@@ -1,0 +1,1041 @@
+<!DOCTYPE html><html lang="en"><head>
+	{% load static %}
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="DSAThemes">	
+		<meta name="description" content="Martex - Software, App, SaaS &amp; Startup Landing Pages Pack">
+		<meta name="keywords" content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+				
+  		<!-- SITE TITLE -->
+		<title>Martex - Software, App, SaaS &amp; Startup Landing Pages Pack</title>
+							
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/apple-touch-icon-152x152.png' %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/apple-touch-icon-120x120.png' %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/apple-touch-icon-76x76.png' %}">
+		<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+		<link rel="icon" href="{% static 'images/apple-touch-icon.png' %}" type="image/x-icon">
+
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+		
+		<!-- BOOTSTRAP CSS -->
+		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="{% static 'css/menu.css' %}" rel="stylesheet">	
+		<link id="effect" href="{% static 'css/fade-down.css' %}" media="all" rel="stylesheet">
+		<link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">	
+		<link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/lunar.css' %}" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+
+		<!-- TEMPLATE CSS -->
+		<link href="{% static 'css/blue-theme.css' %}" rel="stylesheet">
+
+		<!-- Style Switcher CSS -->	
+		<link href="{% static 'css/crocus-theme.css' %}" rel="alternate stylesheet" title="crocus-theme">	
+		<link href="{% static 'css/green-theme.css' %}" rel="alternate stylesheet" title="green-theme">
+		<link href="{% static 'css/magenta-theme.css' %}" rel="alternate stylesheet" title="magenta-theme">
+		<link href="{% static 'css/pink-theme.css' %}" rel="alternate stylesheet" title="pink-theme">	
+		<link href="{% static 'css/purple-theme.css' %}" rel="alternate stylesheet" title="purple-theme">
+		<link href="{% static 'css/skyblue-theme.css' %}" rel="alternate stylesheet" title="skyblue-theme">	
+		<link href="{% static 'css/red-theme.css' %}" rel="alternate stylesheet" title="red-theme">	
+		<link href="{% static 'css/violet-theme.css' %}" rel="alternate stylesheet" title="violet-theme">	
+		
+		<!-- RESPONSIVE CSS -->
+		<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+	</head>
+
+
+
+
+	<body> 
+
+
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<div id="loading" class="loading--theme">
+			<div id="loading-center"><span class="loader"></span></div>
+		</div>
+
+
+
+
+		<!-- STYLE SWITCHER
+		============================================= -->
+		<div id="stlChanger">
+			<div class="blockChanger bgChanger">
+            	<a href="#" class="chBut icon-xs"><span class="flaticon-control-panel"></span></a>
+                <div class="chBody white-color">	
+
+                	<div class="stBlock text-center" style="margin: 30px 20px 20px 26px;">				
+						<div class="stBgs">	
+							<p class="switch"></p>
+
+							<p class="color--white">Color Scheme</p>						
+							<a href="javascript:chooseStyle('pink-theme', 60)"><img src="{% static 'images/pink.jpg' %}" alt=""></a>
+							<a href="javascript:chooseStyle('purple-theme', 60)"><img src="{% static 'images/purple.jpg' %}" alt=""></a>
+							<a href="javascript:chooseStyle('violet-theme', 60)"><img src="{% static 'images/violet.jpg' %}" alt=""></a>	
+							<a href="javascript:chooseStyle('skyblue-theme', 60)"><img src="{% static 'images/skyblue.jpg' %}" alt=""></a>
+							<a href="javascript:chooseStyle('magenta-theme', 60)"><img src="{% static 'images/magenta.jpg' %}" alt=""></a>
+							<a href="javascript:chooseStyle('crocus-theme', 60)"><img src="{% static 'images/crocus.jpg' %}" alt=""></a>
+							<a href="javascript:chooseStyle('red-theme', 60)"><img src="{% static 'images/red.jpg' %}" alt=""></a>
+							<a href="javascript:chooseStyle('green-theme', 60)"><img src="{% static 'images/green.jpg' %}" alt=""></a>
+							
+						</div>
+					</div>
+
+					<div class="stBlock text-center" style="margin: 0px 27px 25px 31px;">
+						<a class="btn r-04 btn--theme hover--theme" href="javascript:chooseStyle('none', 60)">Reset Color</a>
+					</div>
+
+				</div>
+			</div>
+		</div>	  <!-- END SWITCHER -->
+
+
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page font--jakarta">
+
+
+
+
+			<!-- HEADER
+			============================================= -->
+			<header id="header" class="tra-menu navbar-dark inner-page-header white-scroll">
+				<div class="header-wrapper">
+
+
+					<!-- MOBILE HEADER -->
+				    <div class="wsmobileheader clearfix">	  	
+				    	<span class="smllogo"><img src="{% static 'images/logo-blue.png' %}" alt="mobile-logo"></span>
+				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
+				 	</div>
+
+
+				 	<!-- NAVIGATION MENU -->
+				  	<div class="wsmainfull menu clearfix">
+	    				<div class="wsmainwp clearfix">
+
+
+	    					<!-- HEADER BLACK LOGO -->
+	    					<div class="desktoplogo">
+	    						<a href="demo-1.html" class="logo-black">
+	    							<img class="light-theme-img" src="{% static 'images/logo-blue.png' %}" alt="logo">
+	    							<img class="dark-theme-img" src="{% static 'images/logo-blue-white.png' %}" alt="logo">
+	    						</a>
+	    					</div>
+	    					
+
+	    					<!-- HEADER WHITE LOGO -->
+	    					<div class="desktoplogo">
+	    						<a href="demo-1.html" class="logo-white"><img src="{% static 'images/logo-blue-white.png' %}" alt="logo"></a>
+	    					</div>
+
+
+	    					<!-- MAIN MENU -->
+	      					<nav class="wsmenu clearfix">
+	        					<ul class="wsmenu-list nav-theme">
+									
+									<!-- SIMPLE NAVIGATION LINK -->
+									<li class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link">Ana səhifə</a></li>
+										<!-- DROPDOWN SUB MENU -->
+										<li class="nl-simple" aria-haspopup="true"><a href="{% url 'about' %}" class="h-link">Haqqımızda </a></li>
+	
+	
+										<!-- SIMPLE NAVIGATION LINK -->
+						
+										
+	
+										<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">Xidmətlər <span class="wsarrow"></span></a>
+											<ul class="sub-menu">
+												<li aria-haspopup="true"><a href="{% url 'training' %}" class="h-link">Təlimlər</a></li>
+												<li aria-haspopup="true"><a href="{% url 'services' %}" class="h-link">Tədqiqatlar </a></li>		
+												<li aria-haspopup="true"><a href="{% url 'psychology' %}" class="h-link">Biznes psixologiyası</a></li>
+	
+										
+											   </ul>
+										</li>	
+	
+										<!-- SIMPLE NAVIGATION LINK -->
+										<li class="nl-simple" aria-haspopup="true"><a href="{% url 'blogs' %}" class="h-link">Bloqlar</a></li>
+										
+									   
+	
+									 
+										<li class="nl-simple" aria-haspopup="true"><a href="#faqs-3" class="h-link"></a></li>
+	
+										<!-- SIGN UP BUTTON -->
+										<li class="nl-simple" aria-haspopup="true">
+											<a href="{% url 'contact' %}" class="btn r-04 btn--theme hover--tra-white last-link">Əlaqə</a>
+										</li> 
+	
+	
+									</ul>
+	        				</nav>	<!-- END MAIN MENU -->
+
+
+	    				</div>
+	    			</div>	<!-- END NAVIGATION MENU -->
+
+
+				</div>     <!-- End header-wrapper -->
+			</header>	<!-- END HEADER -->
+
+
+
+
+			<!-- TEAM-2
+			============================================= -->
+			<section id="team-2" class="gr--whitesmoke pb-40 inner-page-hero team-section">
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-md-10 col-lg-9">
+							<div class="section-title mb-80">	
+								<h2 class="s-52 w-700">All we do is dream and craft amazing products</h2>	
+							</div>	
+						</div>
+					</div>
+
+
+					<!-- TEAM MEMBERS WRAPPER -->	
+					<div class="team-members-wrapper">
+						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+
+							<!-- TEAM MEMBER #1 -->
+							<div class="col">
+								<div id="tm-2-1" class="team-member mb-60 wow fadeInUp">
+															
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-1.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																																					
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->
+										<h6 class="s-20 color--black w-700">Jonathan Barnes</h6>
+										<p class="color--grey">Founder and CEO</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-twitter"></span></a></li>	
+										</ul>	
+
+									</div>	
+								
+								</div>									
+							</div>	<!-- END TEAM MEMBER #1 -->
+							
+							
+							<!-- TEAM MEMBER #2 -->
+							<div class="col">
+								<div id="tm-2-2" class="team-member mb-60 wow fadeInUp">
+								
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-2.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+												
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->													
+										<h6 class="s-20 color--black w-700">Jaime Fletcher</h6>
+										<p class="color--grey">Senior Software Developer</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-twitter"></span></a></li>	
+										</ul>
+
+									</div>	
+
+								</div>											
+							</div>	<!-- END TEAM MEMBER #2 -->
+							
+							
+							<!-- TEAM MEMBER #3 -->
+							<div class="col">
+								<div id="tm-2-3" class="team-member mb-60 wow fadeInUp">
+
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-3.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																			
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->
+										<h6 class="s-20 color--black w-700">Les Bakker</h6>
+										<p class="color--grey">Software Engineer</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">													
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-twitter"></span></a></li>	
+										</ul>
+
+									</div>
+
+								</div>	
+							</div>	<!-- END TEAM MEMBER #3 -->
+												
+							
+							<!-- TEAM MEMBER #4 -->
+							<div class="col">
+								<div id="tm-2-4" class="team-member mb-60 wow fadeInUp">
+
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-4.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																			
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->
+										<h6 class="s-20 color--black w-700">Alyssa Garrison</h6>
+										<p class="color--grey">Web Development</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-dribbble"></span></a></li>	
+										</ul>
+
+									</div>	
+
+								</div>
+							</div>	<!-- END TEAM MEMBER #4 -->
+
+
+							<!-- TEAM MEMBER #5 -->
+							<div class="col">
+								<div id="tm-2-5" class="team-member mb-60 wow fadeInUp">
+															
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-5.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																																					
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->
+										<h6 class="s-20 color--black w-700">Charlotte Johnson</h6>
+										<p class="color--grey">Content Manager</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-dribbble"></span></a></li>	
+										</ul>
+
+									</div>	
+								
+								</div>									
+							</div>	<!-- END TEAM MEMBER #5 -->
+							
+							
+							<!-- TEAM MEMBER #6 -->
+							<div class="col">
+								<div id="tm-2-6" class="team-member mb-60 wow fadeInUp">
+								
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-6.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+												
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->
+										<h6 class="s-20 color--black w-700">Olivia Steiner</h6>
+										<p class="color--grey">Customers Manager</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-twitter"></span></a></li>	
+										</ul>
+
+									</div>	
+
+								</div>											
+							</div>	<!-- END TEAM MEMBER #6 -->
+							
+							
+							<!-- TEAM MEMBER #7 -->
+							<div class="col">
+								<div id="tm-2-7" class="team-member mb-60 wow fadeInUp">
+
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-7.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																			
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->													
+										<h6 class="s-20 color--black w-700">Charles Fairless</h6>
+										<p class="color--grey">Customers Manager</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-twitter"></span></a></li>	
+										</ul>
+
+									</div>
+
+								</div>	
+							</div>	<!-- END TEAM MEMBER #7 -->
+												
+							
+							<!-- TEAM MEMBER #8 -->
+							<div class="col">
+								<div id="tm-2-8" class="team-member mb-60 wow fadeInUp">
+
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-8.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																			
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->	
+										<h6 class="s-20 color--black w-700">Nancy Taylor</h6>
+										<p class="color--grey">Head of Marketing</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-linkedin-logo"></span></a></li>	
+										</ul>
+
+									</div>	
+
+								</div>
+							</div>	<!-- END TEAM MEMBER #8 -->
+
+
+							<!-- TEAM MEMBER #9 -->
+							<div class="col">
+								<div id="tm-2-9" class="team-member mb-60 wow fadeInUp">
+															
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-9.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																																					
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->	
+										<h6 class="s-20 color--black w-700">Robert Walder</h6>
+										<p class="color--grey">Product Manager</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-twitter"></span></a></li>	
+										</ul>
+
+									</div>	
+								
+								</div>									
+							</div>	<!-- END TEAM MEMBER #9 -->
+							
+							
+							<!-- TEAM MEMBER #10 -->
+							<div class="col">
+								<div id="tm-2-10" class="team-member mb-60 wow fadeInUp">
+								
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-10.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+												
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->												
+										<h6 class="s-20 color--black w-700">Michael Green</h6>
+										<p class="color--grey">Marketing Manager</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-linkedin-logo"></span></a></li>	
+										</ul>
+
+									</div>	
+
+								</div>											
+							</div>	<!-- END TEAM MEMBER #10 -->
+							
+							
+							<!-- TEAM MEMBER #11 -->
+							<div class="col">
+								<div id="tm-2-11" class="team-member mb-60 wow fadeInUp">
+
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-11.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																			
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->													
+										<h6 class="s-20 color--black w-700">Nadine Adams</h6>
+										<p class="color--grey">Marketing Copywriter</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-pinterest-logo"></span></a></li>	
+										</ul>
+
+									</div>
+
+								</div>	
+							</div>	<!-- END TEAM MEMBER #11 -->
+												
+							
+							<!-- TEAM MEMBER #12 -->
+							<div class="col">
+								<div id="tm-2-12" class="team-member mb-60 wow fadeInUp">
+
+									<!-- Team Member Photo -->
+									<div class="team-member-photo r-14">
+										<div class="hover-overlay"> 
+											<img class="img-fluid" src="{% static 'images/team-12.jpg' %}" alt="team-member-foto">
+											<div class="item-overlay"></div>
+										</div>
+									</div>
+																			
+									<!-- Team Member Data -->		
+									<div class="team-member-data">	
+
+										<!-- Data -->	
+										<h6 class="s-20 color--black w-700">Andrew Barker</h6>
+										<p class="color--grey">Product Support Manager</p>
+
+										<!-- Social Links -->
+										<ul class="tm-social ico-20 clearfix">														
+											<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+											<li><a href="#"><span class="flaticon-linkedin-logo"></span></a></li>	
+										</ul>
+
+									</div>	
+
+								</div>
+							</div>	<!-- END TEAM MEMBER #12 -->
+
+
+						</div>   <!-- End row -->
+					</div>	<!-- TEAM MEMBERS WRAPPER -->	   
+
+
+				</div>	    <!-- End container -->
+			</section>	<!-- END TEAM-2 -->
+
+
+
+
+			<!-- BANNER-12
+			============================================= -->
+			<section id="banner-12" class="banner-section">
+				<div class="container">
+
+
+					<!-- BANNER-12 WRAPPER -->
+					<div class="banner-12-wrapper bg--05 bg--fixed r-16">
+						<div class="banner-overlay">
+							<div class="row d-flex align-items-center">
+
+
+								<!-- BANNER-12 TEXT -->
+								<div class="col-md-7">
+									<div class="banner-12-txt color--white">
+
+										<!-- Title -->	
+										<h2 class="s-45 w-700">We are looking for talented individuals</h2>
+
+										<!-- Text -->
+										<p class="p-lg">We're constantly looking for talented people to join our team. 
+											Don't hesitate to get in touch with us
+										</p>
+
+										<!-- Button -->
+										<a href="#careers-1" class="btn r-04 btn--theme hover--tra-white">See open roles</a>
+
+									</div>
+								</div>	<!-- END BANNER-12 TEXT -->
+
+
+								<!-- BANNER-12 IMAGE -->
+								<div class="col-md-5">
+									<div class="banner-12-img text-center">
+										<img class="img-fluid" src="{% static 'images/img-16.png' %}" alt="banner-image">
+									</div>	
+								</div>
+
+
+							</div>   <!-- End row -->	
+						</div>   <!-- End banner overlay -->	
+					</div>    <!-- END BANNER-12 WRAPPER -->
+
+
+				</div>     <!-- End container -->	
+			</section>	<!-- END BANNER-12 -->
+
+
+
+
+			<!-- CAREERS-1
+			============================================= -->
+			<section id="careers-1" class="pt-100 pb-60 careers-section">
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-md-10 col-lg-9">
+							<div class="section-title mb-70">	
+
+								<!-- Title -->	
+								<h2 class="s-52 w-700">Open Roles at Martex</h2>	
+
+								<!-- Text -->	
+								<p class="p-lg">We’re building a better way to work, fueled by transparency, trust, and 
+								   technology that is a force for positive change for the hourly workforce
+								</p>
+									
+							</div>	
+						</div>
+					</div>
+
+
+					<!-- OPEN ROLES -->	
+					<div class="row row-cols-1 row-cols-md-2">
+
+
+						<!-- OPEN ROLE #1 -->
+		 				<div class="col">
+		 					<div class="role-box bg--white-300 r-10">
+			 					<a href="career-role.html">
+				 					<span>Sales</span>
+				 					<h6 class="s-20 w-700">Senior Account Executive</h6>
+				 					<p>New York, NY / Full time</p>
+			 					</a>
+		 					</div>
+		 				</div>	<!-- END OPEN ROLE #1 -->
+
+
+		 				<!-- OPEN ROLE #2 -->
+		 				<div class="col">
+		 					<div class="role-box bg--white-300 r-10">
+		 						<a href="career-role.html">
+		 							<span>Engineering</span>
+		 							<h6 class="s-20 w-700">Software Engineer, Security</h6>
+		 							<p>Vancouver, British Columbia, Canada / Remote</p>
+		 						</a>
+		 					</div>
+		 				</div>	<!-- END OPEN ROLE #2 -->
+
+
+		 				<!-- OPEN ROLE #3 -->
+		 				<div class="col">
+		 					<div class="role-box bg--white-300 r-10">
+		 						<a href="career-role.html">
+		 							<span>Engineering</span>
+		 							<h6 class="s-20 w-700">Senior Backend Engineer</h6>
+		 							<p>New York, NY / Full time</p>
+		 						</a>
+		 					</div>
+		 				</div>	<!-- END OPEN ROLE #3 -->
+
+
+		 				<!-- OPEN ROLE #4 -->
+		 				<div class="col">
+	 						<div class="role-box bg--white-300 r-10">
+	 							<a href="career-role.html">
+		 							<span>Engineering</span>
+		 							<h6 class="s-20 w-700">Engineering Tech Lead</h6>
+		 							<p>Vancouver, British Columbia, Canada / Remote</p>
+		 						</a>
+		 					</div>
+		 				</div>	<!-- END OPEN ROLE #4 -->
+
+
+		 				<!-- OPEN ROLE #5 -->
+		 				<div class="col">
+		 					<div class="role-box bg--white-300 r-10">
+		 						<a href="career-role.html">
+		 							<span>Sales</span>
+		 							<h6 class="s-20 w-700">Mid-Market Account Executive</h6>
+		 							<p>New York, NY / Full time</p>
+		 						</a>
+		 					</div>
+		 				</div>	<!-- END OPEN ROLE #5 -->
+
+
+		 				<!-- OPEN ROLE #6 -->
+		 				<div class="col">
+	 						<div class="role-box bg--white-300 r-10">
+	 							<a href="career-role.html">
+		 							<span>Marketing</span>
+		 							<h6 class="s-20 w-700">Product Marketing Manager</h6>
+		 							<p>Vancouver, British Columbia, Canada / Remote</p>
+		 						</a>
+		 					</div>
+		 				</div>	<!-- END OPEN ROLE #6 -->
+
+
+					</div>	<!-- END OPEN ROLES -->	
+
+
+				</div> <!-- End container -->
+			</section>	<!-- END CAREERS-1 -->
+
+
+
+
+			<!-- BANNER-4
+			============================================= -->
+			<section id="banner-4" class="banner-section">
+				<div class="banner-overlay pb-100">
+					<div class="container">
+
+
+						<!-- BANNER-4 WRAPPER -->
+						<div class="banner-4-wrapper">
+							<div class="row justify-content-center">
+
+
+								<!-- BANNER-4 TEXT -->
+								<div class="col-md-9">
+									<div class="banner-4-txt text-center">
+
+										<!-- Title -->	
+										<h2 class="s-46 w-700">We can't wait to meet you</h2>
+
+										<!-- Button -->
+										<a href="mailto:yourdomain@mail.com" class="btn r-04 btn--theme hover--theme">hello@yourdomain.com</a>
+
+									</div>
+								</div>
+
+
+							</div>   <!-- End row -->	
+						</div>    <!-- END BANNER-4 WRAPPER -->
+
+
+					</div>    <!-- End container -->	
+				</div>     <!-- End banner overlay -->	
+			</section>	<!-- END BANNER-4 -->
+
+
+
+
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+
+
+			<!-- FOOTER-3
+			============================================= -->
+			<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
+				<div class="container">
+
+
+					<!-- FOOTER CONTENT -->
+					<div class="row">
+
+
+						<!-- FOOTER LOGO -->
+						<div class="col-xl-3">
+							<div class="footer-info">
+								<img class="footer-logo" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
+								<img class="footer-logo-dark" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-3 col-xl-2">
+							<div class="footer-links fl-1">
+							
+								<!-- Title -->
+								<h6 class="s-17 w-700">Company</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="about.html">About Us</a></p></li>
+									<li><p><a href="blog-listing.html">Our Blog</a></p></li>						
+									<li><p><a href="testimonials.html">Customers</a></p></li>	
+									<li><p><a href="#">Community</a></p></li>			
+								</ul>
+
+							</div>
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-2">
+							<div class="footer-links fl-2">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Product</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="features.html">Integration</a></p></li>
+									<li><p><a href="download.html">What's New</a></p></li>	
+									<li><p><a href="pricing-1.html">Pricing</a></p></li>	
+									<li><p><a href="help-center.html">Help Center</a></p></li>			
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-3 col-xl-2">
+							<div class="footer-links fl-3">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Legal</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="terms.html">Terms of Use</a></p></li>										
+									<li><p><a href="privacy.html">Privacy Policy</a></p></li>
+									<li><p><a href="cookies.html">Cookie Policy</a></p></li>
+									<li><p><a href="#">Site Map</a></p></li>
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER NEWSLETTER FORM -->
+						<div class="col-sm-10 col-md-8 col-lg-4 col-xl-3">
+							<div class="footer-form">
+
+								<!-- Title -->
+								<h6 class="s-17 w-700">Follow the Best</h6>
+
+								<!-- Newsletter Form Input -->
+								<form class="newsletter-form">
+											
+									<div class="input-group r-06">
+										<input type="email" class="form-control" placeholder="Email Address" required="" id="s-email">								
+										<span class="input-group-btn ico-15">
+											<button type="submit" class="btn color--theme">
+												<span class="flaticon-right-arrow-1"></span>
+											</button>
+										</span>
+									</div>
+
+									<!-- Newsletter Form Notification -->		
+									<label for="s-email" class="form-notification"></label>
+												
+								</form>
+														
+							</div>	
+						</div>	<!-- END FOOTER NEWSLETTER FORM -->
+
+
+					</div>	<!-- END FOOTER CONTENT -->
+
+
+					<hr>	<!-- FOOTER DIVIDER LINE -->
+
+
+					<!-- BOTTOM FOOTER -->
+					<div class="bottom-footer">
+						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+
+
+							<!-- FOOTER COPYRIGHT -->
+							<div class="col">
+								<div class="footer-copyright">
+									<p class="p-sm">© 2024 <a style="color: rgb(110, 110, 241);" href="https://caspera.az/">Caspera</a> <span>All Rights Reserved</span></p>
+								</div>
+							</div>
+
+
+							<!-- FOOTER SOCIALS -->
+							<div class="col">
+								<ul class="bottom-footer-socials ico-20 text-end">
+									<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+									<li><a href="#"><span class="flaticon-twitter"></span></a></li>
+									<li><a href="#"><span class="flaticon-instagram"></span></a></li>
+									<li><a href="#"><span class="flaticon-youtube"></span></a></li>
+								</ul>
+							</div>
+
+
+						</div>  <!-- End row -->
+					</div>	<!-- END BOTTOM FOOTER -->
+
+
+				</div>     <!-- End container -->	
+			</footer>   <!-- END FOOTER-3 -->
+
+
+		</div>	<!-- END PAGE CONTENT -->	
+
+
+
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->	
+		<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>	
+		<script src="{% static 'js/modernizr.custom.js' %}"></script>
+		<script src="{% static 'js/jquery.easing.js' %}"></script>
+		<script src="{% static 'js/jquery.appear.js' %}"></script>
+		<script src="{% static 'js/menu.js' %}"></script>
+		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/pricing-toggle.js' %}"></script>
+		<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'js/request-form.js' %}"></script>	
+		<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+		<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>	
+		<script src="{% static 'js/popper.min.js' %}"></script>
+		<script src="{% static 'js/lunar.js' %}"></script>
+		<script src="{% static 'js/wow.js' %}"></script>
+				
+		<!-- Custom Script -->		
+		<script src="{% static 'js/custom.js' %}"></script>
+
+		<!-- <script>
+			$(document).on({
+			    "contextmenu": function (e) {
+			        console.log("ctx menu button:", e.which); 
+
+			        // Stop the context menu
+			        e.preventDefault();
+			    },
+			    "mousedown": function(e) { 
+			        console.log("normal mouse down:", e.which); 
+			    },
+			    "mouseup": function(e) { 
+			        console.log("normal mouse up:", e.which); 
+			    }
+			});
+		</script> -->
+
+		<script>
+			$(function() {
+			  $(".switch").click(function() {
+			    $("body").toggleClass("theme--dark");
+				    if( $( "body" ).hasClass( "theme--dark" )) {
+	                	$( ".switch" ).text( "Light Mode" );
+	            	} else {
+	                	$( ".switch" ).text( "Dark Mode" );
+	            	}
+			    });
+			});
+		</script>
+
+		<script>
+			$(document).ready(function() {
+	            if( $( "body" ).hasClass( "theme--dark" )) {
+	                $( ".switch" ).text( "Light Mode" );
+	            } else {
+	                $( ".switch" ).text( "Dark Mode" );
+	            }
+	        });
+		</script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
+		<!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js' %}';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->	
+
+		<script src="{% static 'js/changer.js' %}"></script>
+		<script defer="" src="{% static 'js/styleswitch.js' %}"></script>	
+		
+	
+
+
+
+
+</body></html>

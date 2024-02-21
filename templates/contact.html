@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="en"><head>
+	{% load static %}
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="DSAThemes">	
+		<meta name="description" content="Martex - Software, App, SaaS &amp; Startup Landing Pages Pack">
+		<meta name="keywords" content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  		<!-- SITE TITLE -->
+		<title>ASK GROUP</title>
+		<link rel="stylesheet" href="path/to/sweetalert2.min.css">			
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	
+
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+		
+		<!-- BOOTSTRAP CSS -->
+		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="{% static 'css/menu.css' %}" rel="stylesheet">	
+		<link id="effect" href="{% static 'css/fade-down.css' %}" media="all" rel="stylesheet">
+		<link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">	
+		<link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/lunar.css' %}" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+
+		<!-- TEMPLATE CSS -->
+		<link href="{% static 'css/blue-theme.css' %}" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<!-- Style Switcher CSS -->	
+		<link href="{% static 'css/crocus-theme.css' %}" rel="alternate stylesheet" title="crocus-theme">	
+		<link href="{% static 'css/green-theme.css' %}" rel="alternate stylesheet" title="green-theme">
+		<link href="{% static 'css/magenta-theme.css' %}" rel="alternate stylesheet" title="magenta-theme">
+		<link href="{% static 'css/pink-theme.css' %}" rel="alternate stylesheet" title="pink-theme">	
+		<link href="{% static 'css/purple-theme.css' %}" rel="alternate stylesheet" title="purple-theme">
+		<link href="{% static 'css/skyblue-theme.css' %}" rel="alternate stylesheet" title="skyblue-theme">	
+		<link href="{% static 'css/red-theme.css' %}" rel="alternate stylesheet" title="red-theme">	
+		<link href="{% static 'css/violet-theme.css' %}" rel="alternate stylesheet" title="violet-theme">	
+		
+		<!-- RESPONSIVE CSS -->
+		<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+	</head>
+
+
+
+
+	<body> 
+
+
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<div id="loading" class="loading--theme">
+			<div id="loading-center"><span class="loader"></span></div>
+		</div>
+
+
+
+
+
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page font--jakarta">
+
+
+
+
+		<!-- HEADER
+			============================================= -->
+			<header id="header" class="tra-menu navbar-dark inner-page-header white-scroll">
+				<div class="header-wrapper blog-header">
+
+
+					<!-- MOBILE HEADER -->
+				    <div class="wsmobileheader clearfix">	  	
+				    	<span class="smllogo"><img src="{% static 'images/MARKA.png' %}" alt="mobile-logo"></span>
+				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
+				 	</div>
+
+
+				 	 	<!-- NAVIGATION MENU -->
+						  <div class="wsmainfull menu clearfix">
+							<div class="wsmainwp clearfix">
+	
+	
+								<!-- HEADER BLACK LOGO -->
+								<div class="desktoplogo">
+									<a href="#blog-page" class="logo-black">
+										<img class="light-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
+										<img class="dark-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
+									</a>
+								</div>
+								
+	
+								<!-- HEADER WHITE LOGO -->
+								<div class="desktoplogo">
+									<a href="blog-listing.html" class="logo-white"><img src="{% static 'images/MARKA.png' %}" alt="logo"></a>
+								</div>
+	
+	
+								<!-- MAIN MENU -->
+								  <nav class="wsmenu clearfix">
+									<ul class="wsmenu-list nav-theme">
+									
+										<!-- SIMPLE NAVIGATION LINK -->
+										<li class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link">Ana səhifə</a></li>
+											<!-- DROPDOWN SUB MENU -->
+											<li class="nl-simple" aria-haspopup="true"><a href="{% url 'about' %}" class="h-link">Haqqımızda </a></li>
+		
+		
+											<!-- SIMPLE NAVIGATION LINK -->
+							
+											
+		
+											<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">Xidmətlər <span class="wsarrow"></span></a>
+												<ul class="sub-menu">
+													<li aria-haspopup="true"><a href="{% url 'training' %}" class="h-link">Təlimlər</a></li>
+													<li aria-haspopup="true"><a href="{% url 'services' %}" class="h-link">Tədqiqatlar </a></li>		
+													<li aria-haspopup="true"><a href="{% url 'psychology' %}" class="h-link">Biznes psixologiyası</a></li>
+		
+											
+												   </ul>
+											</li>	
+		
+											<!-- SIMPLE NAVIGATION LINK -->
+											<li class="nl-simple" aria-haspopup="true"><a href="{% url 'blogs' %}" class="h-link">Bloqlar</a></li>
+											
+										   
+		
+										 
+											<li class="nl-simple" aria-haspopup="true"><a href="#faqs-3" class="h-link"></a></li>
+		
+											<!-- SIGN UP BUTTON -->
+											<li class="nl-simple" aria-haspopup="true">
+												<a href="{% url 'contact' %}" class="btn r-04 btn--theme hover--tra-white last-link">Əlaqə</a>
+											</li> 
+		
+		
+										</ul>
+								</nav>	<!-- END MAIN MENU -->
+	
+	
+							</div>
+						</div>	<!-- END NAVIGATION MENU -->
+	
+
+				</div>     <!-- End header-wrapper -->
+			</header>	<!-- END HEADER -->
+
+
+
+			<!-- CONTACTS-1
+			============================================= -->
+			<section id="contacts-1" class="pb-50 inner-page-hero contacts-section division">				
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-md-10 col-lg-9">
+							<div class="section-title text-center mb-80">	
+
+								<!-- Title -->	
+								<h2 class="s-52 w-700">Müraciət et</h2>	
+
+								<!-- Text -->	
+								<p class="p-lg">ASK Group haaqında daha ətraflı məlumat almaq, yeniliklərdən xəbərdar olmaq və əməkdaşlıq üçün müraciət edin
+								</p>
+									
+							</div>	
+						</div>
+					</div>
+
+
+					<!-- CONTACT FORM -->
+				 	<div class="row justify-content-center">	
+				 		<div class="col-md-11 col-lg-10 col-xl-8">
+				 			<div class="form-holder">
+								<form name="contactform" class="row contact-form">
+
+									<!-- Form Select -->
+									<div class="col-md-12 input-subject">
+										<p class="p-lg">Müraciətiniz nə ilə əlaqəlidir </p>
+										<span>Müraciətinizin mövzusunu qeyd edin</span>
+										<select class="form-select subject" aria-label="Default select example">
+									    	<option selected="">Mövzu seç...</option>	
+											<option>Əməkdaşlıq</option>
+											<option>Qiymətləndirmə</option>
+											<option>Təklif və iradlar</option>
+											<option>Təlimlər</option>
+											<option>Başqa</option>
+									    </select>
+									</div>
+																						
+									<!-- Contact Form Input -->
+									<div class="col-md-12">
+										<p class="p-lg">Tam adınız: </p>
+										<span>Ad və soyadınızı daxil edin: </span>
+										<input type="text" name="name" class="form-control name" placeholder="Your Name*"> 
+									</div>
+												
+									<div class="col-md-12">
+										<p class="p-lg">E-poçt adresi: </p>
+										<span>Mailinizi daxil edin</span>
+										<input type="text" name="email" class="form-control email" placeholder="Email Address*"> 
+									</div>
+		
+									<div class="col-md-12">
+										<p class="p-lg">Müraciətinizi yazın </p>
+										<span>Müraciətinizi aydın şəkildə ifadə edin</span>
+										<textarea class="form-control message" name="message" rows="6" placeholder="I have a problem with..."></textarea>
+									</div> 
+																						
+									<!-- Contact Form Button -->
+									<div class="col-md-12 mt-15 form-btn text-right">	
+										<button type="submit" class="btn btn--theme hover--theme submit">Təsdiqlə və göndər</button>	
+									</div>
+
+									<div class="contact-form-notice">
+										<p class="p-sm">Biz sizin məxfiliyinizi qoruyuruq <a href="privacy.html">Privacy Policy</a>.
+										</p>
+									</div>
+																															
+									<!-- Contact Form Message -->
+									<div class="col-lg-12 contact-form-msg">
+										<span class="loading"></span>
+									</div>	
+																							
+								</form>	
+				 			</div>	
+				 		</div>	
+				 	</div>	   <!-- END CONTACT FORM -->
+
+
+				</div>	   <!-- End container -->	
+			</section>	<!-- END CONTACTS-1 -->
+			<div style="display: flex;align-items:center;justify-content:center;margin-bottom:40px"><h1>Əlaqə</h1></div>
+			
+			<div class="contact-info-head">
+				
+			<div class="contact-info">
+				<div class="card">
+				  <i class="icon fas fa-envelope"></i>
+				  <div class="card-content">
+					<h3>Email</h3>
+					<span>email@address.com</span>
+				  </div>
+				</div>
+			  
+				<div class="card">
+				  <i class="icon fas fa-phone"></i>
+				  <div class="card-content">
+					<h3>Phone Number</h3>
+					<span>+00000000000</span>
+				  </div>
+				</div>
+			  
+				<div class="card">
+				  <i class="icon fas fa-map-marker-alt"></i>
+				  <div class="card-content">
+					<h3>Location</h3>
+					<span>United States</span>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+
+
+
+			<section id="newsletter-1" class="newsletter-section">
+				<div class="newsletter-overlay">
+					<div class="container">
+						<div class="row d-flex align-items-center row-cols-1 row-cols-lg-2">
+
+
+							<!-- NEWSLETTER TEXT -->	
+							<div class="col">
+								<div class="newsletter-txt">	
+									<h4 class="s-34 w-700">Yeniliklərdən ASK group ilə xəbərdar ol !</h4>	
+								</div>								
+							</div>
+
+
+							<!-- NEWSLETTER FORM -->
+							<div class="col">
+								<form class="newsletter-form">
+											
+									<div class="input-group">
+										<input type="email" autocomplete="off" class="form-control" placeholder="Your email address" required="" id="s-email">								
+										<span class="input-group-btn">
+											<button type="submit" class="btn btn--theme hover--theme">Subscribe Now</button>
+										</span>										
+									</div>
+
+									<!-- Newsletter Form Notification -->	
+									<label for="s-email" class="form-notification"></label>
+												
+								</form>							
+							</div>	  <!-- END NEWSLETTER FORM -->
+
+
+						</div>	  <!-- End row -->
+					</div>    <!-- End container -->	
+				</div>     <!-- End newsletter-overlay -->
+			</section>	<!-- END NEWSLETTER-1 -->
+
+
+
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+
+		<!-- FOOTER-3
+			============================================= -->
+			<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
+				<div class="container">
+
+
+					<!-- FOOTER CONTENT -->
+					<div class="row">
+
+
+						<!-- FOOTER LOGO -->
+						<div class="col-xl-3">
+							<div class="footer-info">
+								<img class="footer-logo" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
+								<img class="footer-logo-dark" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-3 col-xl-2">
+							<div class="footer-links fl-1">
+							
+								<!-- Title -->
+								<h6 class="s-17 w-700">Company</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="about.html">About Us</a></p></li>
+									<li><p><a href="blog-listing.html">Our Blog</a></p></li>						
+									<li><p><a href="testimonials.html">Customers</a></p></li>	
+									<li><p><a href="#">Community</a></p></li>			
+								</ul>
+
+							</div>
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-2">
+							<div class="footer-links fl-2">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Product</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="features.html">Integration</a></p></li>
+									<li><p><a href="download.html">What's New</a></p></li>	
+									<li><p><a href="pricing-1.html">Pricing</a></p></li>	
+									<li><p><a href="help-center.html">Help Center</a></p></li>			
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-3 col-xl-2">
+							<div class="footer-links fl-3">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Legal</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="terms.html">Terms of Use</a></p></li>										
+									<li><p><a href="privacy.html">Privacy Policy</a></p></li>
+									<li><p><a href="cookies.html">Cookie Policy</a></p></li>
+									<li><p><a href="#">Site Map</a></p></li>
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER NEWSLETTER FORM -->
+						<div class="col-sm-10 col-md-8 col-lg-4 col-xl-3">
+							<div class="footer-form">
+
+								<!-- Title -->
+								<h6 class="s-17 w-700">Follow the Best</h6>
+
+								<!-- Newsletter Form Input -->
+								<form class="newsletter-form">
+											
+									<div class="input-group r-06">
+										<input type="email" class="form-control" placeholder="Email Address" required="" id="s-email">								
+										<span class="input-group-btn ico-15">
+											<button type="submit" class="btn color--theme">
+												<span class="flaticon-right-arrow-1"></span>
+											</button>
+										</span>
+									</div>
+
+									<!-- Newsletter Form Notification -->		
+									<label for="s-email" class="form-notification"></label>
+												
+								</form>
+														
+							</div>	
+						</div>	<!-- END FOOTER NEWSLETTER FORM -->
+
+
+					</div>	<!-- END FOOTER CONTENT -->
+
+
+					<hr>	<!-- FOOTER DIVIDER LINE -->
+
+
+					<!-- BOTTOM FOOTER -->
+					<div class="bottom-footer">
+						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+
+
+							<!-- FOOTER COPYRIGHT -->
+							<div class="col">
+								<div class="footer-copyright">
+									<p class="p-sm">© 2024 <a style="color: rgb(110, 110, 241);" href="https://caspera.az/">Caspera</a> <span>All Rights Reserved</span></p>
+								</div>
+							</div>
+
+
+							<!-- FOOTER SOCIALS -->
+							<div class="col">
+								<ul class="bottom-footer-socials ico-20 text-end">
+									<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+									<li><a href="#"><span class="flaticon-twitter"></span></a></li>
+									<li><a href="#"><span class="flaticon-instagram"></span></a></li>
+									<li><a href="#"><span class="flaticon-youtube"></span></a></li>
+								</ul>
+							</div>
+
+
+						</div>  <!-- End row -->
+					</div>	<!-- END BOTTOM FOOTER -->
+
+
+				</div>     <!-- End container -->	
+			</footer>   <!-- END FOOTER-3 -->
+
+
+
+		</div>	<!-- END PAGE CONTENT -->	
+
+<style>
+	.card{
+		position: relative;
+		flex: 1;
+		max-width: 300px;
+		height: 140px;
+		background-color: #444;
+		margin: 20px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.icon{
+		font-size: 32px;
+		color: #ea8685;
+		transition: .3s linear;
+	}
+	
+	.card:hover .icon{
+		transform: scale(4);
+		opacity: 0;
+	}
+	
+	.card-content h3,
+	.card-content span{
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 16px;
+		opacity: 0;
+	}
+	
+	.card-content h3{
+		top: 20px;
+		text-transform: uppercase;
+		color: #ea8685;
+	}
+	
+	.card-content span{
+		bottom: 20px;
+		color: #fff;
+		font-weight: 500;
+	}
+	
+	.card:hover h3{
+		opacity: 1;
+		top: 46px;
+		transition: .3s linear .3s;
+	}
+	
+	.card:hover span{
+		opacity: 1;
+		bottom: 46px;
+		transition: .3s linear .3s;
+	}
+	
+	
+	@media screen and (max-width:900px){
+		.card{
+			flex: 100%;
+			max-width: 500px;
+		}
+	}
+
+	.contact-info{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.contact-info-head{
+		margin-bottom:40px;
+
+	}
+</style>
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->	
+		<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>	
+		<script src="{% static 'js/modernizr.custom.js' %}"></script>
+		<script src="{% static 'js/jquery.easing.js' %}"></script>
+		<script src="{% static 'js/jquery.appear.js' %}"></script>
+		<script src="{% static 'js/menu.js' %}"></script>
+		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/pricing-toggle.js' %}"></script>
+		<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'js/contact-form.js' %}"></script>
+		<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+		<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>	
+		<script src="{% static 'js/popper.min.js' %}"></script>
+		<script src="{% static 'js/lunar.js' %}"></script>
+		<script src="{% static 'js/wow.js' %}"></script>
+				
+		<!-- Custom Script -->		
+		<script src="{% static 'js/custom.js' %}"></script>
+
+		<!-- <script>
+			$(document).on({
+			    "contextmenu": function (e) {
+			        console.log("ctx menu button:", e.which); 
+
+			        // Stop the context menu
+			        e.preventDefault();
+			    },
+			    "mousedown": function(e) { 
+			        console.log("normal mouse down:", e.which); 
+			    },
+			    "mouseup": function(e) { 
+			        console.log("normal mouse up:", e.which); 
+			    }
+			});
+		</script> -->
+		<script>
+			const csrfToken = "{{ csrf_token }}";
+			const messageUrl = "{% url 'message' %}";
+		
+			$(document).ready(function() {
+				$(".submit").on("click", function(e) {
+					e.preventDefault();
+		
+					// Capture form data
+					const formData = {
+						subject: $(".subject").val(),
+						name: $(".name").val(),
+						email: $(".email").val(),
+						message: $(".message").val()
+					};
+		
+					// Check if any field is empty
+					if (Object.values(formData).some(value => value === "")) {
+						// Display SweetAlert for empty fields
+						Swal.fire({
+							icon: 'error',
+							title: 'Xəta',
+							text: 'Zəhmət olmasa formun düzgünlüyünü yoxlayın',
+						});
+					} else {
+						// If not empty, send data to the backend
+						fetch(messageUrl, {
+							method: 'POST',
+							body: JSON.stringify(formData),
+							headers: {
+								'Content-Type': 'application/json',
+								'X-CSRFToken': csrfToken
+							}
+						})
+						.then(response => {
+							if (!response.ok) {
+								Swal.fire({
+									icon: 'error',
+									title: 'Xəta',
+									text: 'Zəhmət olmasa formun düzgünlüyünü yoxlayın',
+								});
+								throw new Error('Network response was not ok');
+							}
+							Swal.fire({
+								title: "",
+								text: "Məktub uğurla göndərildi",
+								icon: "success"
+							  });
+							return response.json();
+						})
+						.then(data => {
+							// Handle successful response if needed
+							console.log(data);
+						})
+						.catch(error => {
+							// Handle error if needed
+							console.error('There was a problem with the fetch operation:', error);
+						});
+					}
+				});
+			});
+		</script>
+		
+	
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
+		<!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js' %}';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->	
+
+		<script src="{% static 'js/changer.js' %}"></script>
+		<script defer="" src="{% static 'js/styleswitch.js' %}"></script>	
+
+	
+
+
+
+
+</body></html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="en"><head>
+	{% load static %}
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="DSAThemes">	
+		<meta name="description" content="Martex - Software, App, SaaS &amp; Startup Landing Pages Pack">
+		<meta name="keywords" content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+				
+  		<!-- SITE TITLE -->
+		<title>Martex - Software, App, SaaS &amp; Startup Landing Pages Pack</title>
+							
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/apple-touch-icon-152x152.png' %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/apple-touch-icon-120x120.png' %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/apple-touch-icon-76x76.png' %}">
+		<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+		<link rel="icon" href="{% static 'images/apple-touch-icon.png' %}" type="image/x-icon">
+		<link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+		
+		<!-- BOOTSTRAP CSS -->
+		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="{% static 'css/menu.css' %}" rel="stylesheet">	
+		<link id="effect" href="{% static 'css/fade-down.css' %}" media="all" rel="stylesheet">
+		<link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">	
+		<link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+		<link href="{% static 'css/lunar.css' %}" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+
+		<!-- TEMPLATE CSS -->
+		<link href="{% static 'css/blue-theme.css' %}" rel="stylesheet">
+
+		<!-- Style Switcher CSS -->	
+		<link href="{% static 'css/crocus-theme.css' %}" rel="alternate stylesheet" title="crocus-theme">	
+		<link href="{% static 'css/green-theme.css' %}" rel="alternate stylesheet" title="green-theme">
+		<link href="{% static 'css/magenta-theme.css' %}" rel="alternate stylesheet" title="magenta-theme">
+		<link href="{% static 'css/pink-theme.css' %}" rel="alternate stylesheet" title="pink-theme">	
+		<link href="{% static 'css/purple-theme.css' %}" rel="alternate stylesheet" title="purple-theme">
+		<link href="{% static 'css/skyblue-theme.css' %}" rel="alternate stylesheet" title="skyblue-theme">	
+		<link href="{% static 'css/red-theme.css' %}" rel="alternate stylesheet" title="red-theme">	
+		<link href="{% static 'css/violet-theme.css' %}" rel="alternate stylesheet" title="violet-theme">	
+		
+		<!-- RESPONSIVE CSS -->
+		<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+	
+	</head>
+
+
+
+
+	<body> 
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<div id="loading" class="loading--theme">
+			<div id="loading-center"><span class="loader"></span></div>
+		</div>
+
+
+
+
+
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page font--jakarta">
+
+
+
+
+			<!-- HEADER
+			============================================= -->
+			<header id="header" class="tra-menu navbar-dark inner-page-header white-scroll">
+				<div class="header-wrapper">
+
+
+					<!-- MOBILE HEADER -->
+				    <div class="wsmobileheader clearfix">	  	
+				    	<span class="smllogo"><img src="{% static 'images/MARKA.png' %}" alt="mobile-logo"></span>
+				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
+				 	</div>
+
+
+				 	<!-- NAVIGATION MENU -->
+				  	<div class="wsmainfull menu clearfix">
+	    				<div class="wsmainwp clearfix">
+
+
+	    					<!-- HEADER BLACK LOGO -->
+	    					<div class="desktoplogo">
+	    						<a href="demo-1.html" class="logo-black">
+	    							<img class="light-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
+	    							<img class="dark-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
+	    						</a>
+	    					</div>
+	    					
+
+	    					<!-- HEADER WHITE LOGO -->
+	    					<div class="desktoplogo">
+	    						<a href="demo-1.html" class="logo-white"><img src="{% static 'images/MARKA.png' %}" alt="logo"></a>
+	    					</div>
+
+
+	    					<!-- MAIN MENU -->
+	      					<nav class="wsmenu clearfix">
+								<ul class="wsmenu-list nav-theme">
+									
+									<!-- SIMPLE NAVIGATION LINK -->
+									<li class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link">Ana səhifə</a></li>
+										<!-- DROPDOWN SUB MENU -->
+										<li class="nl-simple" aria-haspopup="true"><a href="{% url 'about' %}" class="h-link">Haqqımızda </a></li>
+	
+	
+										<!-- SIMPLE NAVIGATION LINK -->
+						
+										
+	
+										<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">Xidmətlər <span class="wsarrow"></span></a>
+											<ul class="sub-menu">
+												<li aria-haspopup="true"><a href="{% url 'training' %}" class="h-link">Təlimlər</a></li>
+												<li aria-haspopup="true"><a href="{% url 'services' %}" class="h-link">Tədqiqatlar </a></li>		
+												<li aria-haspopup="true"><a href="{% url 'psychology' %}" class="h-link">Biznes psixologiyası</a></li>
+	
+										
+											   </ul>
+										</li>	
+	
+										<!-- SIMPLE NAVIGATION LINK -->
+										<li class="nl-simple" aria-haspopup="true"><a href="{% url 'blogs' %}" class="h-link">Bloqlar</a></li>
+										
+									   
+	
+									 
+										<li class="nl-simple" aria-haspopup="true"><a href="#faqs-3" class="h-link"></a></li>
+	
+										<!-- SIGN UP BUTTON -->
+										<li class="nl-simple" aria-haspopup="true">
+											<a href="{% url 'contact' %}" class="btn r-04 btn--theme hover--tra-white last-link">Əlaqə</a>
+										</li> 
+	
+	
+									</ul>
+	        				</nav>	<!-- END MAIN MENU -->
+
+
+	    				</div>
+	    			</div>	<!-- END NAVIGATION MENU -->
+
+
+				</div>     <!-- End header-wrapper -->
+			</header>	<!-- END HEADER -->
+
+
+
+
+			<!-- FAQs-4
+			============================================= -->
+			<section id="faqs-4" class="gr--whitesmoke inner-page-hero pb-100 faqs-section division">
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-lg-11 col-xl-10">
+							<div class="inner-page-title">	
+								<h2 class="s-52 w-700">Sizə necə kömək ola bilərik ?</h2>
+							</div>	
+						</div>
+					</div>
+
+
+					<!-- TABS NAVIGATION -->	
+				 	<div class="row">
+				 		<div class="col">
+							<div class="tabs-nav tabs--theme clearfix">
+						 		<ul class="tabs-1 owl-carousel brands-carousel-5">
+
+									{% for service in services %}
+									<li class="tab-link {% if forloop.first %} current {% endif %} ico-45 r-16 brand-logo" data-tab="tab-{{ service.id }}">
+										<div class="tab-link-ico">
+											<img class="service-icon" src="{{ service.icon.url }}" alt="">
+										</div>
+										<p>{{ service.name }}</p>
+									</li>
+									{% endfor %}
+								
+
+								</ul>
+							</div>
+						</div>
+				 	</div>	<!-- END TABS NAVIGATION -->	
+
+
+				 	<!-- TABS CONTENT -->
+					<div class="tabs-content">
+						<div class="row justify-content-center">
+							<div class="col-xl-10">
+
+
+								{% for service in services %}
+								<div id="tab-{{ service.id }}" class="tab-content {% if forloop.first %} current {% endif %}">
+									<div class="blog-post-img py-50">
+									
+										<img style="float:left; width:50%;margin-right:1.3rem;margin-top:1.7rem;" class="img-fluid r-16" src="{{ service.image.url }}" alt="blog-post-image">
+										<p>{{service.description|safe}}
+										</p>	
+										<p>{{service.bottomdescription|safe}}
+										</p>	
+									</div>
+								</div>	<!-- END TAB-1 CONTENT -->
+								{% endfor %}
+							</div>
+						</div> <!-- End row -->
+					</div>	<!-- END TABS CONTENT -->
+
+
+				</div>     <!-- End container -->
+			</section>	<!-- END  FAQs-4 -->
+
+
+
+
+			<!-- BANNER-9
+			============================================= -->
+			<section id="banner-9" class="bg--02 py-70 x-border banner-section">
+				<div class="container">
+
+
+					<!-- BANNER-9 WRAPPER -->
+					<div class="banner-7-wrapper">
+						<div class="row justify-content-center d-flex align-items-center">
+
+
+							<!-- BANNER-9 TEXT -->
+							<div class="col-md-7 col-xl-5">
+								<div class="banner-9-txt">
+
+									<!-- Title -->	
+									<h3 class="s-40 w-700">Hələ də köməyə ehtiyacın var ?</h3>
+
+									<!-- Text -->
+									<p class="p-lg">Suallarınızı yönləndirin, biz cavablandıraq</p>
+
+									<!-- Button -->
+									<a href="{% url 'contact' %}" class="btn r-04 btn--theme hover--theme">Sual ver</a>
+
+								</div>
+							</div>
+
+
+							<!-- BANNER-9 IMAGE -->
+							<div class="col-md-5 col-xl-5">
+								<div class="banner-9-img text-end">
+									<img class="img-fluid" src="{% static 'images/help.png' %}" alt="banner-image">
+								</div>	
+							</div>
+
+
+						</div>     <!-- End row -->	
+					</div>    <!-- END BANNER-9 WRAPPER -->
+
+
+				</div>     <!-- End container -->	
+			</section>	<!-- END BANNER-9 -->
+
+
+
+			
+				<!-- FOOTER-3
+			============================================= -->
+			<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
+				<div class="container">
+
+
+					<!-- FOOTER CONTENT -->
+					<div class="row">
+
+
+						<!-- FOOTER LOGO -->
+						<div class="col-xl-3">
+							<div class="footer-info">
+								<img class="footer-logo" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
+								<img class="footer-logo-dark" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-3 col-xl-2">
+							<div class="footer-links fl-1">
+							
+								<!-- Title -->
+								<h6 class="s-17 w-700">Company</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="about.html">About Us</a></p></li>
+									<li><p><a href="blog-listing.html">Our Blog</a></p></li>						
+									<li><p><a href="testimonials.html">Customers</a></p></li>	
+									<li><p><a href="#">Community</a></p></li>			
+								</ul>
+
+							</div>
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-2">
+							<div class="footer-links fl-2">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Product</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="features.html">Integration</a></p></li>
+									<li><p><a href="download.html">What's New</a></p></li>	
+									<li><p><a href="pricing-1.html">Pricing</a></p></li>	
+									<li><p><a href="help-center.html">Help Center</a></p></li>			
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-4 col-lg-3 col-xl-2">
+							<div class="footer-links fl-3">
+												
+								<!-- Title -->
+								<h6 class="s-17 w-700">Legal</h6>
+
+								<!-- Links -->
+								<ul class="foo-links clearfix">
+									<li><p><a href="terms.html">Terms of Use</a></p></li>										
+									<li><p><a href="privacy.html">Privacy Policy</a></p></li>
+									<li><p><a href="cookies.html">Cookie Policy</a></p></li>
+									<li><p><a href="#">Site Map</a></p></li>
+								</ul>
+
+							</div>	
+						</div>	<!-- END FOOTER LINKS -->	
+
+
+						<!-- FOOTER NEWSLETTER FORM -->
+						<div class="col-sm-10 col-md-8 col-lg-4 col-xl-3">
+							<div class="footer-form">
+
+								<!-- Title -->
+								<h6 class="s-17 w-700">Follow the Best</h6>
+
+								<!-- Newsletter Form Input -->
+								<form class="newsletter-form">
+											
+									<div class="input-group r-06">
+										<input type="email" class="form-control" placeholder="Email Address" required="" id="s-email">								
+										<span class="input-group-btn ico-15">
+											<button type="submit" class="btn color--theme">
+												<span class="flaticon-right-arrow-1"></span>
+											</button>
+										</span>
+									</div>
+
+									<!-- Newsletter Form Notification -->		
+									<label for="s-email" class="form-notification"></label>
+												
+								</form>
+														
+							</div>	
+						</div>	<!-- END FOOTER NEWSLETTER FORM -->
+
+
+					</div>	<!-- END FOOTER CONTENT -->
+
+
+					<hr>	<!-- FOOTER DIVIDER LINE -->
+
+
+					<!-- BOTTOM FOOTER -->
+					<div class="bottom-footer">
+						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+
+
+							<!-- FOOTER COPYRIGHT -->
+							<div class="col">
+								<div class="footer-copyright">
+									<p class="p-sm">© 2024 <a style="color: rgb(110, 110, 241);" href="https://caspera.az/">Caspera</a> <span>All Rights Reserved</span></p>
+								</div>
+							</div>
+
+
+							<!-- FOOTER SOCIALS -->
+							<div class="col">
+								<ul class="bottom-footer-socials ico-20 text-end">
+									<li><a href="#"><span class="flaticon-facebook"></span></a></li>
+									<li><a href="#"><span class="flaticon-twitter"></span></a></li>
+									<li><a href="#"><span class="flaticon-instagram"></span></a></li>
+									<li><a href="#"><span class="flaticon-youtube"></span></a></li>
+								</ul>
+							</div>
+
+
+						</div>  <!-- End row -->
+					</div>	<!-- END BOTTOM FOOTER -->
+
+
+				</div>     <!-- End container -->	
+			</footer>   <!-- END FOOTER-3 -->
+
+
+
+		</div>	<!-- END PAGE CONTENT -->	
+
+
+<style>
+	.service-icon{
+		display: inline-block !important;
+		width: 50px !important;
+	}
+	.owl-dots{
+		display: none !important;
+	}
+	.owl-stage-outer{
+		padding: 10px 0px !important;
+	}
+</style>
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->	
+		<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>	
+		<script src="{% static 'js/modernizr.custom.js' %}"></script>
+		<script src="{% static 'js/jquery.easing.js' %}"></script>
+		<script src="{% static 'js/jquery.appear.js' %}"></script>
+		<script src="{% static 'js/menu.js' %}"></script>
+		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/pricing-toggle.js' %}"></script>
+		<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'js/request-form.js' %}"></script>	
+		<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+		<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>	
+		<script src="{% static 'js/popper.min.js' %}"></script>
+		<script src="{% static 'js/lunar.js' %}"></script>
+		<script src="{% static 'js/wow.js' %}"></script>
+		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<!-- Custom Script -->		
+		<script src="{% static 'js/custom.js' %}"></script>
+
+		<!-- <script>
+			$(document).on({
+			    "contextmenu": function (e) {
+			        console.log("ctx menu button:", e.which); 
+
+			        // Stop the context menu
+			        e.preventDefault();
+			    },
+			    "mousedown": function(e) { 
+			        console.log("normal mouse down:", e.which); 
+			    },
+			    "mouseup": function(e) { 
+			        console.log("normal mouse up:", e.which); 
+			    }
+			});
+		</script> -->
+
+		<script>
+			$(function() {
+			  $(".switch").click(function() {
+			    $("body").toggleClass("theme--dark");
+				    if( $( "body" ).hasClass( "theme--dark" )) {
+	                	$( ".switch" ).text( "Light Mode" );
+	            	} else {
+	                	$( ".switch" ).text( "Dark Mode" );
+	            	}
+			    });
+			});
+		</script>
+
+		<script>
+			$(document).ready(function() {
+	            if( $( "body" ).hasClass( "theme--dark" )) {
+	                $( ".switch" ).text( "Light Mode" );
+	            } else {
+	                $( ".switch" ).text( "Dark Mode" );
+	            }
+	        });
+		</script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
+		<!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js' %}';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->	
+
+		<script src="{% static 'js/changer.js' %}"></script>
+		<script defer="" src="{% static 'js/styleswitch.js' %}"></script>	
+
+		
+
+
+
+
+</body></html>
