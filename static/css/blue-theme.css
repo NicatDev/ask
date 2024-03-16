@@ -2534,9 +2534,11 @@ p.video-txt-sm {
   letter-spacing: 0;
   text-decoration: none;  
   margin: 0 7px;
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
-
+.wsmenu > .wsmenu-list > li {
+  cursor:pointer !important;
+}
 .navbar-dark .wsmenu > .wsmenu-list > li > a.h-link {
   color: #353f4f;
 }

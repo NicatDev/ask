@@ -14,7 +14,7 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('turaladmin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 ]
 
 urlpatterns += i18n_patterns(

@@ -10,6 +10,13 @@ from django.conf import settings
 import json
 from marketapp.forms import Messageform
 
+
+def gallery(request):
+    context = {}
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
+    return render(request,'gallery.html',context)
+
 def home(request):
 
     psychologies = Psychology.objects.all()
@@ -33,6 +40,8 @@ def home(request):
         'services':services,
 
     }
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'home.html',context)
 
 def home2(request):
@@ -48,6 +57,8 @@ def home2(request):
         'services':services,
         'psychologies':psychologies,
     }
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'home2.html',context)
 
 
@@ -61,6 +72,8 @@ def about(request):
         'team':team,
         'psychologies':psychologies,
     }
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'about.html',context)
 
 
@@ -69,7 +82,8 @@ def psychology(request):
     context = {
         'psychologies':psychologies,
     }
-    
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'psychologies.html',context)
 
 from django.shortcuts import get_object_or_404
@@ -79,6 +93,8 @@ def psychologySingle(request,slug):
     context = {
         'psy':psychology
     }
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request, 'psychologySingle.html',context)
 
 
@@ -88,12 +104,13 @@ def services(request):
     context = {
         'services':services,
     }
-    
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'services.html',context)
 
 def serviceSingle(request,slug):
     service = get_object_or_404(Services, slug=slug)
-    related_services =  Services.objects.all().only('name','icon','description_without_ck').exclude(id=service.id)
+    related_services =  Services.objects.all().exclude(id=service.id)
 
     if len(related_services) > 4:
         related_services = related_services[0:4]
@@ -102,7 +119,8 @@ def serviceSingle(request,slug):
         'service':service,
         'related_services':related_services
     }
-
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request, 'service-single.html',context)
 
 
@@ -139,7 +157,8 @@ def blogs(request):
         'recent_blogs':recent_blogs,
         'tags':tags
     }
-    
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'blogs.html',context)
 
 
@@ -164,13 +183,21 @@ def blogSingle(request,slug):
         'categories':categories,
         'tags':tags
     }
+
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     if previous_blog:
         context['pre_blog']=previous_blog
         context['next_blog']=next_blog
     return render(request, 'blogSingle.html',context)
 
 def contact(request):
-    context = {}
+    researchs = Services.objects.all()
+    context = {
+        'researchs':researchs
+    }
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'Contact.html',context)
 
 def message(request):
@@ -199,6 +226,8 @@ def training(request):
         'total_pages':total_pages,
         "recent_trainings":recent_trainings
     }
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request,'trainings.html',context)
 
 
@@ -223,5 +252,6 @@ def trainingSingle(request,slug):
     if previous_training:
         context['pre_training']=previous_training
         context['next_training']=next_training
-        
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     return render(request, 'trainingSingle.html',context)

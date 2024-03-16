@@ -21,14 +21,14 @@ class BaseMixin(models.Model):
 class Services(BaseMixin):
     name = models.CharField(max_length = 800)
     description = models.TextField()
-    description_without_ck = models.CharField(max_length = 200)
-    icon = models.ImageField(null=True,blank=True)
-    image = models.ImageField(null=True,blank=True)
-    bottomdescription = models.TextField()
+    title = models.CharField(max_length=200,null=True,blank=True)
     ordering = models.SmallIntegerField(null=True,blank=True)
     
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Research"
     
     def save(self, *args, **kwargs):
         new_slug = seo(self.name)
@@ -42,6 +42,15 @@ class Services(BaseMixin):
         
     def get_absolute_url(self):
         return reverse('serviceSingle', kwargs={"slug": self.slug})
+
+class ServiceSection(models.Model):
+    service = models.ForeignKey(Services,models.CASCADE,related_name="sections")
+    title = models.CharField(max_length = 200)
+    description = models.TextField()
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.title
 
 class Category(models.Model):
     name = models.CharField(max_length = 200)

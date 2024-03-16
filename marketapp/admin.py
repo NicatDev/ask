@@ -1,21 +1,20 @@
 from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
 from django.db import models
-from marketapp.models import Blog,Category,Tag,Services,Psychology,Message,Partners,Faq,Training,Team
+from marketapp.models import Blog,Category,Tag,Services,Psychology,Message,Partners,Faq,Training,Team,ServiceSection
 
-class MyModelAdmin(admin.ModelAdmin):
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget(config_name='default')},
-    }
-    # exclude = ('content_without_ck','content','name','bottomcontent','sidename','sidecontent','bottomname')
-    
+class SideModelInline(admin.TabularInline):  # veya admin.StackedInline
+    model = ServiceSection
+
+class MainModelAdmin(admin.ModelAdmin):
+    inlines = [SideModelInline]
+
+admin.site.register(Services, MainModelAdmin)
     
 admin.site.register(Category)
 admin.site.register(Tag)
-admin.site.register(Blog,MyModelAdmin)
-admin.site.register(Services,MyModelAdmin)
-
-admin.site.register(Psychology,MyModelAdmin)
+admin.site.register(Blog)
+admin.site.register(Psychology)
 admin.site.register(Message)
 admin.site.register(Partners)
 admin.site.register(Faq)

@@ -81,90 +81,9 @@
 
 
 
-		<!-- HEADER
-			============================================= -->
-			<header id="header" class="tra-menu navbar-dark inner-page-header white-scroll">
-				<div class="header-wrapper blog-header">
+			{% include 'header.html' %}
 
-
-					<!-- MOBILE HEADER -->
-				    <div class="wsmobileheader clearfix">	  	
-				    	<span class="smllogo"><img src="{% static 'images/MARKA.png' %}" alt="mobile-logo"></span>
-				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
-				 	</div>
-
-
-				 	 	<!-- NAVIGATION MENU -->
-						  <div class="wsmainfull menu clearfix">
-							<div class="wsmainwp clearfix">
-	
-	
-								<!-- HEADER BLACK LOGO -->
-								<div class="desktoplogo">
-									<a href="#blog-page" class="logo-black">
-										<img class="light-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
-										<img class="dark-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
-									</a>
-								</div>
-								
-	
-								<!-- HEADER WHITE LOGO -->
-								<div class="desktoplogo">
-									<a href="blog-listing.html" class="logo-white"><img src="{% static 'images/MARKA.png' %}" alt="logo"></a>
-								</div>
-	
-	
-								<!-- MAIN MENU -->
-								  <nav class="wsmenu clearfix">
-									<ul class="wsmenu-list nav-theme">
-									
-										<!-- SIMPLE NAVIGATION LINK -->
-										<li class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link">Ana səhifə</a></li>
-											<!-- DROPDOWN SUB MENU -->
-											<li class="nl-simple" aria-haspopup="true"><a href="{% url 'about' %}" class="h-link">Haqqımızda </a></li>
 		
-		
-											<!-- SIMPLE NAVIGATION LINK -->
-							
-											
-		
-											<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">Xidmətlər <span class="wsarrow"></span></a>
-												<ul class="sub-menu">
-													<li aria-haspopup="true"><a href="{% url 'training' %}" class="h-link">Təlimlər</a></li>
-													<li aria-haspopup="true"><a href="{% url 'services' %}" class="h-link">Tədqiqatlar </a></li>		
-													<li aria-haspopup="true"><a href="{% url 'psychology' %}" class="h-link">Biznes psixologiyası</a></li>
-		
-											
-												   </ul>
-											</li>	
-		
-											<!-- SIMPLE NAVIGATION LINK -->
-											<li class="nl-simple" aria-haspopup="true"><a href="{% url 'blogs' %}" class="h-link">Bloqlar</a></li>
-											
-										   
-		
-										 
-											<li class="nl-simple" aria-haspopup="true"><a href="#faqs-3" class="h-link"></a></li>
-		
-											<!-- SIGN UP BUTTON -->
-											<li class="nl-simple" aria-haspopup="true">
-												<a href="{% url 'contact' %}" class="btn r-04 btn--theme hover--tra-white last-link">Əlaqə</a>
-											</li> 
-		
-		
-										</ul>
-								</nav>	<!-- END MAIN MENU -->
-	
-	
-							</div>
-						</div>	<!-- END NAVIGATION MENU -->
-	
-
-				</div>     <!-- End header-wrapper -->
-			</header>	<!-- END HEADER -->
-
-
-
 			<!-- CONTACTS-1
 			============================================= -->
 			<section id="contacts-1" class="pb-50 inner-page-hero contacts-section division">				

@@ -31,8 +31,8 @@ share/python-wheels/
 *.egg
 MANIFEST
 # Ignore migration files
-**/migrations/*.py
-**/migrations/*.pyc
+**/migrations/*
+!**/migrations/__init__.py
 db.sqlite3
 # Ignore SQLite database file
 db.sqlite3
