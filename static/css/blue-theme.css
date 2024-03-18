@@ -2536,6 +2536,19 @@ p.video-txt-sm {
   margin: 0 7px;
   padding: 10px 10px;
 }
+
+.wsmenu > .wsmenu-list > li > select {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: block;
+  font-size: 1rem;
+  line-height: 50px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-decoration: none;  
+  margin: 0 7px;
+  padding: 10px 10px;
+}
+
 .wsmenu > .wsmenu-list > li {
   cursor:pointer !important;
 }

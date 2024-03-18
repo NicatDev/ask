@@ -72,26 +72,12 @@
 			<section class="pb-60 inner-page-hero blog-page-section">
 				<div class="m-p-g">
 					<div class="m-p-g__thumbs" data-google-image-layout data-max-height="250">
-				
-				<a href="#"><img src="https://pp.vk.me/c306414/v306414322/74e2/0ZHHXbpctqE.jpg" data-full="https://pp.vk.me/c306414/v306414322/74e2/0ZHHXbpctqE.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c306414/v306414322/762c/LfRZQYv0W1Y.jpg" data-full="https://pp.vk.me/c306414/v306414322/762c/LfRZQYv0W1Y.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c306207/v306207135/5520/b2CDIvjKSJA.jpg" data-full="https://pp.vk.me/c306207/v306207135/5520/b2CDIvjKSJA.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c306207/v306207135/558d/AQcUmQXWntE.jpg" data-full="https://pp.vk.me/c306207/v306207135/558d/AQcUmQXWntE.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c319330/v319330047/f3ed/ojdatGZW91E.jpg" data-full="https://pp.vk.me/c319330/v319330047/f3ed/ojdatGZW91E.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c309421/v309421123/35d5/q5knygIx-yk.jpg" data-full="https://pp.vk.me/c309421/v309421123/35d5/q5knygIx-yk.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c6107/v6107123/3abe/Ss0GCTioaNc.jpg" data-full="https://pp.vk.me/c6107/v6107123/3abe/Ss0GCTioaNc.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c309421/v309421123/3401/xiucEFCYyQ4.jpg" data-full="https://pp.vk.me/c309421/v309421123/3401/xiucEFCYyQ4.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c309421/v309421123/32b6/Bnfg_vvLTEw.jpg" data-full="https://pp.vk.me/c309421/v309421123/32b6/Bnfg_vvLTEw.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c418627/v418627123/2ca8/uuq_P3YeGMo.jpg" data-full="https://pp.vk.me/c418627/v418627123/2ca8/uuq_P3YeGMo.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c604425/v604425645/2449/q5Hs8KAGaDk.jpg" data-full="https://pp.vk.me/c604425/v604425645/2449/q5Hs8KAGaDk.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c604425/v604425645/2411/1RNm05RsJ58.jpg" data-full="https://pp.vk.me/c604425/v604425645/2411/1RNm05RsJ58.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c633325/v633325645/f27e/cuBW9qGhga4.jpg" data-full="https://pp.vk.me/c633325/v633325645/f27e/cuBW9qGhga4.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c417725/v417725196/9df/6kKlVuVtOJc.jpg" data-full="https://pp.vk.me/c417725/v417725196/9df/6kKlVuVtOJc.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c417725/v417725196/9d0/Ty2Wt9MghWA.jpg" data-full="https://pp.vk.me/c417725/v417725196/9d0/Ty2Wt9MghWA.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c417725/v417725196/9be/sEmHqjUVkLM.jpg" data-full="https://pp.vk.me/c417725/v417725196/9be/sEmHqjUVkLM.jpg" class="m-p-g__thumbs-img" /></a>
-				<a href="#"><img src="https://pp.vk.me/c323918/v323918925/1b18/T2qPFN63SJA.jpg" data-full="https://pp.vk.me/c323918/v323918925/1b18/T2qPFN63SJA.jpg" class="m-p-g__thumbs-img" /></a>
-				
-				<!-- fullscreen --><div class="m-p-g__fullscreen"></div><!-- end fullscreen -->
+						
+				{% for photo in photos %}
+				<a ><img loading="lazy" src="{{ photo.image.url }}" data-full="{{ photo.image.url }}" class="m-p-g__thumbs-img" /></a>
+				{% endfor %}
+
+				<!-- fullscreen --><div class="m-p-g__fullscreen "></div><!-- end fullscreen -->
 					</div><!-- end m-p-g__thumbs -->
 				</div><!-- end gallery -->
 		
@@ -408,6 +394,7 @@
 }
 
 .m-p-g__fullscreen-img.active {
+	
     visibility: visible;
     opacity: 1!important;
     -webkit-transition: -webkit-transform .5s cubic-bezier(.23,1,.32,1),opacity .5s ease-out;
@@ -436,6 +423,7 @@
 }
 
 .m-p-g__controls-arrow,.m-p-g__controls-close {
+	
     position: absolute;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -497,8 +485,8 @@
 }
 
 .m-p-g__controls-close {
-    top: 3vh;
-    left: 3vw;
+	top:4vh;
+    right: 3vw;
     z-index: 5;
 }
 
@@ -1897,7 +1885,7 @@
 					img.style[transformString] = transform;
 				}
 			};
-		
+			
 			/**
 			 * Makes the thumbnail transform to the same size and position as the full
 			 * size image.
@@ -1991,6 +1979,7 @@
 					this._activateFullBox.call(this);
 					this._disableScroll();
 				}
+				document.getElementById('header').style.display = 'none';
 			};
 		
 			/**
@@ -2064,6 +2053,7 @@
 			Gallery.prototype._handleClose = function() {
 				if (this._fullImgOpen) {
 					this._closeFullImg.call(this);
+					document.getElementById('header').style.display = 'block';
 				}
 			};
 		
@@ -2111,7 +2101,7 @@
 			 *
 			 * @private
 			 */
-		
+			 
 			Gallery.prototype._handlePrev = function() {
 				if (this._fullImgOpen) {
 					this._changeImg.call(this, 'prev');

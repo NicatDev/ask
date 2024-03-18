@@ -67,7 +67,6 @@ class Blog(BaseMixin):
     tag = models.ManyToManyField(Tag)
     title = models.CharField(max_length = 200)
     mainimage = models.ImageField()
-    backimage = models.ImageField(null=True,blank=True)
     content = models.TextField()
     content_without_ck = models.CharField(max_length = 200)
     content_2 = models.TextField()
@@ -79,29 +78,35 @@ class Blog(BaseMixin):
         return self.title
     
     def save(self, *args, **kwargs):
-        new_slug = seo(self.title)
-        self.slug = new_slug
-        if Blog.objects.filter(slug=new_slug).exists():
-            count = 0
-            while Blog.objects.filter(slug=new_slug).exists():
-                new_slug = f"{seo(self.title)}-{count}"
-                count += 1
+        if not self.slug:
+            new_slug = seo(self.title)
+            
+            if Blog.objects.filter(slug=new_slug).exists():
+                count = 2
+                while Blog.objects.filter(slug=new_slug).exists():
+                    new_slug = f"{seo(self.title)}-{count}"
+                    count += 1
+            self.slug = new_slug
         super(Blog, self).save(*args, **kwargs)
-        
+            
     def get_absolute_url(self):
         return reverse('blogSingle', kwargs={"slug": self.slug})
     
 
     
+
+
 class Psychology(BaseMixin):
     name = models.CharField(max_length = 800)
     description = models.TextField()
-    image = models.ImageField()
-    second_image = models.ImageField(null=True,blank=True)
-    second_description = models.TextField(null=True,blank=True)
+    title = models.CharField(max_length=200,null=True,blank=True)
+    ordering = models.SmallIntegerField(null=True,blank=True)
     
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Psychology"
     
     def save(self, *args, **kwargs):
         new_slug = seo(self.name)
@@ -113,8 +118,17 @@ class Psychology(BaseMixin):
                 count += 1
         super(Psychology, self).save(*args, **kwargs)
         
-    def get_absolute_url(self):
-        return reverse('psychologySingle', kwargs={"slug": self.slug})
+  
+class PsychologySection(models.Model):
+    psychology = models.ForeignKey(Psychology,models.CASCADE,related_name="psysections")
+    title = models.CharField(max_length = 200)
+    description = models.TextField()
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.title
+    
+
 
 class Message(models.Model):
     name = models.CharField(max_length = 200)
@@ -152,13 +166,14 @@ class Faq(models.Model):
 class Training(BaseMixin):
     name = models.CharField(max_length = 800)
     description = models.TextField()
-    description_without_ck = models.CharField(max_length = 200)
-    image = models.ImageField(null=True,blank=True)
-    bottomdescription = models.TextField()
+    title = models.CharField(max_length=200,null=True,blank=True)
     ordering = models.SmallIntegerField(null=True,blank=True)
     
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Training"
     
     def save(self, *args, **kwargs):
         new_slug = seo(self.name)
@@ -169,6 +184,143 @@ class Training(BaseMixin):
                 new_slug = f"{seo(self.name)}-{count}"
                 count += 1
         super(Training, self).save(*args, **kwargs)
+        
+   
+
+class TrainingSection(models.Model):
+    training = models.ForeignKey(Training,models.CASCADE,related_name="trainingsections")
+    title = models.CharField(max_length = 200)
+    description = models.TextField()
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.title
+
+
+class Article(BaseMixin):
+    title = models.CharField(max_length = 200)
+    image = models.ImageField()
+    content = models.TextField()
+    content_2 = models.TextField()
+    date = models.DateField(blank=True,null=True,)
+
+    def __str__(self):
+        return self.title
     
-    # def get_absolute_url(self):
-    #     return reverse('serviceSingle', kwargs={"slug": self.slug})
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            new_slug = seo(self.title)
+            
+            if Article.objects.filter(slug=new_slug).exists():
+                count = 2
+                while Article.objects.filter(slug=new_slug).exists():
+                    new_slug = f"{seo(self.title)}-{count}"
+                    count += 1
+            self.slug = new_slug
+        super(Article, self).save(*args, **kwargs)
+            
+    def get_absolute_url(self):
+        return reverse('blogSingle', kwargs={"slug": self.slug})
+    
+
+class News(BaseMixin):
+    title = models.CharField(max_length = 300)
+    image = models.ImageField()
+    content = models.TextField()
+    date = models.DateField(blank=True,null=True)
+
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            new_slug = seo(self.title)
+            
+            if News.objects.filter(slug=new_slug).exists():
+                count = 2
+                while News.objects.filter(slug=new_slug).exists():
+                    new_slug = f"{seo(self.title)}-{count}"
+                    count += 1
+            self.slug = new_slug
+        super(News, self).save(*args, **kwargs)
+            
+    def get_absolute_url(self):
+        return reverse('blogSingle', kwargs={"slug": self.slug})
+
+class Photo(models.Model):
+    subject = models.CharField(max_length = 200)
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.subject
+    
+class Video(models.Model):
+    subject = models.CharField(max_length = 200)
+    video = models.CharField(max_length = 3000)
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.subject
+    
+class Event(BaseMixin):
+    title = models.CharField(max_length = 200)
+    video = models.CharField(max_length = 3000,null=True,blank=True)
+    image = models.ImageField()
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            new_slug = seo(self.title)
+            
+            if Event.objects.filter(slug=new_slug).exists():
+                count = 2
+                while Event.objects.filter(slug=new_slug).exists():
+                    new_slug = f"{seo(self.title)}-{count}"
+                    count += 1
+            self.slug = new_slug
+        super(Event, self).save(*args, **kwargs)
+    
+class Show(BaseMixin):
+    title = models.CharField(max_length = 200)
+    video = models.CharField(max_length = 3000,null=True,blank=True)
+    image = models.ImageField()
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            new_slug = seo(self.title)
+            
+            if Show.objects.filter(slug=new_slug).exists():
+                count = 2
+                while Show.objects.filter(slug=new_slug).exists():
+                    new_slug = f"{seo(self.title)}-{count}"
+                    count += 1
+            self.slug = new_slug
+        super(Show, self).save(*args, **kwargs)
+
+class Podcast(BaseMixin):
+    title = models.CharField(max_length = 200)
+    video = models.CharField(max_length = 3000,null=True,blank=True)
+    image = models.ImageField()
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            new_slug = seo(self.title)
+            
+            if Podcast.objects.filter(slug=new_slug).exists():
+                count = 2
+                while Podcast.objects.filter(slug=new_slug).exists():
+                    new_slug = f"{seo(self.title)}-{count}"
+                    count += 1
+            self.slug = new_slug
+        super(Podcast, self).save(*args, **kwargs)

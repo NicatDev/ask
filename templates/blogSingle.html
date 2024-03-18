@@ -120,7 +120,7 @@
 								<!-- SINGLE POST IMAGE -->
 					 			<div class="blog-post-img py-50">
 									
-									<img style="float:left; width:50%;margin-right:1.3rem;margin-top:1.7rem;" class="img-fluid r-16" src="{{ blog.mainimage.url }}" alt="blog-post-image">
+									<img style="float:left; width:50%;margin-right:1.3rem;" class="img-fluid r-16" src="{{ blog.mainimage.url }}" alt="blog-post-image">
 									<p>{{blog.content|safe}}
 									</p>	
 								</div>
@@ -189,7 +189,7 @@
 
 									<!-- Post Link -->
 									<h6 class="s-20 w-700">
-										<a href="single-post.html">{{ blog.title }}</a>
+										<a href="{% url 'blogSingle' blog.slug %}">{{ blog.title }}</a>
 									</h6>
 
 									<!-- Text -->
