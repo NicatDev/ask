@@ -399,7 +399,7 @@ def contact(request):
     context['pyschologies'] = pyschologies
     trainings = Training.objects.all()
     context['trainings'] = trainings
-    return render(request,'Contact.html',context)
+    return render(request,'contact.html',context)
 
 def message(request):
     if request.method == 'POST':
