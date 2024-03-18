@@ -65,7 +65,7 @@
   /* SubMenu, HalfMenu, MegaMenu */
   .wsmenu > .wsmenu-list > li > ul.sub-menu > li > a, 
   .wsmenu > .wsmenu-list > li > .wsmegamenu.w-75 ul.link-list > li > a,
-  .wsmenu > .wsmenu-list > li > .wsmegamenu.halfmenu ul.link-list > li > a { font-size: 0.9rem; }
+  .wsmenu > .wsmenu-list > li > .wsmegamenu.halfmenu ul.link-list > li > a { font-size: 0.7rem; }
 
   .wsmenu > .wsmenu-list > li > .wsmegamenu .title, .wsmenu > .wsmenu-list > li > .wsmegamenu.halfmenu .title { font-size: 0.8rem; }
 
