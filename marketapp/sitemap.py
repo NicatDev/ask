@@ -3,20 +3,35 @@ from marketapp.models import *
 from django.urls import reverse, NoReverseMatch
 
 
-class BlogSiteMap(Sitemap):
+class ArticleSiteMap(Sitemap):
     changefreq = "daily"
     priority = 0.6
     protocol = 'https'
     
     def items(self):
-        return Blog.objects.all()
+        return Article.objects.all()
 
     def lastmod(self, obj):
         return obj.created_at
     
-    def location(self, obj: Blog) -> str:
+    def location(self, obj: Article) -> str:
         return obj.get_absolute_url()
     
+class TrainingSiteMap(Sitemap):
+    changefreq = "daily"
+    priority = 0.6
+    protocol = 'https'
+    
+    def items(self):
+        return Training.objects.all()
+
+    def lastmod(self, obj):
+        return obj.created_at
+    
+    def location(self, obj: Training) -> str:
+        return obj.get_absolute_url()
+    
+
 class PsychologySiteMap(Sitemap):
     changefreq = "daily"
     priority = 0.6

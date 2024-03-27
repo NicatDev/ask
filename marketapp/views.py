@@ -10,25 +10,15 @@ from django.conf import settings
 import json
 from marketapp.forms import Messageform
 
-def events(request):
-    events = Event.objects.all()
-    paginator = Paginator(events, 4)
-    page = request.GET.get("page", 1)
-    events = paginator.get_page(page)
-    total_pages = [x+1 for x in range(paginator.num_pages)]
-    recent_events = Event.objects.all()[::-1][:3]
-    context = {
-        'recent_events':recent_events,
-        'events':events,
-        'total_pages':total_pages
-    }
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
-    pyschologies = Psychology.objects.all()
-    context['pyschologies'] = pyschologies
-    trainings = Training.objects.all()
-    context['trainings'] = trainings
-    return render(request, 'events.html',context)
+def set_language(request):
+    if request.method == 'POST':
+        next_url = request.POST.get('next') or '/'
+        language = request.POST.get('language')
+        response = redirect(next_url)
+        if language:
+            response.set_cookie('django_language', language)
+        return response
+    return redirect('/')
 
 def shows(request):
     events = Show.objects.all()
@@ -50,56 +40,6 @@ def shows(request):
     context['trainings'] = trainings
     return render(request, 'shows.html',context)
 
-def podcasts(request):
-    events = Podcast.objects.all()
-    paginator = Paginator(events, 4)
-    page = request.GET.get("page", 1)
-    events = paginator.get_page(page)
-    total_pages = [x+1 for x in range(paginator.num_pages)]
-    recent_events = Podcast.objects.all()[::-1][:3]
-    context = {
-        'recent_events':recent_events,
-        'events':events,
-        'total_pages':total_pages
-    }
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
-    pyschologies = Psychology.objects.all()
-    context['pyschologies'] = pyschologies
-    trainings = Training.objects.all()
-    context['trainings'] = trainings
-    return render(request, 'podcasts.html',context)
-
-def video(request):
-    video_list = Video.objects.all()
-    paginator = Paginator(video_list, 4)
-    page = request.GET.get("page", 1)
-    videos = paginator.get_page(page)
-    total_pages = [x+1 for x in range(paginator.num_pages)]
-    context = {
-        'videos':videos,
-        'total_pages':total_pages
-    }
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
-    pyschologies = Psychology.objects.all()
-    context['pyschologies'] = pyschologies
-    trainings = Training.objects.all()
-    context['trainings'] = trainings
-    return render(request, 'videos.html',context)
-
-def gallery(request):
-    photos = Photo.objects.all()
-    context = {
-        'photos':photos
-    }
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
-    pyschologies = Psychology.objects.all()
-    context['pyschologies'] = pyschologies
-    trainings = Training.objects.all()
-    context['trainings'] = trainings
-    return render(request,'gallery.html',context)
 
 def home(request):
 
@@ -107,9 +47,7 @@ def home(request):
     services = Services.objects.all().order_by('ordering')
     if len(services)>6:
         services = services[0:6]
-    blogs = Blog.objects.all().select_related('category')
-    if len(blogs)>3:
-        blogs = blogs[0:3]
+
     partners = Partners.objects.all()
     faq = Faq.objects.all()
     trainings = Training.objects.all()
@@ -123,7 +61,7 @@ def home(request):
         'trainings':trainings,
         'partners':partners,
         'faq':faq,
-        'blogs':blogs,
+
         'psychologies':psychologies,
         'services':services,
 
@@ -141,11 +79,8 @@ def home2(request):
     services = Services.objects.all().order_by('ordering')
     if len(services)>6:
         services = services[0:6]
-    blogs = Blog.objects.all().select_related('category').only('category','category__name','title','content_without_ck','mainimage','backimage')
-    if len(blogs)>3:
-        blogs = blogs[0:3]
+ 
     context = {
-        'blogs':blogs,
         'services':services,
         'psychologies':psychologies,
     }
@@ -240,47 +175,6 @@ def serviceSingle(request,slug):
     return render(request, 'service-single.html',context)
 
 
-def blogs(request):
-    
-    blog_list = Blog.objects.all().only('mainimage','title','content_without_ck','category__name')
-    recent_blogs = Blog.objects.all()[:: -1]
-    if len(recent_blogs)>3:
-        recent_blogs = recent_blogs[0:3]
-    categories = Category.objects.all().only('name','id')
-    tags = Tag.objects.all()
-    
-    if request.GET.get('blog'):
-        name = request.GET.get('blog')
-        blog_list = blog_list.filter(Q(title__icontains=name) | Q(content_without_ck__icontains=name))
-        
-    if request.GET.get('category'):
-        category = request.GET.get('category')
-        blog_list = blog_list.filter(category__id=category)
-    
-    if request.GET.get('tag'):
-        tag = request.GET.get('tag')
-        blog_list = blog_list.filter(tag__id__in=tag)
-        
-    paginator = Paginator(blog_list, 4)
-    page = request.GET.get("page", 1)
-    blogs = paginator.get_page(page)
-    total_pages = [x+1 for x in range(paginator.num_pages)]
-    
-    context = {
-        'blogs':blogs,
-        'total_pages':total_pages,
-        'categories':categories,
-        'recent_blogs':recent_blogs,
-        'tags':tags
-    }
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
-    pyschologies = Psychology.objects.all()
-    context['pyschologies'] = pyschologies
-    trainings = Training.objects.all()
-    context['trainings'] = trainings
-    return render(request,'blogs.html',context)
-
 def articles(request):
     
     blog_list = Article.objects.all()
@@ -354,39 +248,6 @@ def articleSingle(request,slug):
     trainings = Training.objects.all()
     context['trainings'] = trainings
     return render(request, 'articleSingle.html',context)
-
-def blogSingle(request,slug):
-    blog = get_object_or_404(Blog, slug=slug)
-    related_blogs =  Blog.objects.all().exclude(id=blog.id)
-    categories = Category.objects.all().only('name','id')
-    tags = Tag.objects.all()
-    if len(related_blogs) > 3:
-        related_blogs = related_blogs[0:3]
-
-  
-
-    next_blog = Blog.objects.exclude(id=blog.id).first()
-    if next_blog:
-        previous_blog = Blog.objects.exclude(id=blog.id).exclude(id=next_blog.id).order_by('-created_at').first()
-    else:
-        previous_blog = {}
-    context = {
-        'blog':blog,
-        'recent_blogs':related_blogs,
-        'categories':categories,
-        'tags':tags
-    }
-
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
-    pyschologies = Psychology.objects.all()
-    context['pyschologies'] = pyschologies
-    if previous_blog:
-        context['pre_blog']=previous_blog
-        context['next_blog']=next_blog
-    trainings = Training.objects.all()
-    context['trainings'] = trainings
-    return render(request, 'blogSingle.html',context)
 
 def contact(request):
     researchs = Services.objects.all()

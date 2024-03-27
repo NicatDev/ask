@@ -1,13 +1,51 @@
 {% load static %}
-	<!-- HEADER
-			============================================= -->
-			<header id="header" class="tra-menu navbar-dark inner-page-header white-scroll">
+{% load i18n %}
+
+	<!-- HEADER============================================= -->
+		<style>
+			.clearfix{
+				width:100% !important;
+			}
+			li{
+				list-style-type: none !important;
+			}
+			.last-link{
+				border:none !important
+			}
+			.last-link select{
+				border:none !important;
+			}
+			@media (max-width: 991px) {
+			.navbar-dark .wsmenu > .wsmenu-list > li > a.h-link {
+				color: black !important;
+			}
+			.mobilefalse{
+				display:none !important
+			}
+		}
+		</style>	
+		<header id="header" class="tra-menu navbar-dark inner-page-header white-scroll">
 				<div class="header-wrapper blog-header">
 
 
 					<!-- MOBILE HEADER -->
 				    <div class="wsmobileheader clearfix">	  	
-				    	<span class="smllogo"><img src="{% static 'images/MARKA.png' %}" alt="mobile-logo"></span>
+				    
+									
+						
+							<div style="display:flex;align-items:center;justify-content:left;padding-left:5%;height:100%">
+								<li style="float:left" class="nl-simple" aria-haspopup="true">
+									<a style="color:white !important" href="{% url 'contact' %}" class="btn r-04 btn--theme last-link">Əlaqə</a>
+								</li> 
+								<li style="float:left" class="nl-simple" aria-haspopup="true">
+									<a  class="btn r-04  last-link">
+										<select style="border:none;background-color:white;width:100%" class=" r-04   last-link">
+										<option value="az" selected>AZ</option>
+										<option value="en" >EN</option>
+									
+									  </select></a>
+								</li> 
+							</div>
 				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
 				 	</div>
 
@@ -17,47 +55,49 @@
 							<div class="wsmainwp clearfix">
 	
 	
-								<!-- HEADER BLACK LOGO -->
-								<div class="desktoplogo">
-									<a href="#blog-page" class="logo-black">
-										<img class="light-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
-										<img class="dark-theme-img" src="{% static 'images/MARKA.png' %}" alt="logo">
-									</a>
-								</div>
-								
+						
 	
 								<!-- HEADER WHITE LOGO -->
-								<div class="desktoplogo">
-									<a href="blog-listing.html" class="logo-white"><img src="{% static 'images/MARKA.png' %}" alt="logo"></a>
-								</div>
-	
-	
+						
 								<!-- MAIN MENU -->
 								  <nav class="wsmenu clearfix">
 									<ul class="wsmenu-list nav-theme">
 									
 										<!-- SIMPLE NAVIGATION LINK -->
-
+										
+											<li style="float:left" class="nl-simple mobilefalse" aria-haspopup="true">
+												<a style="color:white !important" href="{% url 'contact' %}" class="btn r-04 btn--theme last-link">Əlaqə</a>
+											</li> 
+										
+											<li style="float:left" aria-haspopup="true">
+											<form style="margin-top:5%" action="{% url 'set_language' %}" method="post" class="btn r-04  last-link">
+												{% csrf_token %}
+												<input name="next" type="hidden" value="{{ request.get_full_path }}">
+												<select style="height: 25px;width: 50px;border-radius: 10%;" name="language" id="language-select" onchange="this.form.submit()">
+													{% get_current_language as LANGUAGE_CODE %}
+													{% get_available_languages as LANGUAGES %}
+													{% for lang_code, lang_name in LANGUAGES %}
+														<option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+															{{ lang_code }}
+														</option>
+													{% endfor %}
+												</select>
+												<noscript><input type="submit" value="Go"></noscript>
+											</form>
+										</li> 
 											<!-- DROPDOWN SUB MENU -->
-											<li class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link">ASK Group </a></li>
-
-											<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Training <span class="wsarrow"></span></a>
+											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK MEDIA <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
-													{% for training in trainings %}
-													<li aria-haspopup="true"><a href="{% url 'trainingSingle' training.slug %}" class="h-link">{{ training.name }}</a></li>
-													{% endfor %}
 											
-											   </ul>
+													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'articles' %}" class="h-link">Məqalələr</a></li>
+												
+													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'news' %}" class="h-link">Xəbərlər</a></li>
+												
+													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'shows' %}" class="h-link">Verlişlər</a></li>
+												
+												</ul>
 											</li>	
-											<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Research <span class="wsarrow"></span></a>
-												<ul class="sub-menu">
-													{% for research in researchs %}
-													<li aria-haspopup="true"><a href="{% url 'serviceSingle' research.slug %}" class="h-link">{{ research.name }}</a></li>
-													{% endfor %}
-											
-											   </ul>
-											</li>	
-											<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Pshychology <span class="wsarrow"></span></a>
+											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Pshychology <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
 													{% for psy in pyschologies %}
 													<li aria-haspopup="true"><a href="{% url 'psychologySingle' psy.slug %}" class="h-link">{{ psy.name }}</a></li>
@@ -65,49 +105,34 @@
 											
 											   </ul>
 											</li>	
-											
-											<!-- SIMPLE NAVIGATION LINK -->
-							
-											
-		
-											<li aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK MEDIA <span class="wsarrow"></span></a>
+											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Research <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'blogs' %}" class="h-link">Bloqlar</a></li>
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'articles' %}" class="h-link">Məqalələr</a></li>
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'gallery' %}" class="h-link">Qalereya</a></li>
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'videos' %}" class="h-link">Videolar</a></li>
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'news' %}" class="h-link">Xəbərlər</a></li>
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'events' %}" class="h-link">Eventlər</a></li>
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'shows' %}" class="h-link">Verlişlər</a></li>
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'podcasts' %}" class="h-link">Podkastlar</a></li>
-												</ul>
+													{% for research in researchs %}
+													<li aria-haspopup="true"><a href="{% url 'serviceSingle' research.slug %}" class="h-link">{{ research.name }}</a></li>
+													{% endfor %}
+											
+											   </ul>
 											</li>	
-		
+											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Training <span class="wsarrow"></span></a>
+												<ul class="sub-menu">
+													{% for training in trainings %}
+													<li aria-haspopup="true"><a href="{% url 'trainingSingle' training.slug %}" class="h-link">{{ training.name }}</a></li>
+													{% endfor %}
+											
+											   </ul>
+											</li>	
+											
+											<li style="float:right" class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link">ASK Group </a></li>
+
+											
+											
 											<!-- SIMPLE NAVIGATION LINK -->
 							
 											
-										   
 		
-										 
-										
-										
-											<li class="nl-simple" aria-haspopup="true">
-												<a  class="btn r-04  last-link">
-													<select style="border:none;background-color:white;width:100%" class=" r-04   last-link">
-													<option value="tr" selected>AZ</option>
-													<option value="en" >EN</option>
-													<option value="de">RU</option>
-												  </select></a>
-											</li> 
 											
-										
-											<!-- SIGN UP BUTTON -->
+									
 											
-											<li class="nl-simple" aria-haspopup="true">
-												<a href="{% url 'contact' %}" class="btn r-04 btn--theme hover--tra-white last-link">Əlaqə</a>
-											</li> 
-		
-		
 										</ul>
 								</nav>	<!-- END MAIN MENU -->
 	
@@ -118,3 +143,38 @@
 
 				</div>     <!-- End header-wrapper -->
 			</header>	<!-- END HEADER -->
+
+<script>
+	function updateLanguageBasedOnCookie() {
+		// Cookie'den dil tercihini al
+		var langCookie = document.cookie.replace(/(?:(?:^|.*;\s*)django_language\s*=\s*([^;]*).*$)|^.*$/, "$1");
+	
+		// Dil tercihi varsa ve İngilizce değilse
+		if (langCookie) {
+			// URL'yi parçala
+			var urlParts = window.location.href.split('/');
+	
+			// URL'nin dil kısmını güncelle
+			urlParts.splice(3, 1, langCookie); // Örneğin: /en/ kısmını tr ile değiştirir
+			
+			// Yeni URL'yi oluştur
+			var newURL = urlParts.join('/');
+			console.log(newURL)
+			// Yeni URL'yi kontrol et (eğer daha önce güncellenmediyse)
+			if (window.location.href !== newURL) {
+				// Yeni URL'yi cookie'ye yaz
+				document.cookie = "django_language=" + langCookie + "; path=/";
+				
+				// Sayfayı yeniden yükle
+		
+				window.location.href = newURL
+			}
+		}
+	}
+	
+	// Sayfa yüklendiğinde çalıştır
+	window.onload = function() {
+		updateLanguageBasedOnCookie();
+	};
+	
+</script>
