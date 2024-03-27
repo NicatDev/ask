@@ -1,7 +1,7 @@
 from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
 from django.db import models
-from marketapp.models import TrainingSection,PsychologySection,Category,Tag,Services,Psychology,Message,Partners,Faq,Training,Show,Team,ServiceSection,Article,News
+from marketapp.models import Vacancy,TrainingSection,PsychologySection,Category,Tag,Services,Psychology,Message,Partners,Faq,Training,Show,Team,ServiceSection,Article,News
 
 class SideModelInline(admin.TabularInline):  
     model = ServiceSection
@@ -37,3 +37,4 @@ admin.site.register(Faq)
 admin.site.register(Team)
 admin.site.register(News)
 admin.site.register(Show)
+admin.site.register(Vacancy)

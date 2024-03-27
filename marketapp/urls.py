@@ -17,6 +17,8 @@ urlpatterns = [
     path('meqaleler/<slug>',articleSingle,name='articleSingle'),
     path('elaqe',contact,name='contact'),
     path('message',message,name='message'),
+    path('submit_vacancy_form',submit_vacancy_form,name='submit_vacancy_form'),
+    
     path('xeberler',news,name='news'),
     path('xeberler/<slug>',newsSingle,name='newsSingle'),
 ]

@@ -66,7 +66,9 @@ input,
 textarea {
   font-family: "Poppins", sans-serif;
 }
-
+.input-container option{
+	color:black
+}
 .containerr {
   position: relative;
   width: 100%;
@@ -228,7 +230,7 @@ textarea.input {
   opacity: 0;
   transition: 0.3s;
   height: 15px;
-  background-color: #1abc9c;
+  background-color: #3eb1ff;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -260,7 +262,7 @@ textarea.input {
 }
 
 .contact-info .title {
-  color: #1abc9c;
+  color: #3eb1ff;
 }
 
 .text {
@@ -1070,34 +1072,51 @@ textarea.input {
 					<span class="circle one"></span>
 					<span class="circle two"></span>
 		  
-					<form action="index.html" autocomplete="off">
-			
+					<form id="vacForm" autocomplete="off" onsubmit="handleSubmit(event)">
+					
 					  <div class="input-container">
-						<input type="text" name="name" class="input" />
+						<input required type="text" name="name" id="name-input" class="input" />
 						<label for="">Tam adınız</label>
 						<span>Tam adınız</span>
 					  </div>
 					  <div class="input-container">
-						<input type="email" name="email" class="input" />
+						<select required id="vac-input" name="vac" class="input">
+						
+							<option value="" disabled selected>Vakansiya seç</option>
+							<option value="Müsahibəçi">Müsahibəçi</option>
+							<option value="Sahə meneceri">Sahə meneceri</option>
+							<option value="SMM menecer">SMM menecer</option>
+							<option value="Data analitik">Data analitik</option>
+							<option value="Graphic \ Motion designer">Graphic \ Motion designer</option>
+							<option value="Researcher">Researcher</option>
+							<option value="Layihə Meneceri">Layihə Meneceri</option>
+							<option value="Layihə Meneceri köməkçisi">Layihə Meneceri köməkçisi</option>
+							<option value="PR manager">PR manager</option>
+							
+						</select>
+				
+					  </div>
+					  <div class="input-container">
+						<input required type="email" id="email-input" name="email" class="input" />
 						<label for="">E-poçt</label>
 						<span>E-poçt</span>
 					  </div>
 					  <div class="input-container">
-						<input type="tel" name="phone" class="input" />
+						<input required type="tel" name="phone" id="phone-input" class="input" />
 						<label for="">Əlaqə nömrəsi</label>
 						<span>Əlaqə nömrəsi</span>
 					  </div>
 					  <div class="input-container focus">
-						<input type="date" name="birth" id="birth" class="input" />
+						<input required type="date" name="birth" id="birth-input" class="input" />
 						<label for="">Doğum tarixi</label>
 						<span>Doğum tarixi</span>
 					  </div>
 					  <div class="input-container focus">
-						<input type="file" name="cv" class="input" />
+						<input required type="file" name="cv" id="cv-input" class="input" />
 						<label for="">CV</label>
 						<span>CV</span>
 					  </div>
-					  <input type="submit" value="Təsdiqlə" class="btnn" />
+					  <input  type="submit" value="Təsdiqlə" class="btnn" />
 					</form>
 				  </div>
 				</div>
@@ -1467,9 +1486,12 @@ textarea.input {
 </script>
 <script>
 	const inputs = document.querySelectorAll(".input");
-document.getElementById('birth').defaultValue = "2000-01-01";
+	console.log(inputs,'-------------------------')
+document.getElementById('birth-input').defaultValue = "2000-01-01";
 function focusFunc() {
+
   let parent = this.parentNode;
+  console.log(parent)
   parent.classList.add("focus");
 }
 
@@ -1486,6 +1508,42 @@ inputs.forEach((input) => {
 });
 
 </script>
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+		const csrfToken = "{{ csrf_token }}";
+        const form = document.getElementById('vacForm');
+        const formData = new FormData(form);
 
-
+        fetch('{% url "submit_vacancy_form" %}', {
+            method: 'POST',
+            body: formData,
+			headers: {
+				'X-CSRFToken': csrfToken
+			}
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Form gönderilemedi.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Göndərildi!',
+                text: data.message,
+            });
+            form.reset(); // Formu sıfırla
+        })
+        .catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Xəta!',
+                text: error.message,
+            });
+        });
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body></html>

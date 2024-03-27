@@ -16,7 +16,16 @@ class BaseMixin(models.Model):
     class Meta:
         abstract = True
         
-    
+class Vacancy(models.Model):
+    name = models.CharField(max_length = 400)
+    phone = models.CharField(max_length = 100)
+    email = models.EmailField()
+    birth = models.DateField()
+    field = models.CharField(max_length = 700)
+    cv = models.FileField(null=True,blank=True)
+
+    def __str__(self):
+        return self.name
 
 class Services(BaseMixin):
     name = models.CharField(max_length = 800)

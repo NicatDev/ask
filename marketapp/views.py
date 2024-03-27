@@ -274,7 +274,26 @@ def message(request):
         return JsonResponse(data)
     else:
         return HttpResponse(status=405) 
-    
+
+def submit_vacancy_form(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        field = request.POST.get('vac')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        birth = request.POST.get('birth')
+        cv = request.FILES.get('cv')
+        Vacancy.objects.create(
+            name=name,
+            field=field,
+            email=email,
+            phone=phone,
+            birth=birth,
+            cv=cv
+        )
+        return JsonResponse({'message': 'Müraciətiniz uğurla göndərildi'})
+
+    return JsonResponse({'message': 'Formun düzgünlüyünü yoxlayın və yenidən cəhd edin'}, status=400)    
     
 def training(request):
     training_list = Training.objects.all()
