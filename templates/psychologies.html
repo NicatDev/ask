@@ -60,6 +60,9 @@
 		</head>
 	
 	<style>
+		.order-md-1 p{
+			color:white !important
+		}
 		.mycontainer{
 			padding:0% 10%
 		}
@@ -206,7 +209,7 @@
 				<section style="background-color:#293e56" class="py-100 ct-03 content-section division" style="color:white !important">
 					<div class="container mycontainer">
 						{% for section in psy.psysections.all %}
-						<div style="margin-bottom:5%" class="row d-flex align-items-center">
+						<div  class="row d-flex align-items-center">
 	
 							<!-- TEXT BLOCK -->	
 							 <div style="padding:0 2%" class="col-md-6 col-lg-6 order-last {% if forloop.counter|divisibleby:2 %} order-md-2 {% else %} order-md-1 {% endif %}">
@@ -230,8 +233,16 @@
 									<img class="img-fluid" src="{{ section.image.url }}" alt="content-image">
 								</div>
 							</div>
-	
+							
 						</div>    <!-- End row -->
+						{% if section.bottomDescription %}
+							<div  class="col-md-12 col-lg-12 order-last {% if forloop.counter|divisibleby:2 %} order-md-2 {% else %} order-md-1 {% endif %}">
+								<div class="txt-block left-column wow fadeInRight">
+									<p style="color:white">{{ section.bottomDescription|safe }}
+									</p>
+								</div>
+							</div>
+							{% endif %}
 						{% endfor %}
 					</div>	   <!-- End container -->
 				</section>	<!-- END TEXT CONTENT -->

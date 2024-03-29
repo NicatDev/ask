@@ -154,14 +154,8 @@
 												
 												</ul>
 											</li>	
-											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Pshychology <span class="wsarrow"></span></a>
-												<ul class="sub-menu">
-													{% for psy in pyschologies %}
-													<li aria-haspopup="true"><a href="{% url 'psychologySingle' psy.slug %}" class="h-link">{{ psy.name }}</a></li>
-													{% endfor %}
-											
-											   </ul>
-											</li>	
+											<li style="float:right" class="nl-simple" aria-haspopup="true"><a href="{% url 'psychology' %}" class="h-link">ASK Pshychology</a></li>
+		
 											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Research <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
 													{% for research in researchs %}
@@ -170,6 +164,7 @@
 											
 											   </ul>
 											</li>	
+											
 											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK Training <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
 													{% for training in trainings %}

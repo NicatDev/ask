@@ -59,7 +59,7 @@ class ServiceSection(models.Model):
     image = models.ImageField()
 
     def __str__(self):
-        return self.title
+        return f'-{self.title}'
 
 class Category(models.Model):
     name = models.CharField(max_length = 200)
@@ -111,7 +111,7 @@ class PsychologySection(models.Model):
     bottomDescription = models.TextField(null=True,blank=True)
 
     def __str__(self):
-        return self.title
+        return f'-{self.title}'
     
 
 
@@ -180,7 +180,7 @@ class TrainingSection(models.Model):
     image = models.ImageField()
 
     def __str__(self):
-        return self.title
+        return f'-{self.title}'
 
 
 class Article(BaseMixin):
@@ -191,7 +191,7 @@ class Article(BaseMixin):
     date = models.DateField(blank=True,null=True,)
 
     def __str__(self):
-        return self.title
+        return f'-{self.title}'
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -216,7 +216,7 @@ class News(BaseMixin):
     date = models.DateField(blank=True,null=True)
 
     def __str__(self):
-        return self.title
+        return f'-{self.title}'
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -242,7 +242,7 @@ class Show(BaseMixin):
     content = models.TextField()
 
     def __str__(self):
-        return self.title
+        return f'-{self.title}'
     
     def save(self, *args, **kwargs):
         if not self.slug:

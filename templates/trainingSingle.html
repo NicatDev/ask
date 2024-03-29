@@ -285,8 +285,8 @@
 				============================================= -->
 				<section style="background-color:#293e56" class="py-100 ct-03 content-section division" style="color:white !important">
 					<div class="container mycontainer">
-						{% for section in training.sections.all %}
-						<div style="margin-bottom:5%" class="row d-flex align-items-center">
+						{% for section in training.trainingsections.all %}
+						<div style="" class="row d-flex align-items-center">
 	
 							<!-- TEXT BLOCK -->	
 							 <div style="padding:0 2%" class="col-md-6 col-lg-6 order-last {% if forloop.counter|divisibleby:2 %} order-md-2 {% else %} order-md-1 {% endif %}">
@@ -296,7 +296,7 @@
 								
 	
 									 <!-- Title -->	
-									<h2 style="color:white" class="s-46 w-700">{{ section.title }}</h2>
+									<h2 style="color:white;font-size:22px" class="s-46 w-700">{{ section.title }}</h2>
 	
 											<p style="color:white">{{ section.description }}
 											</p>

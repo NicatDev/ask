@@ -13,6 +13,9 @@ class ServicePsychologyTrainingTranslationOption(TranslationOptions):
 class SectionTranslationOption(TranslationOptions):
     fields = ('title','description')
 
+class PsySectionTranslationOption(TranslationOptions):
+    fields = ('title','description','bottomDescription')
+
 class CategoryTagTranslationOption(TranslationOptions):
     fields = ('name',)
 
@@ -29,5 +32,5 @@ translator.register(Psychology, ServicePsychologyTrainingTranslationOption)
 translator.register(Training, ServicePsychologyTrainingTranslationOption)
 
 translator.register(ServiceSection, SectionTranslationOption)
-translator.register(PsychologySection, SectionTranslationOption)
+translator.register(PsychologySection, PsySectionTranslationOption)
 translator.register(TrainingSection, SectionTranslationOption)
