@@ -1,8 +1,11 @@
 {% load static %}
 {% load i18n %}
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- HEADER============================================= -->
 		<style>
+			.mysubmenu{
+				min-width:40px !important;
+			}
 			.clearfix{
 				width:100% !important;
 			}
@@ -23,6 +26,45 @@
 				display:none !important
 			}
 		}
+		.contactArrow:after{
+			top:19px !important;
+			right:10px !important
+		}
+		.social-divs{
+			display:flex;font-size:18px;align-items:center;text-align:center;gap:7px;
+		}
+		@media (min-width: 1200px){
+			.wsmenu > .wsmenu-list > li form {
+				font-size: 0.9rem;
+				line-height: 28px;
+				padding: 4px 22px 6px;
+				margin: 14px 5px 0;
+			}
+			  }
+			  .wsmenu > .wsmenu-list > li form {
+				font-size: 1rem;
+				line-height: 30px;
+				font-weight: 600;
+				text-transform: none;
+				letter-spacing: 0;
+				margin-top: 14px;
+				padding: 4px 8px;
+			}
+			.wsmenu > .wsmenu-list > li select {
+			border:none !important;
+			
+			outline:none !important;
+			}
+			.wsmenu > .wsmenu-list > li select:focus {
+				border: none; 
+			  }
+			.wsmenu > .wsmenu-list > li option {
+			border:none !important;
+			text-align:center;
+			}	
+			.li{
+				text-align:center !important
+			}
 		</style>	
 		<header id="header" class="tra-menu navbar-dark inner-page-header white-scroll">
 				<div class="header-wrapper blog-header">
@@ -34,21 +76,29 @@
 									
 						
 							<div style="display:flex;align-items:center;justify-content:left;padding-left:5%;height:100%">
+								
+								
+								
 								<li style="float:left" class="nl-simple" aria-haspopup="true">
-									<a style="color:white !important" href="{% url 'contact' %}" class="btn r-04 btn--theme last-link">Əlaqə</a>
-								</li> 
-								<li style="float:left" class="nl-simple" aria-haspopup="true">
-									<a  class="btn r-04  last-link">
-										<select style="border:none;background-color:white;width:100%" class=" r-04   last-link">
-										<option value="az" selected>AZ</option>
-										<option value="en" >EN</option>
-									
-									  </select></a>
+									<form  action="{% url 'set_language_form' %}" method="post" class="btn r-04  last-link">
+										{% csrf_token %}
+										<input name="next" type="hidden" value="{{ request.get_full_path }}">
+										<select style="height: 25px;width: 50px;border-radius: 10%;" name="language" id="language-select" onchange="this.form.submit()">
+											{% get_current_language as LANGUAGE_CODE %}
+											{% get_available_languages as LANGUAGES %}
+											{% for lang_code, lang_name in LANGUAGES %}
+												<option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+													{{ lang_name }}
+												</option>
+											{% endfor %}
+										</select>
+										<noscript><input type="submit" value="Go"></noscript>
+									</form>
 								</li> 
 							</div>
 				    	<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>	
 				 	</div>
-
+				
 
 				 	 	<!-- NAVIGATION MENU -->
 						  <div class="wsmainfull menu clearfix">
@@ -64,27 +114,34 @@
 									<ul class="wsmenu-list nav-theme">
 									
 										<!-- SIMPLE NAVIGATION LINK -->
-										
-											<li style="float:left" class="nl-simple mobilefalse" aria-haspopup="true">
-												<a style="color:white !important" href="{% url 'contact' %}" class="btn r-04 btn--theme last-link">Əlaqə</a>
-											</li> 
-										
-											<li style="float:left" aria-haspopup="true">
-											<form style="margin-top:5%" action="{% url 'set_language' %}" method="post" class="btn r-04  last-link">
-												{% csrf_token %}
-												<input name="next" type="hidden" value="{{ request.get_full_path }}">
-												<select style="height: 25px;width: 50px;border-radius: 10%;" name="language" id="language-select" onchange="this.form.submit()">
-													{% get_current_language as LANGUAGE_CODE %}
-													{% get_available_languages as LANGUAGES %}
+											<li style="float:left" class="nl-simple mobilefalse" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a   style="color:white !important" class=" btn r-04 btn--theme last-link">Əlaqə <span  class="wsarrow contactArrow"></span></a>
+												<ul class="sub-menu">
+													
+													<li aria-haspopup="true"><a href="#" class="h-link"><div class="social-divs"><i class="fa-brands fa-linkedin"></i>Linkedin</div></a></li>
+													<li aria-haspopup="true"><a href="#" class="h-link"><div class="social-divs"><i class="fa-brands fa-facebook"></i>Facebook</div></a></li>
+													<li aria-haspopup="true"><a href="#" class="h-link"><div class="social-divs"><i class="fa-brands fa-instagram"></i>Instagram</div></a></li>
+												
+											   </ul>
+											</li>	
+											{% get_current_language as LANGUAGE_CODE %}
+											<li style="float:left;" class="nl-simple mobilefalse" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a   style="{% if not request.resolver_match.url_name == 'home' %}color:black !important; {% endif %}background-color:transparent !important;" class=" btn r-04 btn--theme last-link">
+												{% get_available_languages as LANGUAGES %}
 													{% for lang_code, lang_name in LANGUAGES %}
-														<option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
-															{{ lang_code }}
-														</option>
+													 {% if lang_code == LANGUAGE_CODE %}{{ lang_name }}{% endif %}
 													{% endfor %}
-												</select>
-												<noscript><input type="submit" value="Go"></noscript>
-											</form>
-										</li> 
+														<span  class="wsarrow contactArrow"></span></a>
+														<ul class="sub-menu mysubmenu">
+													{% for lang_code, lang_name in LANGUAGES %}
+													
+														<li aria-haspopup="true"><a href="{% url 'set_language' lang_code=lang_code url=request.get_full_path %}" class="h-link"><div class="social-divs">{{ lang_name }}</div></a></li>
+													{% endfor %}
+												
+		
+												
+											   </ul>
+											</li>	
+										
+										
 											<!-- DROPDOWN SUB MENU -->
 											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK MEDIA <span class="wsarrow"></span></a>
 												<ul class="sub-menu">

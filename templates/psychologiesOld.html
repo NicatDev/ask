@@ -8,8 +8,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 				
   		<!-- SITE TITLE -->
-		<title>ASK GROUP </title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<title>ASK GROUP</title>
+							
+	
+
 		<!-- GOOGLE FONTS -->
 		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -53,7 +55,7 @@
 
 
 
-	<body>  
+	<body> 
 
 
 
@@ -67,6 +69,8 @@
 
 
 
+	
+
 
 
 		<!-- PAGE CONTENT
@@ -76,136 +80,94 @@
 
 
 
-
+		
 			{% include 'header.html' %}
 
 
 
-			
-			<!-- BLOG POSTS LISTING
+
+			<!-- PROJECTS-1
 			============================================= -->
-			<section id="blog-page" class="pb-60 inner-page-hero blog-page-section">
+			<section id="projects-1" class="inner-page-hero projects-section">
 				<div class="container">
 
 
-					<!-- WIDE BLOG POST -->
-					<div class="blog-post wide-post wow fadeInUp">
-	 					<div class="row d-flex align-items-center">
-							{% for blog in blogs %}
-							{% if forloop.first %}
-							<!-- BLOG POST IMAGE -->
-							<div class="col-md-6">
-								<div class="blog-post-img">
-									<a href="{% url 'articleSingle' blog.slug %}"><img class="img-fluid r-16" src="{{ blog.image.url }}" alt="blog-post-image"></a>
-							
-							   </div>	
-						   </div>
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-md-10 col-lg-9">
+							<div class="section-title mb-80">	
+
+								<!-- Title -->	
+								<h2 class="s-52 w-700">Biznes psixologiyası</h2>	
+
+								<!-- Text -->	
+								<p class="s-21 color--grey">Biznes psixoloq təşkilatın şüuraltı ilə işləyən mütəxəssisdir. Bununla da açıq olmayan və gizli irrasional
+									proseslərlə şirkətin böyüməsinə, inkişafına və mənfəətinə birbaşa təsir edir.</p>
+								
+							</div>	
+						</div>
+					</div>
 
 
-						   <!-- BLOG POST TEXT -->
-						   <div class="col-md-6">
-							   <div class="blog-post-txt">
+					<!-- PROJECTS WRAPPER -->
+					<div class="projects-wrapper">
+						<div class="row align-items-center row-cols-1 row-cols-md-2">
 
-								   <!-- Post Tag -->
-								   <span class="post-tag color--blue-400">{{blog.category.name}}</span>	
+							<!-- id="pt-1-1" -->
+						{% for psy in psychologies %}
+							<div class="col">
+		 						<div id="pt-1-{{forloop.counter}}" class="project-details">
 
-								   <!-- Post Link -->
-								   <h3 class="s-38 w-700">
-									   <a href="{% url 'articleSingle' blog.slug %}">{{blog.title }}
-									   </a>
-								   </h3>
+		 							<!-- Title -->
+		 							<h5 class="s-24">{{psy.name}}</h5>
 
-								   <!-- Text -->
-								   <p>{{ blog.content|safe|slice:500 }}
-								   </p>
+		 							<!-- Image -->
+					 				<div class="project-preview r-10">
 
-								   <!-- Post Meta -->
-								   <div class="blog-post-meta mt-30">
-									   <ul class="post-meta-list ico-10">
-										
-										   <li><p>{{ blog.created_at }}</p></li>
-									   </ul>
-								   </div>
-
-							   </div>
-						   </div>	<!-- END BLOG POST TEXT -->
-						   {% endif %}
-						{% endfor %}
-									
-						
-
-						</div>   <!-- End row -->
-				 	</div>	<!-- END WIDE BLOG POST -->
-
-
-				 	<!-- POSTS WRAPPER -->
-					<div class="posts-wrapper">
-						<div class="row">
-
-							{% for blog in blogs %}
-							{% if not forloop.first %}
-					 		<div class="col-md-12 col-lg-4">
-					 			<div class="blog-post mb-40 wow fadeInUp clearfix">	
-
-
-					 				<!-- BLOG POST IMAGE -->
-					 				<div class="blog-post-img mb-35">
-										<a href="{% url 'articleSingle' blog.slug %}"><img class="img-fluid r-16" src="{{ blog.image.url }}" alt="blog-post-image"></a>
-									</div>	
-
-
-									<!-- BLOG POST TEXT -->
-									<div class="blog-post-txt">
-
-										<!-- Post Tag -->
-										<span class="post-tag color--violet-400">{{ blog.category.name }}</span>	
-
-										<!-- Post Link -->
-										<h6 class="s-20 w-700">
-											<a href="{% url 'articleSingle' blog.slug %}">{{ blog.title }}</a>
-										</h6>
-
-										<!-- Text -->
-										<p>{{ blog.content|slice:200 }}
-										</p>
-
-										<!-- Post Meta -->
-										<div class="blog-post-meta mt-20">
-											<ul class="post-meta-list ico-10">
-												<li><p class="p-sm w-500"></p></li>
-												<li class="meta-list-divider"><p><span class="flaticon-minus"></span></p></li>
-												<li><p class="p-sm">{{blog.created_at}}</p></li>
-											</ul>
+					 					<!-- Project Preview -->
+						 				<div class="hover-overlay"> 
+											<img class="img-fluid" src="{{psy.image.url}}" alt="project-preview">
+											<div class="item-overlay"></div>
 										</div>
 
-									</div>	<!-- END BLOG POST TEXT -->
-									
+										<!-- Project Link -->
+										<div class="project-link ico-35 color--white">
+											<a href="{% url 'psychologySingle' psy.slug %}" title=""><span class="flaticon-visibility"></span></a>
+										</div>
 
-					 			</div>
-					 		</div>	<!-- END BLOG POST #3 -->
-							{% endif %}
-							{% endfor %}
+									</div>
+
+								</div>
+							</div>	
+						{% endfor %}
+							
+
 
 
 						</div>
-					</div>	<!-- END POSTS WRAPPER -->
+					</div>	<!-- END PROJECTS WRAPPER -->
 
 
-		<!-- PAGE PAGINATION
+				</div>	   <!-- End container -->	
+			</section>	<!-- END PROJECTS-1 -->
+
+
+
+
+			<!-- PAGE PAGINATION
 			============================================= -->
-			<div class="pb-100 page-pagination theme-pagination">
+			<div class="py-100 page-pagination theme-pagination">
 				<div class="container">
 					<div class="row">	
 						<div class="col-md-12">
 							<nav aria-label="Page navigation">
 								<ul class="pagination ico-20 justify-content-center">
-							    	<li {% if not blogs.has_previous %} style="cursor:not-allowed;" {% endif %} class="page-item disabled"><a class="page-link" {% if blogs.has_previous %} href="?page={{ blogs.previous_page_number }}" {% else %} style="cursor: not-allowed;"  {% endif %} tabindex="-1"><span class="flaticon-back"></span></a>
+							    	<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><span class="flaticon-back"></span></a>
 							    	</li>
-									{% for page in total_pages %}
-								    <li class="page-item {% if blogs.number == page %} active {% endif %}" aria-current="page"><a class="page-link" href="?page={{ page }}">{{page}}</a></li>
-									{% endfor %}
-								
-								    <li {% if not blogs.next %} style="cursor:not-allowed;" {% endif %} class="page-item"><a class="page-link" {% if blogs.has_next %} href="?page={{ blogs.next_page_number }}" {% else %} style="cursor: not-allowed;"  {% endif %} aria-label="Next"><span class="flaticon-next"></span></a></li>
+								    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+								    <li class="page-item"><a class="page-link" href="#">2</a></li>
+								    <li class="page-item"><a class="page-link" href="#">3</a></li>
+								    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span class="flaticon-next"></span></a></li>
 								</ul>
 							</nav>
 						</div>
@@ -213,132 +175,13 @@
 				</div> <!-- End container -->
 			</div>	<!-- END PAGE PAGINATION -->
 
-
-
-					<!-- BLOG POSTS CATEGORY --> 
-					<div class="row">
-						<div class="col">
-							<div class="posts-category ico-20 wow fadeInUp">
-								<h4 class="s-34 w-700">Çox oxunanlar<span class="flaticon-next"></span></h4>
-							</div>
-						</div>
-					</div>
-
-
-					<!-- POSTS WRAPPER -->
-					<div class="posts-wrapper">
-						<div class="row">
-
-
-							{% for blog in recent_blogs %}
-					 		<div class="col-md-6 col-lg-4">
-					 			<div class="blog-post mb-40 wow fadeInUp clearfix">	
-
-
-					 				<!-- BLOG POST IMAGE -->
-					 				<div class="blog-post-img mb-35">
-										<a href="{% url 'articleSingle' blog.slug %}">
-										<img class="img-fluid r-16" src="{{ blog.image.url }}" alt="blog-post-image">
-									</a>
-									</div>	
-
-
-									<!-- BLOG POST TEXT -->
-									<div class="blog-post-txt">
-
-										<!-- Post Tag -->
-										<span class="post-tag color--pink-400">{{ blog.category.name }}</span>	
-
-										<!-- Post Link -->
-										<h6 class="s-20 w-700">
-											<a href="{% url 'articleSingle' blog.slug %}">{{ blog.title }}
-											</a>
-										</h6>
-
-										<!-- Text -->
-										<p>{{ blog.content|slice:200 }}</p>
-
-										<!-- Post Meta -->
-										<div class="blog-post-meta mt-20">
-											<ul class="post-meta-list ico-10">
-												<li><p class="p-sm w-500">By CASPERA</p></li>
-												<li class="meta-list-divider"><p><span class="flaticon-minus"></span></p></li>
-												<li><p class="p-sm">{{ blog.created_at }}</p></li>
-											</ul>
-										</div>
-
-									</div>	<!-- END BLOG POST TEXT -->
-
-
-					 			</div>
-					 		</div>	<!-- END BLOG POST #4 -->
-							{% endfor %}
-
-						</div>  <!-- End row -->
-					</div>	<!-- END POSTS WRAPPER -->
-
-
-
-					
-
-				</div>	   <!-- End container -->	
-			</section>	<!-- END BLOG POSTS LISTING -->
-
-
-
-	
-
-
-			<!-- DIVIDER LINE -->
-			<hr class="divider">
-
-			<section id="newsletter-1" class="newsletter-section">
-				<div class="newsletter-overlay">
-					<div class="container">
-						<div class="row d-flex align-items-center row-cols-1 row-cols-lg-2">
-
-
-							<!-- NEWSLETTER TEXT -->	
-							<div class="col">
-								<div class="newsletter-txt">	
-									<h4 class="s-34 w-700">Yeniliklərdən ASK group ilə xəbərdar ol !</h4>	
-								</div>								
-							</div>
-
-
-							<!-- NEWSLETTER FORM -->
-							<div class="col">
-								<form class="newsletter-form">
-											
-									<div class="input-group">
-										<input type="email" autocomplete="off" class="form-control" placeholder="Your email address" required="" id="s-email">								
-										<span class="input-group-btn">
-											<button type="submit" class="btn btn--theme hover--theme">Subscribe Now</button>
-										</span>										
-									</div>
-
-									<!-- Newsletter Form Notification -->	
-									<label for="s-email" class="form-notification"></label>
-												
-								</form>							
-							</div>	  <!-- END NEWSLETTER FORM -->
-
-
-						</div>	  <!-- End row -->
-					</div>    <!-- End container -->	
-				</div>     <!-- End newsletter-overlay -->
-			</section>	<!-- END NEWSLETTER-1 -->
-
-
-
-
 			<!-- DIVIDER LINE -->
 			<hr class="divider">
 
 
 
-
-					<!-- FOOTER-3
+			
+		<!-- FOOTER-3
 			============================================= -->
 			<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
 				<div class="container">
@@ -483,13 +326,6 @@
 
 		</div>	<!-- END PAGE CONTENT -->	
 
-<style>
-	.desktoplogo{
-	filter: invert(1) !important;
-}
-</style>
-		
-			
 
 
 
@@ -516,7 +352,6 @@
 
 		
 
-	
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
 		<!--
 		<script>

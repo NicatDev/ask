@@ -3,7 +3,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="author" content="DSAThemes">	
-		<meta name="description" content="Martex - Software, App, SaaS &amp; Startup Landing Pages Pack">
+		<meta name="description" content="">
 		<meta name="keywords" content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">	
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 				
@@ -51,7 +51,184 @@
 	</head>
 
 
-
+	<style>
+		.mycontainer{
+			padding:0% 10%
+		}
+	
+		.card{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 15px 15px;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	
+			padding-bottom: 15px;
+			background-color: white;
+		}
+		
+		.card img{
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			
+			padding: 5px;
+			margin-top: -45px;
+		}
+		
+		.card h2{
+			margin: 10px 0;
+		}
+		
+		.cont{
+			width: 90%;
+			height: 0;
+			overflow: hidden;
+			text-align: center;
+			transition: all 0.6s ease;
+			opacity:0;
+			transition: opacity 1s ease
+		}
+		
+		.card .cont .link i{
+			font-size: 25px;
+			color: rgb(82, 82, 82);
+			transition: all 0.2s ease;
+		}
+		
+		.card .cont .link i:hover{
+			color: black;
+			cursor: pointer;
+		}
+		
+		.card:hover > .cont{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			text-align: center;
+			height: auto;
+			opacity: 1
+		}
+		.card:hover > .heartable{
+			filter:brightness(1.2)
+		}
+		.card:hover > .link{
+			width: 40%;
+			display: flex;
+			justify-content: space-between;
+		}
+		.heartable-div{
+			padding-right:5px;padding-left:5px;position:relative;margin-top:20px;margin-bottom:30px;padding:0px 5px;
+		}
+		@media (min-width: 480px) and (max-width: 575px){
+			.heartable-div{
+				padding-right:15%;padding-left:15%;margin-top:25px
+			}
+			.section-title{
+				padding: 0 10%
+			}
+		}
+		.heartable{
+			animation: hearbeat 1s infinite ease-in-out;
+		}
+		@keyframes hearbeat {
+			0% {
+			  transform: scale(1);
+			}
+			50% {
+			  transform: scale(1.08);
+			}
+			100% {
+			  transform: scale(1);
+			}
+		  }
+		  .cati{
+			text-align:center;
+			font-size:18px;
+		  }
+	</style>
+	<style>
+		.MoreButton:hover{
+			color:black !important;
+			font-weight:400;
+		}
+		.MoreButton{
+			float:right;
+			color:white;
+			cursor:pointer;
+		}
+		.editedSection{
+			margin-top:40px;
+		}
+		.JoinButton:hover{
+			color:white !important;
+			background-color:black;
+		}
+		.JoinButtonDiv{
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:80px;
+			display:flex;
+			align-items:center;
+			
+		}
+		.JoinButton{
+			
+			background-color:#D8005D;
+			border-radius:6px;
+			color:white !important;
+			padding:6px 20px;
+			cursor:pointer;
+		}
+		.firstFbox h6{
+			font-size:20px;
+			text-align:left
+		}
+		.firstFbox p{
+			font-size:16px;
+			font-weight:400;
+			text-align:left;
+			margin-bottom:1rem;
+			margin-top:1rem;
+		}
+		.firstFbox{
+			padding:0px 9%;
+			
+		}
+		.secondFbox{
+		height:100%;border-top:solid 1px white;padding:0px 7%;margin-top:15px
+		}
+		.editedImage{
+			background-size:contain;width:86% !important;border-radius:6px !important;max-height:450px !important;
+		}
+		.editedDiv{
+			position:relative;;top:-30px;border-radius:6px !important;background-color:transparent !important;padding:0px !important;margin-bottom:0px !important;
+		}
+		.editedText{
+			margin-top:15px;
+		}
+		.editedCol{
+			padding:0px 3%;
+			margin-bottom:80px;
+		}
+		.editedCol:hover .editedImage {
+			transition: transform 0.3s ease; 
+		}
+		.editedCol:hover .editedImage {
+			transition: transform 0.3s ease;
+			transform: scale(1.06); 
+			filter: brightness(120%);
+			
+			
+		  }
+		  .editedCol:not(:hover) .editedImage {
+			transition: transform 0.3s ease;
+			filter: brightness(100%);
+			transform: scale(1); 
+		  }
+	 </style>
 
 	<body>  
 
@@ -83,171 +260,48 @@
 
 
 
-			
-			<!-- BLOG POSTS LISTING
-			============================================= -->
-			<section id="blog-page" class="pb-60 inner-page-hero blog-page-section">
+			<section id="newsletter-1" class="newsletter-section editedSection inner-page-hero">
 				<div class="container">
-
-
-					<!-- WIDE BLOG POST -->
-					<div class="blog-post wide-post wow fadeInLeft">
-	 					<div class="row d-flex align-items-center">
-							{% for training in trainings %}
-							{% if forloop.first %}
-							<!-- BLOG POST IMAGE -->
-							<div class="col-md-6">
-								<div class="blog-post-img">
-									<a href="{% url 'blogSingle' training.slug %}">
-										<img style="border-radius:0px !important" class="img-fluid r-16" src="{{ training.image.url }}" alt="blog-post-image">
-									</a>
-							
-							   </div>	
-						   </div>
-
-
-						   <!-- BLOG POST TEXT -->
-						   <div class="col-md-6">
-							   <div class="blog-post-txt">
-
-								   <!-- Post Tag -->
-								   <span class="post-tag color--blue-400">{{training.category.name}}</span>	
-
-								   <!-- Post Link -->
-								   <h3 class="s-38 w-700">
-									   <a href="{% url 'trainingSingle' training.slug %}">{{training.name }}
-									   </a>
-								   </h3>
-
-								   <!-- Text -->
-								   <p>{{ training.description|safe|slice:500 }}
-								   </p>
-
-								   <!-- Post Meta -->
-								   <div class="blog-post-meta mt-30">
-									   <ul class="post-meta-list ico-10">
-									
-										   <li><p>{{ training.created_at }}</p></li>
-									   </ul>
-								   </div>
-
-							   </div>
-						   </div>	<!-- END BLOG POST TEXT -->
-						   {% endif %}
-						{% endfor %}
-									
-						
-
-						</div>   <!-- End row -->
-				 	</div>	<!-- END WIDE BLOG POST -->
-
-
-				 	<!-- POSTS WRAPPER -->
 					<div class="fbox-wrapper text-center">
-						<div class="row row-cols-1 row-cols-md-3">
+							<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
 
-							{% for training in trainings %}
-							{% if not forloop.first %}
+
 					
-							<!-- FEATURE BOX #2 -->
-							<div class="col">
-							   <div class="fbox-2 fb-2 wow fadeInUp">
+		
+						{% for training in trainings %}
+						<div class="col editedCol">
+							<div class="fbox-2 fb-2 gr--whitesmoke h-175 wow fadeInUp" style="visibility: visible;border-radius:6px; animation-name: fadeInUp;background-color:#293e56 !important">
 
-								   <!-- Image -->
-								  <div class="fbox-img gr--whitesmoke h-175">
-									  <img class="img-fluid light-theme-img" src="{{ training.image.url }}" alt="feature-image">
-					   
-								  </div>
-
-								  <!-- Text -->
-								  <div class="fbox-txt">
-									<a href="{% url 'trainingSingle' training.slug %}">  <h6 class="s-22 w-700">{{ training.name }}</h6></a>
-									  <p>{{ training.description_without_ck }}</p>
-								  </div>
-
-							   </div>
-						   </div>	<!-- END FEATURE BOX #2 -->		
-						
-							{% endif %}
-							{% endfor %}
-
-
-						</div>
-					</div>	<!-- END POSTS WRAPPER -->
-
-
-		<!-- PAGE PAGINATION
-			============================================= -->
-			<div class="pb-100 pt-100 page-pagination theme-pagination">
-				<div class="container">
-					<div class="row">	
-						<div class="col-md-12">
-							<nav aria-label="Page navigation">
-								<ul class="pagination ico-20 justify-content-center">
-							    	<li {% if not trainings.has_previous %} style="cursor:not-allowed;" {% endif %} class="page-item disabled"><a class="page-link" {% if trainings.has_previous %} href="?page={{ trainings.previous_page_number }}" {% else %} style="cursor: not-allowed;"  {% endif %} tabindex="-1"><span class="flaticon-back"></span></a>
-							    	</li>
-									{% for page in total_pages %}
-								    <li class="page-item {% if trainings.number == page %} active {% endif %}" aria-current="page"><a class="page-link" href="?page={{ page }}">{{page}}</a></li>
-									{% endfor %}
+								<!-- Image -->
+							   <div  class="fbox-img gr--whitesmoke h-175 editedDiv">
+								   <img  class="img-fluid light-theme-img editedImage" src="{{ training.image.url }}" alt="feature-image ">
 								
-								    <li {% if not trainings.next %} style="cursor:not-allowed;" {% endif %} class="page-item"><a class="page-link" {% if trainings.has_next %} href="?page={{ trainings.next_page_number }}" {% else %} style="cursor: not-allowed;"  {% endif %} aria-label="Next"><span class="flaticon-next"></span></a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>  <!-- End row -->	
-				</div> <!-- End container -->
-			</div>	<!-- END PAGE PAGINATION -->
+							   </div>
 
-
-
-					<!-- BLOG POSTS CATEGORY --> 
-					<div class="row">
-						<div class="col">
-							<div class="posts-category ico-20 wow fadeInUp">
-								<h4 class="s-34 w-700">Çox oxunanlar<span class="flaticon-next"></span></h4>
-							</div>
-						</div>
-					</div>
-
-
-					<!-- POSTS WRAPPER -->
-					<div class="fbox-wrapper text-center">
-						<div class="row row-cols-1 row-cols-md-3">
-
-
-							{% for training in recent_trainings %}
-							<!-- FEATURE BOX #2 -->
-							<div class="col">
-								<div class="fbox-2 fb-2 wow fadeInUp">
- 
-									<!-- Image -->
-								   <div class="fbox-img gr--whitesmoke h-175">
-									   <img class="img-fluid light-theme-img" src="{{ training.image.url }}" alt="feature-image">
-						
-								   </div>
- 
-								   <!-- Text -->
-								   <div class="fbox-txt">
-									   <h6 class="s-22 w-700">{{ training.name }}</h6>
-									   <p>{{ training.description_without_ck }}</p>
-								   </div>
- 
+							   <!-- Text -->
+							   <div  class="fbox-txt firstFbox">
+								   <h6 class="s-22 w-700 editedText" style="color:white">{{ training.name }}</h6>
+								   <p style="color:white">{{ training.description|slice:250 }}</p>
+							   </div>
+							   <div  class="fbox-txt secondFbox">
+								<div class="JoinButtonDiv">
+								<a href="{% url 'trainingSingle' training.slug %}" class="JoinButton">Müraciət et</a>
+								<a href="{% url 'trainingSingle' training.slug %}" class="MoreButton">Daha ətraflı</a>
 								</div>
-							</div>	<!-- END FEATURE BOX #2 -->		
-						 
-							{% endfor %}
-
-						</div>  <!-- End row -->
-					</div>	<!-- END POSTS WRAPPER -->
-
+						
+							</div>
+							</div>
+						</div>		
+						{% endfor %}
 
 
-					
 
-				</div>	   <!-- End container -->	
-			</section>	<!-- END BLOG POSTS LISTING -->
+				</div>  <!-- End row -->
+			</div>
+				</div>
+			</section>
 
-
+	
 
 	
 

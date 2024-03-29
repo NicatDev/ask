@@ -10,15 +10,22 @@ from django.conf import settings
 import json
 from marketapp.forms import Messageform
 
-def set_language(request):
-    if request.method == 'POST':
-        next_url = request.POST.get('next') or '/'
-        language = request.POST.get('language')
-        response = redirect(next_url)
-        if language:
-            response.set_cookie('django_language', language)
-        return response
-    return redirect('/')
+def set_language(request,lang_code,url):
+    next_url = url or '/'
+    language = lang_code
+    response = redirect(next_url)
+    if language:
+        response.set_cookie('django_language', language)
+    return response
+   
+def set_language_form(request):
+    print(request.POST.get('next'))
+    next_url = request.POST.get('next') or '/'
+    language = request.POST.get('language')
+    response = redirect(next_url)
+    if language:
+        response.set_cookie('django_language', language)
+    return response
 
 def shows(request):
     events = Show.objects.all()
@@ -113,14 +120,16 @@ def about(request):
 
 
 def psychology(request):
-    psychologies = Psychology.objects.all()
+    psychology_exists = Psychology.objects.exists()
+    if psychology_exists:
+        psychology = Psychology.objects.first()
     context = {
-        'psychologies':psychologies,
+        'psy':psychology
     }
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
     pyschologies = Psychology.objects.all()
     context['pyschologies'] = pyschologies
+    researchs = Services.objects.all()
+    context['researchs'] = researchs
     trainings = Training.objects.all()
     context['trainings'] = trainings
     return render(request,'psychologies.html',context)
@@ -138,7 +147,7 @@ def psychologySingle(request,slug):
     context['researchs'] = researchs
     trainings = Training.objects.all()
     context['trainings'] = trainings
-    return render(request, 'psychologySingle.html',context)
+    return render(request, 'psychologies.html',context)
 
 
 def services(request):
@@ -320,8 +329,8 @@ def trainingSingle(request,slug):
     training = get_object_or_404(Training, slug=slug)
     related_trainings =  Training.objects.all().exclude(id=training.id)
  
-    if len(related_trainings) > 3:
-        related_trainings = related_trainings[0:3]
+
+    related_trainings = related_trainings[0:3]
 
   
 

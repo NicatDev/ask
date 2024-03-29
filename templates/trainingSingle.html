@@ -3,7 +3,7 @@
 			<meta charset="utf-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="author" content="DSAThemes">	
-			<meta name="description" content="Martex - Software, App, SaaS &amp; Startup Landing Pages Pack">
+			<meta name="description" content="Mydescription">
 			<meta name="keywords" content="Responsive, HTML5, DSAThemes, Landing, Software, Mobile App, SaaS, Startup, Creative, Digital Product">	
 			<meta name="viewport" content="width=device-width, initial-scale=1">
 					
@@ -156,7 +156,87 @@
 			font-size:18px;
 		  }
 	</style>
-	
+	<style>
+		.MoreButton:hover{
+			color:black !important;
+			font-weight:400;
+		}
+		.MoreButton{
+			float:right;
+			color:white;
+			cursor:pointer;
+		}
+		.editedSection{
+			margin-top:100px;
+		}
+		.JoinButton:hover{
+			color:white !important;
+			background-color:black;
+		}
+		.JoinButtonDiv{
+			display:flex;
+			align-items:center;
+			justify-content:space-between;
+			height:80px;
+			display:flex;
+			align-items:center;
+			
+		}
+		.JoinButton{
+			
+			background-color:#D8005D;
+			border-radius:6px;
+			color:white !important;
+			padding:6px 20px;
+			cursor:pointer;
+		}
+		.firstFbox h6{
+			font-size:20px;
+			text-align:left
+		}
+		.firstFbox p{
+			font-size:16px;
+			font-weight:400;
+			text-align:left;
+			margin-bottom:1rem;
+			margin-top:1rem;
+		}
+		.firstFbox{
+			padding:0px 9%;
+			
+		}
+		.secondFbox{
+		height:100%;border-top:solid 1px white;padding:0px 7%;margin-top:15px
+		}
+		.editedImage{
+			background-size:contain;width:86% !important;border-radius:6px !important;max-height:450px !important;
+		}
+		.editedDiv{
+			position:relative;;top:-30px;border-radius:6px !important;background-color:transparent !important;padding:0px !important;margin-bottom:0px !important;
+		}
+		.editedText{
+			margin-top:15px;
+		}
+		.editedCol{
+			padding:0px 3%;
+			margin-bottom:80px;
+		}
+		.editedCol:hover .editedImage {
+			transition: transform 0.3s ease; 
+		}
+		.editedCol:hover .editedImage {
+			transition: transform 0.3s ease;
+			transform: scale(1.06); 
+			filter: brightness(120%);
+			
+			
+		  }
+		  .editedCol:not(:hover) .editedImage {
+			transition: transform 0.3s ease;
+			filter: brightness(100%);
+			transform: scale(1); 
+		  }
+	 </style>
 	
 		<body> 
 	
@@ -246,7 +326,46 @@
 				<!-- DIVIDER LINE -->
 				<hr class="divider">
 	
+				<section id="newsletter-1" class="newsletter-section editedSection">
+					<div class="container">
+						<div class="fbox-wrapper text-center">
+								<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
+
+
+						
+			
+							{% for training in recent_trainings %}
+							<div class="col editedCol">
+								<div class="fbox-2 fb-2 gr--whitesmoke h-175 wow fadeInUp" style="visibility: visible;border-radius:6px; animation-name: fadeInUp;background-color:#293e56 !important">
 	
+									<!-- Image -->
+								   <div  class="fbox-img gr--whitesmoke h-175 editedDiv">
+									   <img  class="img-fluid light-theme-img editedImage" src="{{ training.image.url }}" alt="feature-image ">
+									
+								   </div>
+	
+								   <!-- Text -->
+								   <div  class="fbox-txt firstFbox">
+									   <h6 class="s-22 w-700 editedText" style="color:white">{{ training.name }}</h6>
+									   <p style="color:white">{{ training.description|slice:250 }}...</p>
+								   </div>
+								   <div  class="fbox-txt secondFbox">
+									<div class="JoinButtonDiv">
+									<a href="{% url 'trainingSingle' training.slug %}" class="JoinButton">Müraciət et</a>
+									<a href="{% url 'trainingSingle' training.slug %}" class="MoreButton">Daha ətraflı</a>
+									</div>
+							
+								</div>
+								</div>
+							</div>		
+							{% endfor %}
+
+
+
+					</div>  <!-- End row -->
+				</div>
+					</div>
+				</section>
 	
 	
 				<!-- NEWSLETTER-1
@@ -289,80 +408,6 @@
 				</section>	<!-- END NEWSLETTER-1 -->
 	
 	
-				<section id="blog-page" class="pb-60 inner-page-hero blog-page-section">
-					<div class="container">
-	
-	
-				
-	
-						<!-- BLOG POSTS CATEGORY --> 
-						<div class="row">
-							<div class="col">
-								<div class="posts-category ico-20 wow fadeInUp">
-									<h4 class="s-34 w-700">Bloqlar<span class="flaticon-next"></span></h4>
-								</div>
-							</div>
-						</div>
-	
-	
-	
-				
-						<!-- POSTS WRAPPER -->
-						<div class="posts-wrapper">
-							<div class="row">
-	
-						
-					
-								 <div class="col-md-6 col-lg-4">
-									 <div class="blog-post mb-40 wow fadeInUp clearfix">	
-	
-	
-										<a class="blog-post-href" >
-										 <div class="blog-post-img mb-35">
-											<img class="img-fluid r-16 blog-post-hover" src="{% static 'images/a2-3.jpg' %}" alt="blog-post-image">
-										</div>	
-										</a>
-	
-										<!-- BLOG POST TEXT -->
-										<div class="blog-post-txt">
-	
-											<!-- Post Tag -->
-											<span class="post-tag color--red-400">Category</span>	
-	
-											<!-- Post Link -->
-											<h6 class="s-20 w-700">
-												<a> My title is the best title
-												</a>
-											</h6>
-	
-											<!-- Text -->
-											<p>My content is the best content over thee world
-											</p>
-	
-											<!-- Post Meta -->
-											<div class="blog-post-meta mt-20">
-												<ul class="post-meta-list ico-10">
-													<li><p class="p-sm w-500">By ASK GROUP</p></li>
-													<li class="meta-list-divider"><p><span class="flaticon-minus"></span></p></li>
-													<li><p class="p-sm">ayin 3-u deyese</p></li>
-												</ul>
-											</div>
-	
-										</div>	<!-- END BLOG POST TEXT -->
-	
-	
-									 </div>
-								 </div>	<!-- END BLOG POST #7 -->
-							
-						
-					
-							</div>  <!-- End row -->
-						</div>	<!-- END POSTS WRAPPER -->
-	
-	
-					</div>	   <!-- End container -->	
-				</section>	<!-- END BLOG POSTS LISTING -->
-	
 	
 				<!-- DIVIDER LINE -->
 				<hr class="divider">
@@ -370,8 +415,7 @@
 	
 	
 	
-	
-	
+				
 				<!-- FOOTER-3
 				============================================= -->
 				<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
@@ -518,7 +562,8 @@
 	
 			</div>	<!-- END PAGE CONTENT -->	
 	
-	<style>	.icon-part{
+	<style>	
+		.icon-part{
 		width: 30%;
 		display: flex;
 		justify-content: center;

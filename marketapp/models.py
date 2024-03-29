@@ -34,7 +34,7 @@ class Services(BaseMixin):
     ordering = models.SmallIntegerField(null=True,blank=True)
     
     def __str__(self):
-        return self.name
+        return f'-{self.name}'
 
     class Meta:
         verbose_name = "Research"
@@ -87,7 +87,7 @@ class Psychology(BaseMixin):
     ordering = models.SmallIntegerField(null=True,blank=True)
     
     def __str__(self):
-        return self.name
+        return f'-{self.name}'
 
     class Meta:
         verbose_name = "Psychology"
@@ -108,6 +108,7 @@ class PsychologySection(models.Model):
     title = models.CharField(max_length = 200)
     description = models.TextField()
     image = models.ImageField()
+    bottomDescription = models.TextField(null=True,blank=True)
 
     def __str__(self):
         return self.title
@@ -152,7 +153,8 @@ class Training(BaseMixin):
     description = models.TextField()
     title = models.CharField(max_length=200,null=True,blank=True)
     ordering = models.SmallIntegerField(null=True,blank=True)
-    
+    image = models.ImageField(null=True,blank=True)
+
     def __str__(self):
         return f'-{self.name}'
 

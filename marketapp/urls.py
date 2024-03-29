@@ -2,7 +2,9 @@ from django.urls import path,include
 from .views import *
 
 urlpatterns = [
-    path('set-language/', set_language, name='set_language'),
+    path('set-language/<lang_code>/<path:url>', set_language, name='set_language'),
+    path('set_language_form/', set_language_form, name='set_language_form'),
+    
     path('',home,name='home'),
     path('2',home2,name='home2'),
     path('verlisler',shows,name='shows'),
