@@ -139,14 +139,16 @@ class Partners(models.Model):
     def __str__(self):
         return self.name
 
-class Faq(models.Model):
-    question = models.CharField(max_length = 200)
-    answer = models.TextField()
+class Testimonials(models.Model):
+    full_name = models.CharField(max_length = 400)
+    field = models.CharField(max_length = 400)
+    company = models.CharField(max_length = 400)
+    image = models.ImageField(null=True,blank=True)
+    description = models.TextField()
+    file = models.FileField(null=True,blank=True)
     
     def __str__(self):
-        return self.question
-    
-
+        return f'-{self.full_name}'
 
 class Training(BaseMixin):
     name = models.CharField(max_length = 800)
@@ -171,7 +173,7 @@ class Training(BaseMixin):
                 count += 1
         super(Training, self).save(*args, **kwargs)
         
-   
+
 
 class TrainingSection(models.Model):
     training = models.ForeignKey(Training,models.CASCADE,related_name="trainingsections")
@@ -182,6 +184,16 @@ class TrainingSection(models.Model):
     def __str__(self):
         return f'-{self.title}'
 
+class TrainingItems(models.Model):
+    title = models.CharField(max_length = 300)
+    description = models.TextField()
+    training = models.ForeignKey(Training,on_delete=models.CASCADE)
+    active = models.BooleanField(default=False)
+    live = models.BooleanField(default=True)
+    image = models.ImageField(null=True,blank=True)
+
+    def __str__(self):
+        return f'-{self.title}'
 
 class Article(BaseMixin):
     title = models.CharField(max_length = 200)
@@ -233,7 +245,14 @@ class News(BaseMixin):
     def get_absolute_url(self):
         return reverse('blogSingle', kwargs={"slug": self.slug})
 
+class Student(models.Model):
+    name = models.CharField(max_length = 300)
+    phone = models.CharField(max_length = 300)
+    email = models.EmailField()
+    training = models.CharField(max_length = 300)
 
+    def __str__(self):
+        return f'-{self.name}'
     
 class Show(BaseMixin):
     title = models.CharField(max_length = 200)

@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from django.db.models import Count
 from django.conf import settings
 import json
-from marketapp.forms import Messageform
+from marketapp.forms import Messageform,TrainingMessageForm
 
 def set_language(request,lang_code,url):
     next_url = url or '/'
@@ -56,19 +56,19 @@ def home(request):
         services = services[0:6]
 
     partners = Partners.objects.all()
-    faq = Faq.objects.all()
+ 
     trainings = Training.objects.all()
 
     if len(trainings)>3:
         trainings = trainings[0:3]
 
     team = Team.objects.all()
+    testimonials = Testimonials.objects.all()
     context = {
         'team':team,
         'trainings':trainings,
         'partners':partners,
-        'faq':faq,
-
+        'testimonials':testimonials,
         'psychologies':psychologies,
         'services':services,
 
@@ -100,23 +100,7 @@ def home2(request):
     return render(request,'home2.html',context)
 
 
-def about(request):
-    psychologies = Psychology.objects.all()[0:5]
-    services = Services.objects.all().order_by('ordering')[0:6]
-    team = Team.objects.all()
 
-    context = {
-        "services":services,
-        'team':team,
-        'psychologies':psychologies,
-    }
-    researchs = Services.objects.all()
-    context['researchs'] = researchs
-    pyschologies = Psychology.objects.all()
-    context['pyschologies'] = pyschologies
-    trainings = Training.objects.all()
-    context['trainings'] = trainings
-    return render(request,'about.html',context)
 
 
 def psychology(request):
@@ -283,6 +267,19 @@ def message(request):
         return JsonResponse(data)
     else:
         return HttpResponse(status=405) 
+    
+def trainingMessage(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        newmessage = TrainingMessageForm(data=data)
+        if newmessage.is_valid():
+            newmessage.save()
+            
+            return HttpResponse(status=200) 
+        else:
+            print(newmessage.errors)
+            return HttpResponse(status=400) 
+    return HttpResponse(status=405) 
 
 def submit_vacancy_form(request):
     if request.method == 'POST':
@@ -327,12 +324,7 @@ def training(request):
 
 def trainingSingle(request,slug):
     training = get_object_or_404(Training, slug=slug)
-    related_trainings =  Training.objects.all().exclude(id=training.id)
- 
-
-    related_trainings = related_trainings[0:3]
-
-  
+    training_items = TrainingItems.objects.filter(training = training)
 
     next_training = Training.objects.exclude(id=training.id).first()
     if next_training:
@@ -341,7 +333,7 @@ def trainingSingle(request,slug):
         previous_training = {}
     context = {
         'training':training,
-        'recent_trainings':related_trainings,
+        'training_items':training_items,
     }
     if previous_training:
         context['pre_training']=previous_training

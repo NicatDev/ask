@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 	{% load static %}
+	{% load i18n %}
 			<meta charset="utf-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="author" content="DSAThemes">	
@@ -9,7 +10,7 @@
 					
 			  <!-- SITE TITLE -->
 			<title>ASK GROUP</title>
-								
+			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>				
 			<!-- FAVICON AND TOUCH ICONS -->
 			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 			<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -209,7 +210,26 @@
 		height:100%;border-top:solid 1px white;padding:0px 7%;margin-top:15px
 		}
 		.editedImage{
-			background-size:contain;width:86% !important;border-radius:6px !important;max-height:450px !important;
+			background-size:contain;width:86% !important;max-height:450px !important;margin-bottom:0px !important;
+			border-top-left-radius:6px;
+			border-top-right-radius:6px;
+		}
+		.editedImageText{
+			border-bottom-left-radius:6px;
+			border-bottom-right-radius:6px;
+			width:86%;
+			background-color:red;
+			margin:auto;
+			background-color:#e4f4ff;
+			text-align:left;
+			padding-left:5%;
+		}
+		.editedImageText h2{
+			color:#293e56c4 !important;
+			font-size:1rem;
+			padding:11px 0px;
+			text-transform: uppercase;
+			font-weight:700;
 		}
 		.editedDiv{
 			position:relative;;top:-30px;border-radius:6px !important;background-color:transparent !important;padding:0px !important;margin-bottom:0px !important;
@@ -221,25 +241,225 @@
 			padding:0px 3%;
 			margin-bottom:80px;
 		}
-		.editedCol:hover .editedImage {
+		.editedCol:hover .editedDiv {
 			transition: transform 0.3s ease; 
 		}
-		.editedCol:hover .editedImage {
+		.editedCol:hover .editedDiv {
 			transition: transform 0.3s ease;
 			transform: scale(1.06); 
 			filter: brightness(120%);
 			
 			
 		  }
-		  .editedCol:not(:hover) .editedImage {
+		  .editedCol:not(:hover) .editedDiv {
 			transition: transform 0.3s ease;
 			filter: brightness(100%);
 			transform: scale(1); 
 		  }
 	 </style>
-	
+	<style>
+		@keyframes modal-container-in {
+			0% {
+			  scale: 0 0.005;
+			}
+			33% {
+			  scale: 1 0.005;
+			}
+			66%,
+			100% {
+			  scale: 1 1;
+			}
+		  }
+		  
+		  @keyframes modal-window-in {
+			0%,
+			66% {
+			  opacity: 0;
+			  visibility: hidden;
+			  translate: -50% -30%;
+			}
+			100% {
+			  opacity: 1;
+			  visibility: visible;
+			}
+		  }
+		  button {
+			font-family: inherit;
+			cursor: pointer;
+			background: #ffffff;
+			color: #000000;
+			border: 0;
+			border-radius: 8px;
+			padding: 20px 36px;
+			font-size: 16px;
+			font-weight: bold;
+		  }
+		  
+		  .modal-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			place-items: center;
+			opacity: 0;
+			visibility: hidden;
+			transform: scale(1, 1);
+			transition: 0.5s;
+		  }
+		  
+		  body.open .modal-container {
+			z-index:299;
+			visibility: visible;
+			opacity: 1;
+			animation: modal-container-in 1s both;
+		  }
+		  .form-btn{
+			display: flex;
+    align-items: center;
+    justify-content: center;
+		  }
+		  .modal-window {
+			box-shadow:0px 0px 15px #888888;
+			z-index:999;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			background: #ffffff;
+			color: #000000;
+			padding: 28px 20px;
+			width: 300px;
+			border-radius: 12px;
+			translate: -50% -50%;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.3s;
+		  }
+		  
+		  body.open .modal-window {
+			opacity: 1;
+			visibility: visible;
+			animation: modal-window-in 1s;
+		  }
+		  
+		  body.closed .modal-window {
+			opacity: 0;
+			visibility: hidden;
+			translate: -50% -50%;
+		  }
+	</style>
 		<body> 
-	
+			<div class="modal-container" onclick="toggleModal(event)"></div>
+			<div id="modal-window-id" class="modal-window">
+				<div class="form-holder">
+					<form  name="contactform" onsubmit="validateForm(event)" class="row contact-form">
+
+						<input type="text" name="training" id="training-input" class="form-control training" hidden> 
+						<div class="col-md-12">
+							<input type="text" name="name" class="form-control name" placeholder="Ad soyad*"> 
+						</div>
+									
+						<div class="col-md-12">
+							<input type="text" name="email" class="form-control email" placeholder="E-poçt ünvanı*"> 
+						</div>
+
+						<div class="col-md-12">
+							<input type="text" name="phone" class="form-control email" placeholder="Əlaqə nömrəsi*"> 
+						</div>
+
+						<!-- Contact Form Button -->
+						<div class="col-md-12  form-btn text-right">	
+							<button type="submit" class="btn btn--theme hover--theme submit">Təsdiqlə və göndər</button>	
+						</div>
+									
+					</form>	
+				 </div>	
+			</div>
+			<script>
+				function validateForm(event) {
+					
+					var csrfToken = "{{ csrf_token }}"
+					var url = "{% url 'trainingMessage' %}"
+					event.preventDefault();
+					var name = document.forms["contactform"]["name"].value;
+					var email = document.forms["contactform"]["email"].value;
+					var phone = document.forms["contactform"]["phone"].value;
+					var training = document.forms["contactform"]["training"].value;
+					console.log(training,document.forms["contactform"]["training"])
+					var formData = {
+						name:name,
+						email:email,
+						phone:phone,
+						training:training
+					}
+					console.log(formData)
+					if (name == "" || email == "" || phone == "") {
+						alert("Ad, e-poçt və ya telefon nömrəsi daxil edilməlidir.");
+						return false;
+					}
+					fetch(url, {
+						method: 'POST',
+						body: JSON.stringify(formData),
+						headers: {
+							'Content-Type': 'application/json',
+							'X-CSRFToken': csrfToken
+						}
+					})
+					.then(response => {
+						if (!response.ok) {
+							Swal.fire({
+								icon: 'error',
+								title: 'Xəta',
+								text: 'Zəhmət olmasa formun düzgünlüyünü yoxlayın',
+							});
+							throw new Error('Network response was not ok');
+						}
+						
+						Swal.fire({
+							title: "",
+							text: "Məktub uğurla göndərildi",
+							icon: "success"
+						  });
+						  toggleModal()
+						return;
+					})
+					.then(data => {
+						// Handle successful response if needed
+						console.log(data);
+					})
+					.catch(error => {
+						// Handle error if needed
+						console.error('There was a problem with the fetch operation:', error);
+					});
+				
+				}
+			</script>
+			<script>
+			  const toggleModal = (event) => {
+			
+				const bodyClassList = document.body.classList;
+				if (bodyClassList.contains("open")) {
+				  bodyClassList.remove("open");
+				  bodyClassList.add("closed");
+				
+				  let clickedElement = event.target;
+					if(clickedElement.closest('.modal-window')){
+						return;
+					}
+					else{
+						console.log(event.target)
+					}	
+				} else {
+					var name = event.target.id;
+					console.log(name)
+					var traininput = document.getElementById('training-input');
+					traininput.value = name;
+				  bodyClassList.remove("closed");
+				  bodyClassList.add("open");
+				}
+			  };
+			</script>
 	
 	
 	
@@ -272,7 +492,6 @@
 							<!-- Title -->	
 							<h2 class="s-50 w-700">{{ training.name }}</h2>	
 
-							<!-- Text -->	
 							<p class="s-21 color--grey">{{ training.description|safe }}</p>
 								
 						</div>	
@@ -280,6 +499,9 @@
 				</div>
 			</section>
 	
+
+			
+		
 	
 				<!-- TEXT CONTENT
 				============================================= -->
@@ -334,25 +556,25 @@
 
 						
 			
-							{% for training in recent_trainings %}
+							{% for training in training_items %}
 							<div class="col editedCol">
 								<div class="fbox-2 fb-2 gr--whitesmoke h-175 wow fadeInUp" style="visibility: visible;border-radius:6px; animation-name: fadeInUp;background-color:#293e56 !important">
 	
 									<!-- Image -->
 								   <div  class="fbox-img gr--whitesmoke h-175 editedDiv">
 									   <img  class="img-fluid light-theme-img editedImage" src="{{ training.image.url }}" alt="feature-image ">
-									
+									   <div class="editedImageText"><h2>{% if training.live %}Canlı{% else %}Onlayn{% endif %}</h2></div>
 								   </div>
-	
+								   
 								   <!-- Text -->
 								   <div  class="fbox-txt firstFbox">
-									   <h6 class="s-22 w-700 editedText" style="color:white">{{ training.name }}</h6>
+									   <h6 class="s-22 w-700 editedText" style="color:white;margin-top:0px; padding-top:0px">{{ training.title }}</h6>
 									   <p style="color:white">{{ training.description|slice:250 }}...</p>
 								   </div>
 								   <div  class="fbox-txt secondFbox">
 									<div class="JoinButtonDiv">
-									<a href="{% url 'trainingSingle' training.slug %}" class="JoinButton">Müraciət et</a>
-									<a href="{% url 'trainingSingle' training.slug %}" class="MoreButton">Daha ətraflı</a>
+									<a id='{{ training.title }}' onclick="toggleModal(event)" class="JoinButton">Müraciət et</a>
+				
 									</div>
 							
 								</div>
@@ -367,196 +589,7 @@
 					</div>
 				</section>
 	
-	
-				<!-- NEWSLETTER-1
-				============================================= -->
-				<section id="newsletter-1" class="newsletter-section">
-					<div class="newsletter-overlay">
-						<div class="container">
-							<div class="row d-flex align-items-center row-cols-1 row-cols-lg-2">
-	
-	
-								<!-- NEWSLETTER TEXT -->	
-								<div class="col">
-									<div class="newsletter-txt">	
-										<h4 class="s-34 w-700">Stay up to date with our news, ideas and updates</h4>	
-									</div>								
-								</div>
-	
-	
-								<!-- NEWSLETTER FORM -->
-								<div class="col">
-									<form class="newsletter-form">
-												
-										<div class="input-group">
-											<input type="email" autocomplete="off" class="form-control" placeholder="Your email address" required="" id="s-email">								
-											<span class="input-group-btn">
-												<button type="submit" class="btn btn--theme hover--theme">Subscribe Now</button>
-											</span>										
-										</div>
-	
-										<!-- Newsletter Form Notification -->	
-										<label for="s-email" class="form-notification"></label>
-													
-									</form>							
-								</div>	  <!-- END NEWSLETTER FORM -->
-	
-	
-							</div>	  <!-- End row -->
-						</div>    <!-- End container -->	
-					</div>     <!-- End newsletter-overlay -->
-				</section>	<!-- END NEWSLETTER-1 -->
-	
-	
-	
-				<!-- DIVIDER LINE -->
-				<hr class="divider">
-	
-	
-	
-	
-				
-				<!-- FOOTER-3
-				============================================= -->
-				<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
-					<div class="container">
-	
-	
-						<!-- FOOTER CONTENT -->
-						<div class="row">
-	
-	
-							<!-- FOOTER LOGO -->
-							<div class="col-xl-3">
-								<div class="footer-info">
-									<img class="footer-logo" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
-									<img class="footer-logo-dark" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
-								</div>	
-							</div>	
-	
-	
-							<!-- FOOTER LINKS -->
-							<div class="col-sm-4 col-lg-3 col-xl-2">
-								<div class="footer-links fl-1">
-								
-									<!-- Title -->
-									<h6 class="s-17 w-700">Company</h6>
-	
-									<!-- Links -->
-									<ul class="foo-links clearfix">
-										<li><p><a href="about.html">About Us</a></p></li>
-										<li><p><a href="blog-listing.html">Our Blog</a></p></li>						
-										<li><p><a href="testimonials.html">Customers</a></p></li>	
-										<li><p><a href="#">Community</a></p></li>			
-									</ul>
-	
-								</div>
-							</div>	<!-- END FOOTER LINKS -->	
-	
-	
-							<!-- FOOTER LINKS -->
-							<div class="col-sm-4 col-lg-2">
-								<div class="footer-links fl-2">
-													
-									<!-- Title -->
-									<h6 class="s-17 w-700">Product</h6>
-	
-									<!-- Links -->
-									<ul class="foo-links clearfix">
-										<li><p><a href="features.html">Integration</a></p></li>
-										<li><p><a href="download.html">What's New</a></p></li>	
-										<li><p><a href="pricing-1.html">Pricing</a></p></li>	
-										<li><p><a href="help-center.html">Help Center</a></p></li>			
-									</ul>
-	
-								</div>	
-							</div>	<!-- END FOOTER LINKS -->	
-	
-	
-							<!-- FOOTER LINKS -->
-							<div class="col-sm-4 col-lg-3 col-xl-2">
-								<div class="footer-links fl-3">
-													
-									<!-- Title -->
-									<h6 class="s-17 w-700">Legal</h6>
-	
-									<!-- Links -->
-									<ul class="foo-links clearfix">
-										<li><p><a href="terms.html">Terms of Use</a></p></li>										
-										<li><p><a href="privacy.html">Privacy Policy</a></p></li>
-										<li><p><a href="cookies.html">Cookie Policy</a></p></li>
-										<li><p><a href="#">Site Map</a></p></li>
-									</ul>
-	
-								</div>	
-							</div>	<!-- END FOOTER LINKS -->	
-	
-	
-							<!-- FOOTER NEWSLETTER FORM -->
-							<div class="col-sm-10 col-md-8 col-lg-4 col-xl-3">
-								<div class="footer-form">
-	
-									<!-- Title -->
-									<h6 class="s-17 w-700">Follow the Best</h6>
-	
-									<!-- Newsletter Form Input -->
-									<form class="newsletter-form">
-												
-										<div class="input-group r-06">
-											<input type="email" class="form-control" placeholder="Email Address" required="" id="s-email">								
-											<span class="input-group-btn ico-15">
-												<button type="submit" class="btn color--theme">
-													<span class="flaticon-right-arrow-1"></span>
-												</button>
-											</span>
-										</div>
-	
-										<!-- Newsletter Form Notification -->		
-										<label for="s-email" class="form-notification"></label>
-													
-									</form>
-															
-								</div>	
-							</div>	<!-- END FOOTER NEWSLETTER FORM -->
-	
-	
-						</div>	<!-- END FOOTER CONTENT -->
-	
-	
-						<hr>	<!-- FOOTER DIVIDER LINE -->
-	
-	
-						<!-- BOTTOM FOOTER -->
-						<div class="bottom-footer">
-							<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
-	
-	
-								<!-- FOOTER COPYRIGHT -->
-								<div class="col">
-									<div class="footer-copyright">
-										<p class="p-sm">© 2024 <a style="color: rgb(110, 110, 241);" href="https://caspera.az/">Caspera</a> <span>All Rights Reserved</span></p>
-									</div>
-								</div>
-	
-	
-								<!-- FOOTER SOCIALS -->
-								<div class="col">
-									<ul class="bottom-footer-socials ico-20 text-end">
-										<li><a href="#"><span class="flaticon-facebook"></span></a></li>
-										<li><a href="#"><span class="flaticon-twitter"></span></a></li>
-										<li><a href="#"><span class="flaticon-instagram"></span></a></li>
-										<li><a href="#"><span class="flaticon-youtube"></span></a></li>
-									</ul>
-								</div>
-	
-	
-							</div>  <!-- End row -->
-						</div>	<!-- END BOTTOM FOOTER -->
-	
-	
-					</div>     <!-- End container -->	
-				</footer>   <!-- END FOOTER-3 -->
-	
+				{% include 'footer.html' %}
 	
 	
 	

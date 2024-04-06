@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="az"><head>
 	{% load static %}
+	{% load i18n %}
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="author" content="DSAThemes">	
@@ -97,7 +98,16 @@ textarea {
   background-color: #293e56;
   position: relative;
 }
+#cv-input{
+	color:transparent
+}
 
+#cv-input {  }
+::file-selector-button { color:transparent;background-color:transparent;border:none; }
+.focus #cv-input {
+  color: white;
+ 
+}
 .circle {
   border-radius: 50%;
   background: linear-gradient(135deg, transparent 20%, #3eb1ff);
@@ -195,7 +205,7 @@ textarea.input {
   background-color: #fff;
   border: 2px solid #fafafa;
   font-size: 0.95rem;
-  color: #1abc9c;
+  color: #293e56;
   line-height: 1;
   border-radius: 5px;
   outline: none;
@@ -262,7 +272,7 @@ textarea.input {
 }
 
 .contact-info .title {
-  color: #3eb1ff;
+  color: #293e56;
 }
 
 .text {
@@ -316,39 +326,7 @@ textarea.input {
   transform: scale(1.05);
 }
 
-.contact-info:before {
-  content: "";
-  position: absolute;
-  width: 110px;
-  height: 100px;
-  border: 22px solid #1abc9c;
-  border-radius: 50%;
-  bottom: -77px;
-  right: 50px;
-  opacity: 0.3;
-}
 
-.big-circle {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: linear-gradient(to bottom, #293e56, #3eb1ff);
-  bottom: 50%;
-  right: 50%;
-  transform: translate(-40%, 38%);
-}
-
-.big-circle:after {
-  content: "";
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  background-color: #fafafa;
-  border-radius: 50%;
-  top: calc(50% - 180px);
-  left: calc(50% - 180px);
-}
 
 .square {
   position: absolute;
@@ -382,12 +360,7 @@ textarea.input {
     height: 350px;
   }
 
-  .big-circle {
-    bottom: 75%;
-    transform: scale(0.9) translate(-40%, 30%);
-    right: 50%;
-  }
-
+ 
   .text {
     margin: 1rem 0 1.5rem 0;
   }
@@ -940,61 +913,7 @@ textarea.input {
 			<!-- DIVIDER LINE -->
 			<hr class="divider">
 
-				<!-- FAQs-3
-			============================================= -->
-			<section id="faqs-3" class="pt-100 faqs-section">				
-				<div class="container">
-
-
-					<!-- SECTION TITLE -->	
-					<div class="row justify-content-center">	
-						<div class="col-md-10 col-lg-9">
-							<div class="section-title mb-80">	
-
-								<!-- Title -->	
-								<h2 class="s-50 w-700">Suallar &amp; Cavablar</h2>	
-
-									
-							</div>	
-						</div>
-					</div>
-					
-								<!-- TAB-1 CONTENT -->
-								<div id="tab-1" class="tab-content current">
-									<div class="accordion-wrapper">
-										<ul class="accordion">
-
-											{% for item in faq %}
-											<li class="accordion-item {% if forloop.first %} is-active {% endif %}">
-
-												<!-- Question -->
-												<div class="accordion-thumb">
-													<h5 class="s-22 w-700">{{ item.question }}</h5>
-												</div>
-
-												<!-- Answer -->
-												<div class="accordion-panel color--grey">
-
-													<!-- Text -->
-													<p>
-														{{ item.answer }}
-													</p>
-
-												</div>
-
-											</li>	
-											{% endfor %}
-							
-										</ul>
-									</div>
-								</div>	<!-- END TAB-1 CONTENT -->
-
-
 		
-
-				</div>	   <!-- End container -->		
-			</section>	<!-- END FAQs-3 -->
-
 
 
 
@@ -1049,10 +968,79 @@ textarea.input {
 				</div>     <!-- End container -->	
 			</section>	<!-- END BANNER-13 -->
 
-			
+				<!-- TESTIMONIALS-2
+			============================================= -->
+			<section id="reviews-2" class="pt-100 reviews-section">
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-md-10 col-lg-9">
+							<div class="section-title mb-70">	
+
+								<!-- Title -->	
+								<h2 class="s-50 w-700">Əməkdaşların gözündə ASK GROUP komandası</h2>	
+
+									
+							</div>	
+						</div>
+					</div>
+
+
+					<!-- TESTIMONIALS-2 WRAPPER -->
+					<div class="reviews-2-wrapper rel shape--02 shape--whitesmoke">
+						<div class="row align-items-center row-cols-1 row-cols-md-2">
+
+							<!-- i know test is not good for it -->
+							{% for test in testimonials %}
+							<div  class="col">
+								<div style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);" id="rw-2-{{test.id}}" class="review-2 bg--white-100 block-shadow r-08">
+
+									<!-- Quote Icon -->
+		 							<div class="review-ico ico-65"><span class="flaticon-quote"></span></div>
+
+									<!-- Text -->
+									<a href="{{ test.file.url }}">
+									<div class="review-txt">
+
+										<!-- Text -->
+										<p>{{ test.description|slice:140 }}...
+										</p>
+
+										<!-- Author -->
+										<div class="author-data clearfix">
+
+											<!-- Avatar -->
+											<div class="review-avatar">
+												<img src="{{ test.image.url }}" alt="review-avatar">
+											</div>
+														
+											<!-- Data -->
+											<div class="review-author">
+												<h6 class="s-18 w-700">{{ test.full_name }}</h6>
+												<p class="p-sm">{{ test.company }} - {{ test.field }}</p>
+											</div>	
+
+										</div>	<!-- End Author -->
+
+									</div>	<!-- End Text -->
+									</a>
+								</div>
+							</div>
+							{% endfor %}
+
+
+						</div>  <!-- End row -->
+					</div>	<!-- END TESTIMONIALS-2 WRAPPER -->
+
+
+				</div>	   <!-- End container -->
+			</section>	<!-- END TESTIMONIALS-2 -->
+
 
 			<div class="containerr">
-				<span class="big-circle"></span>
+			
 				<img src="img/shape.png" class="square" alt="" />
 				<div class="form">
 				  <div class="contact-info">
@@ -1069,8 +1057,7 @@ textarea.input {
 				  </div>
 		  
 				  <div class="contact-form">
-					<span class="circle one"></span>
-					<span class="circle two"></span>
+			
 		  
 					<form id="vacForm" autocomplete="off" onsubmit="handleSubmit(event)">
 					
@@ -1111,7 +1098,7 @@ textarea.input {
 						<label for="">Doğum tarixi</label>
 						<span>Doğum tarixi</span>
 					  </div>
-					  <div class="input-container focus">
+					  <div class="input-container ">
 						<input required type="file" name="cv" id="cv-input" class="input" />
 						<label for="">CV</label>
 						<span>CV</span>
@@ -1122,150 +1109,8 @@ textarea.input {
 				</div>
 			  </div>
 
-			<hr>
-
-			<!-- FOOTER-3
-			============================================= -->
-			<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
-				<div class="container">
-
-
-					<!-- FOOTER CONTENT -->
-					<div class="row">
-
-
-						<!-- FOOTER LOGO -->
-						<div class="col-xl-3">
-							<div class="footer-info">
-								<img class="footer-logo" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
-								<img class="footer-logo-dark" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
-							</div>	
-						</div>	
-
-
-						<!-- FOOTER LINKS -->
-						<div class="col-sm-4 col-lg-3 col-xl-2">
-							<div class="footer-links fl-1">
-							
-								<!-- Title -->
-								<h6 class="s-17 w-700">Company</h6>
-
-								<!-- Links -->
-								<ul class="foo-links clearfix">
-									<li><p><a href="about.html">About Us</a></p></li>
-									<li><p><a href="blog-listing.html">Our Blog</a></p></li>						
-									<li><p><a href="testimonials.html">Customers</a></p></li>	
-									<li><p><a href="#">Community</a></p></li>			
-								</ul>
-
-							</div>
-						</div>	<!-- END FOOTER LINKS -->	
-
-
-						<!-- FOOTER LINKS -->
-						<div class="col-sm-4 col-lg-2">
-							<div class="footer-links fl-2">
-												
-								<!-- Title -->
-								<h6 class="s-17 w-700">Product</h6>
-
-								<!-- Links -->
-								<ul class="foo-links clearfix">
-									<li><p><a href="features.html">Integration</a></p></li>
-									<li><p><a href="download.html">What's New</a></p></li>	
-									<li><p><a href="pricing-1.html">Pricing</a></p></li>	
-									<li><p><a href="help-center.html">Help Center</a></p></li>			
-								</ul>
-
-							</div>	
-						</div>	<!-- END FOOTER LINKS -->	
-
-
-						<!-- FOOTER LINKS -->
-						<div class="col-sm-4 col-lg-3 col-xl-2">
-							<div class="footer-links fl-3">
-												
-								<!-- Title -->
-								<h6 class="s-17 w-700">Legal</h6>
-
-								<!-- Links -->
-								<ul class="foo-links clearfix">
-									<li><p><a href="terms.html">Terms of Use</a></p></li>										
-									<li><p><a href="privacy.html">Privacy Policy</a></p></li>
-									<li><p><a href="cookies.html">Cookie Policy</a></p></li>
-									<li><p><a href="#">Site Map</a></p></li>
-								</ul>
-
-							</div>	
-						</div>	<!-- END FOOTER LINKS -->	
-
-
-						<!-- FOOTER NEWSLETTER FORM -->
-						<div class="col-sm-10 col-md-8 col-lg-4 col-xl-3">
-							<div class="footer-form">
-
-								<!-- Title -->
-								<h6 class="s-17 w-700">Follow the Best</h6>
-
-								<!-- Newsletter Form Input -->
-								<form class="newsletter-form">
-											
-									<div class="input-group r-06">
-										<input type="email" class="form-control" placeholder="Email Address" required="" id="s-email">								
-										<span class="input-group-btn ico-15">
-											<button type="submit" class="btn color--theme">
-												<span class="flaticon-right-arrow-1"></span>
-											</button>
-										</span>
-									</div>
-
-									<!-- Newsletter Form Notification -->		
-									<label for="s-email" class="form-notification"></label>
-												
-								</form>
-														
-							</div>	
-						</div>	<!-- END FOOTER NEWSLETTER FORM -->
-
-
-					</div>	<!-- END FOOTER CONTENT -->
-
-
-					<hr>	<!-- FOOTER DIVIDER LINE -->
-
-
-					<!-- BOTTOM FOOTER -->
-					<div class="bottom-footer">
-						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
-
-
-							<!-- FOOTER COPYRIGHT -->
-							<div class="col">
-								<div class="footer-copyright">
-									<p class="p-sm">© 2024 <a style="color: rgb(110, 110, 241);" href="https://caspera.az/">Caspera</a> <span>All Rights Reserved</span></p>
-								</div>
-							</div>
-
-
-							<!-- FOOTER SOCIALS -->
-							<div class="col">
-								<ul class="bottom-footer-socials ico-20 text-end">
-									<li><a href="#"><span class="flaticon-facebook"></span></a></li>
-									<li><a href="#"><span class="flaticon-twitter"></span></a></li>
-									<li><a href="#"><span class="flaticon-instagram"></span></a></li>
-									<li><a href="#"><span class="flaticon-youtube"></span></a></li>
-								</ul>
-							</div>
-
-
-						</div>  <!-- End row -->
-					</div>	<!-- END BOTTOM FOOTER -->
-
-
-				</div>     <!-- End container -->	
-			</footer>   <!-- END FOOTER-3 -->
-
-
+		
+			{% include 'footer.html' %}
 
 
 		</div>	<!-- END PAGE CONTENT -->	
@@ -1370,29 +1215,7 @@ textarea.input {
 			});
 		</script> -->
 
-		<script>
-			$(function() {
-			  $(".switch").click(function() {
-			    $("body").toggleClass("theme--dark");
-				    if( $( "body" ).hasClass( "theme--dark" )) {
-	                	$( ".switch" ).text( "Light Mode" );
-	            	} else {
-	                	$( ".switch" ).text( "Dark Mode" );
-	            	}
-			    });
-			});
-		</script>
-
-		<script>
-			$(document).ready(function() {
-	            if( $( "body" ).hasClass( "theme--dark" )) {
-	                $( ".switch" ).text( "Light Mode" );
-	            } else {
-	                $( ".switch" ).text( "Dark Mode" );
-	            }
-	        });
-		</script>
-
+	
 
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
 		<!--
@@ -1450,30 +1273,20 @@ textarea.input {
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
 		var mySwiper = new Swiper('.mySwiper', {
-		  // Optional parameters
-	
 
-	  
 		  pagination: {
 			el: ".swiper-pagination",
 			type: "progressbar",
 		  },
-		  // Navigation arrows
 		  navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		  },
-	  
-		  // Enable autoplay
-		
-	  
-		  // Event listener when slide changes
 		  on: {
 			slideChange: function () {
 			  var currentSlide = mySwiper.slides[mySwiper.activeIndex];
 			  var backgroundUrl = currentSlide.getAttribute('data-background');
-			  console.log(backgroundUrl,'------------------------------')
-			  console.log(document.getElementById('hero-3'),'+++++++++++')
+		
 			  if(backgroundUrl==='black'){
 				document.getElementById('hero-3').style.backgroundColor = backgroundUrl;
 			  }else{
@@ -1486,12 +1299,10 @@ textarea.input {
 </script>
 <script>
 	const inputs = document.querySelectorAll(".input");
-	console.log(inputs,'-------------------------')
 document.getElementById('birth-input').defaultValue = "2000-01-01";
 function focusFunc() {
 
   let parent = this.parentNode;
-  console.log(parent)
   parent.classList.add("focus");
 }
 

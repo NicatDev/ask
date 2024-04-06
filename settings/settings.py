@@ -44,8 +44,7 @@ INSTALLED_APPS = [
     'marketapp',
     'ckeditor',
     'ckeditor_uploader',
-    'rosetta',
-    'django_makeallmessages' , 
+    'rosetta', 
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,18 +115,30 @@ AUTH_PASSWORD_VALIDATORS = [
 from django.utils.translation import gettext_lazy as _
 
 
-LANGUAGES = (
-    ('en', _('en')),
-    ('az', _('az')),
-)
+LANGUAGE_CODE = 'az'
 
+LANGUAGES = [
+    ('en', _('English')),
+    ('az', _('Azerbaijani')),
+]
+
+PARLER_LANGUAGES = {
+    None : (
+        {'code': 'en',},
+        {'code': 'az',},
+    ),
+    'default': {
+        'fallbacks': ['az'],
+        'hide_untranslated': False,
+    }
+}
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
-LANGUAGE_CODE = 'az'
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
+
+
 
 TIME_ZONE = 'Asia/Baku'
 SITE_ID = 1
@@ -137,9 +148,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
@@ -148,10 +159,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
 CKEDITOR_UPLOAD_PATH = 'uploads'
 
+
+SILENCED_SYSTEM_CHECKS = ['ckeditor.W001']
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
         'extraPlugins': 'blockquote',
+        "versionCheck": False
     },
 }
 

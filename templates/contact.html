@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 	{% load static %}
+	{% load i18n %}
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="author" content="DSAThemes">	
@@ -96,10 +97,10 @@
 							<div class="section-title text-center mb-80">	
 
 								<!-- Title -->	
-								<h2 class="s-52 w-700">Müraciət et</h2>	
+								<h2 class="s-52 w-700">{% trans "Müraciət et" %}</h2>	
 
 								<!-- Text -->	
-								<p class="p-lg">ASK Group haaqında daha ətraflı məlumat almaq, yeniliklərdən xəbərdar olmaq və əməkdaşlıq üçün müraciət edin
+								<p class="p-lg">{% trans "ASK Group haqqında daha ətraflı məlumat almaq, yeniliklərdən xəbərdar olmaq və əməkdaşlıq üçün müraciət edin" %}
 								</p>
 									
 							</div>	
@@ -115,44 +116,44 @@
 
 									<!-- Form Select -->
 									<div class="col-md-12 input-subject">
-										<p class="p-lg">Müraciətiniz nə ilə əlaqəlidir </p>
-										<span>Müraciətinizin mövzusunu qeyd edin</span>
+										<p class="p-lg">{% trans "Müraciətiniz nə ilə əlaqəlidir" %} </p>
+										<span>{% trans "Müraciətinizin mövzusunu qeyd edin" %}</span>
 										<select class="form-select subject" aria-label="Default select example">
-									    	<option selected="">Mövzu seç...</option>	
-											<option>Əməkdaşlıq</option>
-											<option>Qiymətləndirmə</option>
-											<option>Təklif və iradlar</option>
-											<option>Təlimlər</option>
-											<option>Başqa</option>
+									    	<option selected="">{% trans "Mövzu seç..." %}</option>	
+											<option>{% trans "Əməkdaşlıq" %}</option>
+											<option>{% trans "Qiymətləndirmə" %}</option>
+											<option>{% trans "Təklif və iradlar" %}</option>
+											<option>{% trans "Təlimlər" %}</option>
+											<option>{% trans "Başqa" %}</option>
 									    </select>
 									</div>
 																						
 									<!-- Contact Form Input -->
 									<div class="col-md-12">
-										<p class="p-lg">Tam adınız: </p>
-										<span>Ad və soyadınızı daxil edin: </span>
-										<input type="text" name="name" class="form-control name" placeholder="Your Name*"> 
+										<p class="p-lg">{% trans "Tam adınız:" %}" </p>
+										<span>{% trans "Ad və soyadınızı daxil edin:" %}" </span>
+										<input type="text" name="name" class="form-control name" placeholder="{% trans 'Ad soyad*' %}%"> 
 									</div>
 												
 									<div class="col-md-12">
-										<p class="p-lg">E-poçt adresi: </p>
-										<span>Mailinizi daxil edin</span>
-										<input type="text" name="email" class="form-control email" placeholder="Email Address*"> 
+										<p class="p-lg">{% trans "E-poçt adresi:" %}" </p>
+										<span>{% trans "Mailinizi daxil edin" %}</span>
+										<input type="text" name="email" class="form-control email" placeholder="{% trans 'E-poçt*' %}"> 
 									</div>
 		
 									<div class="col-md-12">
-										<p class="p-lg">Müraciətinizi yazın </p>
-										<span>Müraciətinizi aydın şəkildə ifadə edin</span>
-										<textarea class="form-control message" name="message" rows="6" placeholder="I have a problem with..."></textarea>
+										<p class="p-lg">{% trans "Müraciətinizi yazın" %} </p>
+										<span>{% trans "Müraciətinizi aydın şəkildə ifadə edin" %}</span>
+										<textarea class="form-control message" name="message" rows="6" placeholder="{% trans 'I have a problem with...' %}"></textarea>
 									</div> 
 																						
 									<!-- Contact Form Button -->
 									<div class="col-md-12 mt-15 form-btn text-right">	
-										<button type="submit" class="btn btn--theme hover--theme submit">Təsdiqlə və göndər</button>	
+										<button type="submit" class="btn btn--theme hover--theme submit">{% trans "Təsdiqlə və göndər" %}</button>	
 									</div>
 
 									<div class="contact-form-notice">
-										<p class="p-sm">Biz sizin məxfiliyinizi qoruyuruq <a href="privacy.html">Privacy Policy</a>.
+										<p class="p-sm">{% trans "Biz sizin məxfiliyinizi qoruyuruq" %}
 										</p>
 									</div>
 																															
@@ -177,7 +178,7 @@
 				<div class="card">
 				  <i class="icon fas fa-envelope"></i>
 				  <div class="card-content">
-					<h3>Email</h3>
+					<h3>{% trans "E-poçt" %}</h3>
 					<span>email@address.com</span>
 				  </div>
 				</div>
@@ -185,7 +186,7 @@
 				<div class="card">
 				  <i class="icon fas fa-phone"></i>
 				  <div class="card-content">
-					<h3>Phone Number</h3>
+					<h3>{% trans "Əlaqə nömrəsi" %}</h3>
 					<span>+00000000000</span>
 				  </div>
 				</div>
@@ -193,8 +194,8 @@
 				<div class="card">
 				  <i class="icon fas fa-map-marker-alt"></i>
 				  <div class="card-content">
-					<h3>Location</h3>
-					<span>United States</span>
+					<h3>{% trans "Location" %}</h3>
+					<span>|Bakı şəhəri</span>
 				  </div>
 				</div>
 			  </div>
@@ -206,192 +207,7 @@
 
 
 
-
-			<section id="newsletter-1" class="newsletter-section">
-				<div class="newsletter-overlay">
-					<div class="container">
-						<div class="row d-flex align-items-center row-cols-1 row-cols-lg-2">
-
-
-							<!-- NEWSLETTER TEXT -->	
-							<div class="col">
-								<div class="newsletter-txt">	
-									<h4 class="s-34 w-700">Yeniliklərdən ASK group ilə xəbərdar ol !</h4>	
-								</div>								
-							</div>
-
-
-							<!-- NEWSLETTER FORM -->
-							<div class="col">
-								<form class="newsletter-form">
-											
-									<div class="input-group">
-										<input type="email" autocomplete="off" class="form-control" placeholder="Your email address" required="" id="s-email">								
-										<span class="input-group-btn">
-											<button type="submit" class="btn btn--theme hover--theme">Subscribe Now</button>
-										</span>										
-									</div>
-
-									<!-- Newsletter Form Notification -->	
-									<label for="s-email" class="form-notification"></label>
-												
-								</form>							
-							</div>	  <!-- END NEWSLETTER FORM -->
-
-
-						</div>	  <!-- End row -->
-					</div>    <!-- End container -->	
-				</div>     <!-- End newsletter-overlay -->
-			</section>	<!-- END NEWSLETTER-1 -->
-
-
-
-			<!-- DIVIDER LINE -->
-			<hr class="divider">
-
-
-		<!-- FOOTER-3
-			============================================= -->
-			<footer id="footer-3" style="padding-top:20px" class=" footer ft-3-ntr">
-				<div class="container">
-
-
-					<!-- FOOTER CONTENT -->
-					<div class="row">
-
-
-						<!-- FOOTER LOGO -->
-						<div class="col-xl-3">
-							<div class="footer-info">
-								<img class="footer-logo" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
-								<img class="footer-logo-dark" src="{% static 'images/MARKA.png' %}" alt="footer-logo">
-							</div>	
-						</div>	
-
-
-						<!-- FOOTER LINKS -->
-						<div class="col-sm-4 col-lg-3 col-xl-2">
-							<div class="footer-links fl-1">
-							
-								<!-- Title -->
-								<h6 class="s-17 w-700">Company</h6>
-
-								<!-- Links -->
-								<ul class="foo-links clearfix">
-									<li><p><a href="about.html">About Us</a></p></li>
-									<li><p><a href="blog-listing.html">Our Blog</a></p></li>						
-									<li><p><a href="testimonials.html">Customers</a></p></li>	
-									<li><p><a href="#">Community</a></p></li>			
-								</ul>
-
-							</div>
-						</div>	<!-- END FOOTER LINKS -->	
-
-
-						<!-- FOOTER LINKS -->
-						<div class="col-sm-4 col-lg-2">
-							<div class="footer-links fl-2">
-												
-								<!-- Title -->
-								<h6 class="s-17 w-700">Product</h6>
-
-								<!-- Links -->
-								<ul class="foo-links clearfix">
-									<li><p><a href="features.html">Integration</a></p></li>
-									<li><p><a href="download.html">What's New</a></p></li>	
-									<li><p><a href="pricing-1.html">Pricing</a></p></li>	
-									<li><p><a href="help-center.html">Help Center</a></p></li>			
-								</ul>
-
-							</div>	
-						</div>	<!-- END FOOTER LINKS -->	
-
-
-						<!-- FOOTER LINKS -->
-						<div class="col-sm-4 col-lg-3 col-xl-2">
-							<div class="footer-links fl-3">
-												
-								<!-- Title -->
-								<h6 class="s-17 w-700">Legal</h6>
-
-								<!-- Links -->
-								<ul class="foo-links clearfix">
-									<li><p><a href="terms.html">Terms of Use</a></p></li>										
-									<li><p><a href="privacy.html">Privacy Policy</a></p></li>
-									<li><p><a href="cookies.html">Cookie Policy</a></p></li>
-									<li><p><a href="#">Site Map</a></p></li>
-								</ul>
-
-							</div>	
-						</div>	<!-- END FOOTER LINKS -->	
-
-
-						<!-- FOOTER NEWSLETTER FORM -->
-						<div class="col-sm-10 col-md-8 col-lg-4 col-xl-3">
-							<div class="footer-form">
-
-								<!-- Title -->
-								<h6 class="s-17 w-700">Follow the Best</h6>
-
-								<!-- Newsletter Form Input -->
-								<form class="newsletter-form">
-											
-									<div class="input-group r-06">
-										<input type="email" class="form-control" placeholder="Email Address" required="" id="s-email">								
-										<span class="input-group-btn ico-15">
-											<button type="submit" class="btn color--theme">
-												<span class="flaticon-right-arrow-1"></span>
-											</button>
-										</span>
-									</div>
-
-									<!-- Newsletter Form Notification -->		
-									<label for="s-email" class="form-notification"></label>
-												
-								</form>
-														
-							</div>	
-						</div>	<!-- END FOOTER NEWSLETTER FORM -->
-
-
-					</div>	<!-- END FOOTER CONTENT -->
-
-
-					<hr>	<!-- FOOTER DIVIDER LINE -->
-
-
-					<!-- BOTTOM FOOTER -->
-					<div class="bottom-footer">
-						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
-
-
-							<!-- FOOTER COPYRIGHT -->
-							<div class="col">
-								<div class="footer-copyright">
-									<p class="p-sm">© 2024 <a style="color: rgb(110, 110, 241);" href="https://caspera.az/">Caspera</a> <span>All Rights Reserved</span></p>
-								</div>
-							</div>
-
-
-							<!-- FOOTER SOCIALS -->
-							<div class="col">
-								<ul class="bottom-footer-socials ico-20 text-end">
-									<li><a href="#"><span class="flaticon-facebook"></span></a></li>
-									<li><a href="#"><span class="flaticon-twitter"></span></a></li>
-									<li><a href="#"><span class="flaticon-instagram"></span></a></li>
-									<li><a href="#"><span class="flaticon-youtube"></span></a></li>
-								</ul>
-							</div>
-
-
-						</div>  <!-- End row -->
-					</div>	<!-- END BOTTOM FOOTER -->
-
-
-				</div>     <!-- End container -->	
-			</footer>   <!-- END FOOTER-3 -->
-
-
+			{% include 'footer.html' %}
 
 		</div>	<!-- END PAGE CONTENT -->	
 
@@ -531,8 +347,8 @@
 						// Display SweetAlert for empty fields
 						Swal.fire({
 							icon: 'error',
-							title: 'Xəta',
-							text: 'Zəhmət olmasa formun düzgünlüyünü yoxlayın',
+							title: '{% trans "Xəta" %}',
+							text: '{% trans "Zəhmət olmasa formun düzgünlüyünü yoxlayın" %}',
 						});
 					} else {
 						// If not empty, send data to the backend
@@ -549,13 +365,13 @@
 								Swal.fire({
 									icon: 'error',
 									title: 'Xəta',
-									text: 'Zəhmət olmasa formun düzgünlüyünü yoxlayın',
+									text: '{% trans "Zəhmət olmasa formun düzgünlüyünü yoxlayın" %}',
 								});
 								throw new Error('Network response was not ok');
 							}
 							Swal.fire({
 								title: "",
-								text: "Məktub uğurla göndərildi",
+								text: "{% trans 'Məktub uğurla göndərildi' %}",
 								icon: "success"
 							  });
 							return response.json();

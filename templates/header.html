@@ -114,9 +114,10 @@
 									<ul class="wsmenu-list nav-theme">
 									
 										<!-- SIMPLE NAVIGATION LINK -->
-											<li style="float:left" class="nl-simple mobilefalse" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a   style="color:white !important" class=" btn r-04 btn--theme last-link">Əlaqə <span  class="wsarrow contactArrow"></span></a>
+											<li style="float:left" class="nl-simple mobilefalse" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a   style="color:white !important" class=" btn r-04 btn--theme last-link">{% trans "Əlaqə" %} <span  class="wsarrow contactArrow"></span></a>
 												<ul class="sub-menu">
 													
+													<li aria-haspopup="true"><a href="{% url 'contact' %}" class="h-link"><div class="social-divs">{% trans 'Müraciət et' %}</div></a></li>
 													<li aria-haspopup="true"><a href="#" class="h-link"><div class="social-divs"><i class="fa-brands fa-linkedin"></i>Linkedin</div></a></li>
 													<li aria-haspopup="true"><a href="#" class="h-link"><div class="social-divs"><i class="fa-brands fa-facebook"></i>Facebook</div></a></li>
 													<li aria-haspopup="true"><a href="#" class="h-link"><div class="social-divs"><i class="fa-brands fa-instagram"></i>Instagram</div></a></li>
@@ -146,11 +147,11 @@
 											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK MEDIA <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
 											
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'articles' %}" class="h-link">Məqalələr</a></li>
+													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'articles' %}" class="h-link">{% trans "Məqalələr" %}</a></li>
 												
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'news' %}" class="h-link">Xəbərlər</a></li>
+													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'news' %}" class="h-link">{% trans "Xəbərlər" %}</a></li>
 												
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'shows' %}" class="h-link">Verlişlər</a></li>
+													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'shows' %}" class="h-link">{% trans "Verlişlər" %}</a></li>
 												
 												</ul>
 											</li>	
@@ -198,27 +199,13 @@
 
 <script>
 	function updateLanguageBasedOnCookie() {
-		// Cookie'den dil tercihini al
 		var langCookie = document.cookie.replace(/(?:(?:^|.*;\s*)django_language\s*=\s*([^;]*).*$)|^.*$/, "$1");
-	
-		// Dil tercihi varsa ve İngilizce değilse
 		if (langCookie) {
-			// URL'yi parçala
 			var urlParts = window.location.href.split('/');
-	
-			// URL'nin dil kısmını güncelle
-			urlParts.splice(3, 1, langCookie); // Örneğin: /en/ kısmını tr ile değiştirir
-			
-			// Yeni URL'yi oluştur
+			urlParts.splice(3, 1, langCookie); 
 			var newURL = urlParts.join('/');
-			console.log(newURL)
-			// Yeni URL'yi kontrol et (eğer daha önce güncellenmediyse)
 			if (window.location.href !== newURL) {
-				// Yeni URL'yi cookie'ye yaz
 				document.cookie = "django_language=" + langCookie + "; path=/";
-				
-				// Sayfayı yeniden yükle
-		
 				window.location.href = newURL
 			}
 		}

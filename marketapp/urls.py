@@ -8,7 +8,6 @@ urlpatterns = [
     path('',home,name='home'),
     path('2',home2,name='home2'),
     path('verlisler',shows,name='shows'),
-    path('haqqımızda',about,name='about'),
     path('biznespsixologiyasi',psychology,name='psychology'),
     path('biznespsixologiyasi/<slug>',psychologySingle,name='psychologySingle'),
     path('tedqiqatlar',services,name='services'),
@@ -19,6 +18,8 @@ urlpatterns = [
     path('meqaleler/<slug>',articleSingle,name='articleSingle'),
     path('elaqe',contact,name='contact'),
     path('message',message,name='message'),
+    path('trainingMessage',trainingMessage,name='trainingMessage'),
+    
     path('submit_vacancy_form',submit_vacancy_form,name='submit_vacancy_form'),
     
     path('xeberler',news,name='news'),
