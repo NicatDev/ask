@@ -8,7 +8,7 @@ class SideModelInline(admin.StackedInline):
     exclude = ['title','description']
 
     extra = 0
-    min_num = 1
+
 
 class MainModelAdmin(admin.ModelAdmin):
     inlines = [SideModelInline]
@@ -21,7 +21,7 @@ class PSideModelInline(admin.StackedInline):
     exclude = ['bottomDescription','title','description']
 
     extra = 0
-    min_num = 1
+
 
 class PMainModelAdmin(admin.ModelAdmin):
     inlines = [PSideModelInline]
@@ -35,7 +35,7 @@ class TSideModelInline(admin.StackedInline):
     exclude = ['title','description']
 
     extra = 0
-    min_num = 1
+
 
 class TMainModelAdmin(admin.ModelAdmin):
     inlines = [TSideModelInline]
