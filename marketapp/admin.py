@@ -10,6 +10,7 @@ class SideModelInline(admin.StackedInline):
         models.TextField: {'widget': CKEditorWidget}
     }
     extra = 1
+    min_num = 1
 
 class MainModelAdmin(admin.ModelAdmin):
     inlines = [SideModelInline]
@@ -27,6 +28,7 @@ class PSideModelInline(admin.StackedInline):
         models.TextField: {'widget': CKEditorWidget}
     }
     extra = 1
+    min_num = 1
 
 class PMainModelAdmin(admin.ModelAdmin):
     inlines = [PSideModelInline]
@@ -42,6 +44,7 @@ class TSideModelInline(admin.StackedInline):
         models.TextField: {'widget': CKEditorWidget}
     }
     extra = 1
+    min_num = 1
 
 class TMainModelAdmin(admin.ModelAdmin):
     inlines = [TSideModelInline]
