@@ -83,7 +83,7 @@
 									<form  action="{% url 'set_language_form' %}" method="post" class="btn r-04  last-link">
 										{% csrf_token %}
 										<input name="next" type="hidden" value="{{ request.get_full_path }}">
-										<select style="height: 25px;width: 80px;border-radius: 10%;" name="language" id="language-select" onchange="this.form.submit()">
+										<select style="height: 25px;width: 100%;border-radius: 10%;" name="language" id="language-select" onchange="this.form.submit()">
 											{% get_current_language as LANGUAGE_CODE %}
 											{% get_available_languages as LANGUAGES %}
 											{% for lang_code, lang_name in LANGUAGES %}
