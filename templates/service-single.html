@@ -253,7 +253,7 @@
 							<div class="section-title mb-70">	
 
 								<!-- Title -->	
-								<h2 class="s-52 w-700">Metodlar</h2>	
+								<h2 class="s-52 w-700">{% trans 'Metodlar' %}</h2>	
 
 							
 
@@ -274,8 +274,8 @@
 									<img class="heartable" src="{% static '44.webp' %}" alt="">
 									<h2 class="cati">CAPI</h2>
 									<div class="cont">
-										<p>Kompüter Dəstəkli Şəxsi Müsahibələr (CAPI) üz-üzə məlumat toplama üsuludur, bu üsulla müsahibə aparan şəxs müsahibə zamanı verilən cavabları qeyd etmək üçün planşet, mobil telefon və ya kompüterdən istifadə edir.
-										</p>
+										<p>{% block trans %}Kompüter Dəstəkli Şəxsi Müsahibələr (CAPI) üz-üzə məlumat toplama üsuludur, bu üsulla müsahibə aparan şəxs müsahibə zamanı verilən cavabları qeyd etmək üçün planşet, mobil telefon və ya kompüterdən istifadə edir.
+										{% endblock %}</p>
 									
 									</div>
 								</div>
@@ -286,7 +286,10 @@
 									<img class="heartable" src="{% static '44.webp' %}" alt="">
 									<h2 class="cati">CATI</h2>
 									<div class="cont">
-										<p>Kompüter dəstəkli telefon müsahibəsi (CATI) telefon sorğularının aparılmasında müsahibə verənlərə kömək etmək üçün proqram təminatından istifadə edən tədqiqat metodologiyasıdır. CATI ilə müsahibə götürənlər kompüter ekranlarında suallar və cavab variantlarını ehtiva edən skriptləri izləyirlər. Respondentlər cavab verdikdə, müsahibəçilər onları birbaşa kompüter sisteminə daxil edirlər.
+										<p>
+											{% block trans %}
+											Kompüter dəstəkli telefon müsahibəsi (CATI) telefon sorğularının aparılmasında müsahibə verənlərə kömək etmək üçün proqram təminatından istifadə edən tədqiqat metodologiyasıdır. CATI ilə müsahibə götürənlər kompüter ekranlarında suallar və cavab variantlarını ehtiva edən skriptləri izləyirlər. Respondentlər cavab verdikdə, müsahibəçilər onları birbaşa kompüter sisteminə daxil edirlər.
+											{% endblock %}
 										</p>
 									
 									</div>
@@ -298,12 +301,14 @@
 									<img class="heartable" src="{% static '44.webp' %}" alt="">
 									<h2 class="cati">CAWI</h2>
 									<div class="cont">
-										<p >Veb sorğusu link, panel və ya veb-sayt ilə respondentə təqdim olunan sorğu vərəqəsinə əsaslanan metodologiyanın bir hissəsidir. Bu, sorğu məlumatlarını toplamaq üçün ən qənaətcil yol hesab olunur, çünki sizə CATI və ya CAPI müsahibə verənlərə, cihazlara və ya əlavə alətlərə ehtiyac yoxdur.
+										<p >
+											{% block trans %}
+											Veb sorğusu link, panel və ya veb-sayt ilə respondentə təqdim olunan sorğu vərəqəsinə əsaslanan metodologiyanın bir hissəsidir. Bu, sorğu məlumatlarını toplamaq üçün ən qənaətcil yol hesab olunur, çünki sizə CATI və ya CAPI müsahibə verənlərə, cihazlara və ya əlavə alətlərə ehtiyac yoxdur.
 
 											Bütün bu səbəblərə görə, internet sorğuları (onlayn sorğular da adlanır) məlumat toplamaq üçün ən geniş yayılmış üsullardan biridir.
 											
 											CAWI bazar araşdırması və məlumat toplama metodunu seçdiyiniz zaman bütün diqqət sorğu vərəqəsinin dizaynında olur, çünki cavab dərəcəsi birbaşa sorğunun keyfiyyəti ilə bağlıdır.</p>
-									
+											{% endblock %}
 									</div>
 								</div>
 							</div>	
@@ -311,9 +316,9 @@
 								
 								<div class="card">
 									<img class="heartable" src="{% static '44.webp' %}" alt="">
-									<h2 class="cati">Masaüstü Tədqiqat</h2>
+									<h2 class="cati">{% trans 'Masaüstü Tədqiqat' %}</h2>
 									<div class="cont">
-										<p>
+										<p>{% block trans %}
 											İkinci dərəcəli tədqiqat kimi də tanınan Masaüstü tədqiqat, sahə işi və ya sorğular vasitəsilə ilkin məlumatların toplanması yerinə, mövcud məlumat və mənbələri təhlil və sintez etməklə məlumat və anlayışların toplanması üsuludur.
 											
 											Bu metod dəyərli biliklər əldə etmək və əsaslandırılmış qərarlar qəbul etmək üçün dərc edilmiş hesabatlar, məqalələr, tədqiqatlar və digər ictimaiyyətə açıq materiallar vasitəsilə araşdırmağı əhatə edir.
@@ -321,7 +326,8 @@
 											Masaüstü Tədqiqat aveb axtarışları, onlayn platformalar, sənaye hesabatları və ya hətta fiziki kitablar şəklində ola bilər.
 											
 											Bu mənbələr ümumiyyətlə bütünlüklə uyğun gəlməyə biləe, lakin suallarınıza cavab vermək üçün dəyərli məlumat parçaları təklif edə bilər.
-											</p>
+											{% endblock %}	
+										</p>
 									
 									</div>
 								</div>
@@ -330,9 +336,11 @@
 								
 								<div class="card">
 									<img class="heartable" src="{% static '44.webp' %}" alt="">
-									<h2 class="cati">Fokus qrup</h2>
+									<h2 class="cati">{% trans 'Fokus qrup' %}</h2>
 									<div class="cont">
-										<p>Fokus qrupu ən yaxşı şəkildə tədqiqat üçün açıq müzakirələrə töhfə verən diqqətlə seçilmiş iştirakçıların kiçik bir qrupu kimi müəyyən edilir. Ev sahibi təşkilat, hədəf almağa çalışdıqları daha böyük əhalini təmsil etmək üçün tədqiqat üçün iştirakçıları diqqətlə seçir.
+										<p>
+											{% block trans %}
+											Fokus qrupu ən yaxşı şəkildə tədqiqat üçün açıq müzakirələrə töhfə verən diqqətlə seçilmiş iştirakçıların kiçik bir qrupu kimi müəyyən edilir. Ev sahibi təşkilat, hədəf almağa çalışdıqları daha böyük əhalini təmsil etmək üçün tədqiqat üçün iştirakçıları diqqətlə seçir.
 
 											Qrup bütün əhalinin reaksiyasını ümumiləşdirmək üçün yeni məhsullara, xüsusiyyət yeniləmələrinə və ya digər maraqlı mövzulara baxa bilər. Bu araşdırmaya moderator daxildir. Onların işi obyektiv nəticələri təmin etmək və müzakirələrdə qərəzliyi azaltmaqdır.
 											
@@ -342,7 +350,7 @@
 											
 											Vasitəçi qrup üzvlərinin müzakirəsi və fikirlərini qeyd edir.
 											Düzgün qrup üzvləri tədqiqatınızın nəticələrinə təsir edir, ona görə də üzvləri seçərkən seçici olmaq çox vacibdir.</p>
-									
+											{% endblock %}
 									</div>
 								</div>
 							</div>	
@@ -350,10 +358,10 @@
 								
 								<div class="card">
 									<img class="heartable" src="{% static '44.webp' %}" alt="">
-									<h2 class="cati">Etnoqrafik Tədqiqat </h2>
+									<h2 class="cati">{% trans 'Etnoqrafik Tədqiqat' %} </h2>
 									<div class="cont">
-										<p>Etnoqrafiya sosial və davranış elmlərində tez-tez istifadə olunan məlumatların toplanması üçün keyfiyyətli bir üsuldur. Məlumatlar müşahidələr və müsahibələr vasitəsilə toplanır, daha sonra cəmiyyətlərin və fərdlərin necə fəaliyyət göstərdiyinə dair nəticə çıxarmaq üçün istifadə olunur. Etnoqraflar laboratoriyada onu manipulyasiya etməyə çalışmaq əvəzinə həyatı olduğu kimi müşahidə edirlər. </p>
-									
+										<p> {% block trans  %}Etnoqrafiya sosial və davranış elmlərində tez-tez istifadə olunan məlumatların toplanması üçün keyfiyyətli bir üsuldur. Məlumatlar müşahidələr və müsahibələr vasitəsilə toplanır, daha sonra cəmiyyətlərin və fərdlərin necə fəaliyyət göstərdiyinə dair nəticə çıxarmaq üçün istifadə olunur. Etnoqraflar laboratoriyada onu manipulyasiya etməyə çalışmaq əvəzinə həyatı olduğu kimi müşahidə edirlər. </p>
+										{% endblock %}
 									</div>
 								</div>
 							</div>	
@@ -361,14 +369,14 @@
 								
 								<div class="card">
 									<img class="heartable" src="{% static '44.webp' %}" alt="">
-									<h2 class="cati">Dərin müsahibələr</h2>
+									<h2 class="cati">{% trans 'Dərin müsahibələr' %}</h2>
 									<div class="cont">
-										<p>Bunlar birbaşa üz-üzə müsahibələrdir, burada ayrı-ayrı şəxslərlə evlərində və ya başqa uyğun şəxsi yerdə uzun-uzadı danışa bilərsiniz. Əks təqdirdə, bu, telefonla və hətta Skype kimi proqramlardan istifadə edərək onlayn edilə bilər. Bu, fərdlərə xüsusilə həssas mövzular ətrafında açıq danışmaqda rahat olmağa imkan verir və bu yolla daha çox fikir əldə etməyə kömək edir.
+										<p>{% block trans %}Bunlar birbaşa üz-üzə müsahibələrdir, burada ayrı-ayrı şəxslərlə evlərində və ya başqa uyğun şəxsi yerdə uzun-uzadı danışa bilərsiniz. Əks təqdirdə, bu, telefonla və hətta Skype kimi proqramlardan istifadə edərək onlayn edilə bilər. Bu, fərdlərə xüsusilə həssas mövzular ətrafında açıq danışmaqda rahat olmağa imkan verir və bu yolla daha çox fikir əldə etməyə kömək edir.
 
 											Müzakirə bələdçisi izləniləcək mövzuların nisbətən strukturlaşdırılmamış siyahısı ilə bu müsahibələrə kömək etmək üçün lazım olur. Bu müsahibələrə moderatorluq edən şəxs tədqiqatın uğurunu müəyyən etməkdə bacarıqlı olmalıdır, burada onlar müzakirə təlimatında müəyyən edilmiş ümumi mövzu suallarından daha çox dərinləşə və bəzən mövzudan kənara çıxsalar belə, müzakirəyə rəhbərlik edə bilərlər.
 											
 											Standart sorğulardan fərqli olaraq, tədqiqat üçün az sayda müsahibə tələb olunur, çünki bu texnikanın hədəfi konkret məqamları rəqəmlərlə qiymətləndirməkdənsə, mövzunu daha yaxşı başa düşmək və əsaslandırmaqdan ibarətdir. </p>
-									
+											{% endblock %}
 									</div>
 								</div>
 							</div>	
