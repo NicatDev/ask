@@ -569,7 +569,7 @@
 								   <!-- Text -->
 								   <div  class="fbox-txt firstFbox">
 									   <h6 class="s-22 w-700 editedText" style="color:white;margin-top:0px; padding-top:0px">{{ training.title }}</h6>
-									   <p style="color:white">{{ training.description|slice:250 }}...</p>
+									   {% if training.description %}<p style="color:white">{{ training.description }}</p>{% endif %}
 								   </div>
 								   <div  class="fbox-txt secondFbox">
 									<div class="JoinButtonDiv">
