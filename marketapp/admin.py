@@ -9,6 +9,7 @@ class SideModelInline(admin.StackedInline):
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget}
     }
+    extra = 1
 
 class MainModelAdmin(admin.ModelAdmin):
     inlines = [SideModelInline]
@@ -25,6 +26,7 @@ class PSideModelInline(admin.StackedInline):
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget}
     }
+    extra = 1
 
 class PMainModelAdmin(admin.ModelAdmin):
     inlines = [PSideModelInline]
@@ -39,6 +41,7 @@ class TSideModelInline(admin.StackedInline):
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget}
     }
+    extra = 1
 
 class TMainModelAdmin(admin.ModelAdmin):
     inlines = [TSideModelInline]
