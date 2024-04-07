@@ -6,27 +6,20 @@ from marketapp.models import Testimonials,Student,TrainingItems,Vacancy,Training
 class SideModelInline(admin.StackedInline):  
     model = ServiceSection
     exclude = ['title','description']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
+
     extra = 0
     min_num = 1
 
 class MainModelAdmin(admin.ModelAdmin):
     inlines = [SideModelInline]
     exclude = ['name','description','title']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
 
 admin.site.register(Services, MainModelAdmin)
 
 class PSideModelInline(admin.StackedInline):  
     model = PsychologySection
     exclude = ['bottomDescription','title','description']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
+
     extra = 0
     min_num = 1
 
@@ -40,18 +33,14 @@ admin.site.register(Psychology,PMainModelAdmin)
 class TSideModelInline(admin.StackedInline):  
     model = TrainingSection
     exclude = ['title','description']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
+
     extra = 0
     min_num = 1
 
 class TMainModelAdmin(admin.ModelAdmin):
     inlines = [TSideModelInline]
     exclude = ['name','description','title']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
+
 
 admin.site.register(Training,TMainModelAdmin)
 
