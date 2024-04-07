@@ -26,7 +26,17 @@ SECRET_KEY = 'django-insecure-9l_%ojsx%hw(eio&m_zg#aby_lazy7_*np$)%+=(vmm!z2#^%7
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CORS_ALLOWED_ORIGINS = [
+    'https://test.askgroup.az',
+    'https://askgroup.az',
+]
+# Application definition
+CSRF_TRUSTED_ORIGINS = [
+    'https://test.askgroup.az',
+    'http://test.askgroup.az',
+    'https://askgroup.az',
+    'http://askgroup.az',
+]
 
 # Application definition
 
@@ -148,9 +158,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
