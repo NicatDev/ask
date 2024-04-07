@@ -29,9 +29,7 @@ class PSideModelInline(admin.StackedInline):
 class PMainModelAdmin(admin.ModelAdmin):
     inlines = [PSideModelInline]
     exclude = ['name','description','title']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
+    
 
 admin.site.register(Psychology,PMainModelAdmin)
 
