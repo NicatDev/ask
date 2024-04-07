@@ -55,7 +55,7 @@ class Services(BaseMixin):
 class ServiceSection(models.Model):
     service = models.ForeignKey(Services,models.CASCADE,related_name="sections")
     title = models.CharField(max_length = 200)
-    description = models.TextField()
+    description = models.TextField(null=True,blank=True)
     image = models.ImageField()
 
     def __str__(self):
@@ -178,7 +178,7 @@ class Training(BaseMixin):
 class TrainingSection(models.Model):
     training = models.ForeignKey(Training,models.CASCADE,related_name="trainingsections")
     title = models.CharField(max_length = 200)
-    description = models.TextField()
+    description = models.TextField(null=True,blank=True)
     image = models.ImageField()
 
     def __str__(self):
