@@ -6,9 +6,16 @@ from marketapp.models import Testimonials,Student,TrainingItems,Vacancy,Training
 class SideModelInline(admin.TabularInline):  
     model = ServiceSection
     exclude = ['title','description']
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget}
+    }
+
 class MainModelAdmin(admin.ModelAdmin):
     inlines = [SideModelInline]
     exclude = ['name','description','title']
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget}
+    }
 
 admin.site.register(Services, MainModelAdmin)
 
@@ -22,16 +29,25 @@ class PSideModelInline(admin.StackedInline):
 class PMainModelAdmin(admin.ModelAdmin):
     inlines = [PSideModelInline]
     exclude = ['name','description','title']
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget}
+    }
 
 admin.site.register(Psychology,PMainModelAdmin)
 
 class TSideModelInline(admin.TabularInline):  
     model = TrainingSection
     exclude = ['title','description']
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget}
+    }
 
 class TMainModelAdmin(admin.ModelAdmin):
     inlines = [TSideModelInline]
     exclude = ['name','description','title']
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget}
+    }
 
 admin.site.register(Training,TMainModelAdmin)
 
@@ -40,6 +56,9 @@ admin.site.register(Tag)
 
 class ArticleModelAdmin(admin.ModelAdmin):
     exclude = ['content','title','content_2']
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget}
+    }
 
 admin.site.register(Article,ArticleModelAdmin)
 
@@ -50,6 +69,9 @@ admin.site.register(Team)
 
 class NewsShowModelAdmin(admin.ModelAdmin):
     exclude = ['content','title']
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget}
+    }
 
 admin.site.register(News,NewsShowModelAdmin)
 admin.site.register(Show,NewsShowModelAdmin)
