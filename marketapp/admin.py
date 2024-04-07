@@ -56,9 +56,6 @@ admin.site.register(Tag)
 
 class ArticleModelAdmin(admin.ModelAdmin):
     exclude = ['content','title','content_2']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
 
 admin.site.register(Article,ArticleModelAdmin)
 
@@ -69,9 +66,6 @@ admin.site.register(Team)
 
 class NewsShowModelAdmin(admin.ModelAdmin):
     exclude = ['content','title']
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
-    }
 
 admin.site.register(News,NewsShowModelAdmin)
 admin.site.register(Show,NewsShowModelAdmin)
