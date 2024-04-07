@@ -158,7 +158,13 @@ form {
   position: relative;
   margin: 1rem 0;
 }
+@media (min-width: 490px) and (max-width: 1200px){
+#slideimageheight{
+	max-width:1400px !important	
+}
+}
 @media (min-width: 200px) and (max-width: 489.98px){
+	
 	.mydivision{
 		padding-top:0px !important;
 		margin-top:0px !important;
@@ -486,7 +492,7 @@ textarea.input {
 			
 				<section id="hero-3" style="background-image:url({% static "images/hero-nicat-2.png" %}) !important;padding-top:0px;background-position:center;" class="bg--fixed hero-section swiper mySwiper">
 			
-				<div style="z-index:40;padding-top:160px" class="swiper-wrapper" id="slideimageheight">	
+				<div style="z-index:40;padding-top:160px" class="container swiper-wrapper" id="slideimageheight">	
 					<div style="margin:0px !important;" class="row d-flex align-items-center swiper-slide" data-background="{% static "images/hero-nicat-2.png" %}">
 
 
