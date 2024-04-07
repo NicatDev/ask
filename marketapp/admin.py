@@ -3,7 +3,7 @@ from ckeditor.widgets import CKEditorWidget
 from django.db import models
 from marketapp.models import Testimonials,Student,TrainingItems,Vacancy,TrainingSection,PsychologySection,Category,Tag,Services,Psychology,Message,Partners,Training,Show,Team,ServiceSection,Article,News
 
-class SideModelInline(admin.TabularInline):  
+class SideModelInline(admin.StackedInline):  
     model = ServiceSection
     exclude = ['title','description']
     formfield_overrides = {
@@ -35,7 +35,7 @@ class PMainModelAdmin(admin.ModelAdmin):
 
 admin.site.register(Psychology,PMainModelAdmin)
 
-class TSideModelInline(admin.TabularInline):  
+class TSideModelInline(admin.StackedInline):  
     model = TrainingSection
     exclude = ['title','description']
     formfield_overrides = {
