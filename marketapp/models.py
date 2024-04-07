@@ -186,7 +186,7 @@ class TrainingSection(models.Model):
 
 class TrainingItems(models.Model):
     title = models.CharField(max_length = 300)
-    description = models.TextField()
+    description = models.TextField(null=True,blank=True)
     training = models.ForeignKey(Training,on_delete=models.CASCADE)
     active = models.BooleanField(default=False)
     live = models.BooleanField(default=True)
