@@ -480,12 +480,12 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a href="{% url 'services' %}"><h2 class="s-60 w-700">Bazar araşdırması və rəqabət analizi</h2></a>
+								<a href="{% url 'services' %}"><h2 class="s-60 w-700">{% trans 'Bazar araşdırması və rəqabət analizi' %}</h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">
-									Bazar araşdırması, biznes strategiyasının önəmli bir parçası kimi, müştəri seçimləri, 
-									son trendler ve rəqib davranışları haqqında dəyərli məlumatlar təqdim edir.
+									{% trans 'Bazar araşdırması, biznes strategiyasının önəmli bir parçası kimi, müştəri seçimləri, 
+									son trendler ve rəqib davranışları haqqında dəyərli məlumatlar təqdim edir.' %}'
 								</p> 
 
 								<!-- HERO DIGITS -->	
@@ -551,13 +551,13 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a href="{% url 'training' %}"><h2 class="s-60 w-700">Təlimlər</h2></a>
+								<a href="{% url 'training' %}"><h2 class="s-60 w-700">{% trans 'Təlimlər' %}</h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">
-									Bilik və bacarıqların uğurlu biznesin açarı olduğunu dərk edərək bildiklərimizi paylaşmağa qərar verdik. Bununla da komandamız
+									{% trans 'Bilik və bacarıqların uğurlu biznesin açarı olduğunu dərk edərək bildiklərimizi paylaşmağa qərar verdik. Bununla da komandamız
 									biliklərini məhsulların hazırlanmasında tətbiq etməklə yanaşı, ekosistemin inkişafı üçün bu bilikləri ayrıca təlimlər halında da təqdim
-									etmək qərarına gəldi.
+									etmək qərarına gəldi.' %}
 								</p> 
 
 								<!-- HERO DIGITS -->	
@@ -623,15 +623,15 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a href="{% url 'psychology' %}"><h2 class="s-60 w-700">Biznes psixologiyası</h2></a>
+								<a href="{% url 'psychology' %}"><h2 class="s-60 w-700">{% trans 'Biznes psixologiyası' %}</h2></a>
 
 								<!-- Text -->
-								<p class="p-lg">
-									Biznes psixoloq təşkilatın şüuraltı ilə işləyən mütəxəssisdir. Bununla da açıq olmayan və gizli irrasional
+								<p class="p-lg">{% trans
+									'Biznes psixoloq təşkilatın şüuraltı ilə işləyən mütəxəssisdir. Bununla da açıq olmayan və gizli irrasional
 									proseslərlə şirkətin böyüməsinə, inkişafına və mənfəətinə birbaşa təsir edir. Biznes psixoloq biznes kouçdan fərqli
 									olaraq ancaq hədəflərlə, fərdi psixoloqdan fərqli olaraq isə fərdlərin şüüraltı və gözəgörünməyən qeyri-rasional
 									proseslərlə işləmir. Biznes psixoloq biznesə və insan qrupuna bir canlı orqanizm kimi baxır və bu orqanizmi tətqiq
-									edərək işləyir.
+									edərək işləyir.' %}
 								</p> 
 
 								<!-- HERO DIGITS -->	
@@ -723,7 +723,7 @@ textarea.input {
 							<div class="txt-block right-column wow fadeInLeft">
 
 								<!-- Section ID -->	
-						 		<span class="section-id">DƏYƏRLƏRİMİZ, VİZYONUMUZ, MİSSİYAMIZ</span>
+						 		<span class="section-id">{% trans 'DƏYƏRLƏRİMİZ, VİZYONUMUZ, MİSSİYAMIZ' %}</span>
 								
 								<!-- Title -->	
 								<h2 class="s-46 w-700">ASK Group</h2>
@@ -735,34 +735,34 @@ textarea.input {
 								<!-- List -->	
 								<ul class="simple-list">
 									
-									<p >Transformasiya üçün həllər təklif edən bir şirkət olaraq ASK GROUP daim yenilənmək və
-										dəyişməyin tərəfdarıdır.</p>
+									<p >{% trans 'Transformasiya üçün həllər təklif edən bir şirkət olaraq ASK GROUP daim yenilənmək və
+										dəyişməyin tərəfdarıdır.' %}</p>
 									<li class="list-item">
-										<p><b>Dəyərlərimiz</b> - Daim öyrənmək,
+										<p><b>{% trans 'Dəyərlərimiz' %}</b>{%trans '- Daim öyrənmək,
 											Daim çevik olmaq,
 											Daim yenilənmək,
 											Daim böyümək,
-											Daim etibarlı tərəfdaş olmaq
+											Daim etibarlı tərəfdaş olmaq' %}
 										</p>
 										
 									</li>
 
 									<li class="list-item">
-										<p><b>Missiyamız</b> - 
+										<p><b>{% trans 'Missiyamız' %}</b> - 
 
-											İnkişaf naminə Maairfləndirmək və məlumatlandırmaqla dəyişimə kömək etməkdir.
+											{% trans 'İnkişaf naminə Maairfləndirmək və məlumatlandırmaqla dəyişimə kömək etməkdir.' %}
 										</p>
 									</li>
 
 									<li class="list-item">
-										<p><b>Vizyonumuz</b> -
+										<p><b>{% trans 'Vizyonumuz' %}</b> -
 
-											Düzgün qərarlar üçün etibarlı zəmin yaratmaqla ölkə iqtisadiyyatının inkişafına töhfə verməkdir.
+											{% trans 'Düzgün qərarlar üçün etibarlı zəmin yaratmaqla ölkə iqtisadiyyatının inkişafına töhfə verməkdir.'%}
 										</p>
 									</li>
 									
 								</ul>
-								<span style="margin-top:2rem"  class="section-id"> &quot;Həyatda yeganə dəyişilməyən dəyişikliyin özüdür.&quot;<br>
+								<span style="margin-top:2rem"  class="section-id"> &quot;{% trans 'Həyatda yeganə dəyişilməyən dəyişikliyin özüdür.' %}&quot;<br>
 									<span style="float:right;font-family:cursive;font-size:18px;font-weight:600;padding-right:3rem;padding-top:1rem;">Heraklitus</span>
 							   </span>
 							</div>
@@ -799,30 +799,30 @@ textarea.input {
 										<ul class="simple-list">
 
 											<li class="list-item">
-												<p><b> ASK GROUP </b> - çevik biznes həlləri təklif edən xidmətlər qrupudur. Biznesə vahid canlı
+												<p><b> ASK GROUP </b> -{% trans 'çevik biznes həlləri təklif edən xidmətlər qrupudur. Biznesə vahid canlı
 													orqanizm kimi yanaşaraq onun sağlam transformasiyası üçün individual həllərlə dəstək
 													oluruq. Təklif edilən həllər xüsusən müştəri ilə birgə və məhz müştəriyə özəl tərtib
-													olunur. İstiqamətimiz 3 hissəyə bölünür .
+													olunur. İstiqamətimiz 3 hissəyə bölünür .' %}
 												</p>
 											</li>
 
 											<li class="list-item">
-												<p><b>ASK Training</b> - Bilik və bacarıqların uğurlu biznesin açarı olduğunu dərk edərək bildiklərimizi paylaşmağa qərar verdik. Bununla da komandamız
+												<p><b>ASK Training</b> - {% trans 'Bilik və bacarıqların uğurlu biznesin açarı olduğunu dərk edərək bildiklərimizi paylaşmağa qərar verdik. Bununla da komandamız
 													ekosistemin inkişafı üçün bu bilikləri ayrıca təlimlər halında da təqdim
-													etmək qərarına gəldi.
+													etmək qərarına gəldi.' %}
 												</p>
 											</li>
 
 											<li class="list-item">
-												<p><b>ASK Research</b> - Biznes Tədiqatları ASK Groupun əsas və baza xidmətidir. Belə ki, müasir dünyada bütün əhəmiyyətli qərarlar etibarlı
+												<p><b>ASK Research</b> - {% trans 'Biznes Tədiqatları ASK Groupun əsas və baza xidmətidir. Belə ki, müasir dünyada bütün əhəmiyyətli qərarlar etibarlı
 													məlumatlar bazasına əsaslanaraq verilir. ASK GROUP olaraq fərqli biznes tədqiqat növlərini həm müstəqil, həm də
-													konsultasiya layohələrinin tərkib hisssəi kimi təqdim edirik.
+													konsultasiya layohələrinin tərkib hisssəi kimi təqdim edirik.' %}
 												</p>
 											</li>
 
 											<li class="list-item">
-												<p><b>ASK Psychology</b> - Biznes psixoloq təşkilatın şüuraltı ilə işləyən mütəxəssisdir. Bununla da açıq olmayan və gizli irrasional
-													proseslərlə şirkətin böyüməsinə, inkişafına və mənfəətinə birbaşa təsir edir. Biz də biznesinizi məhz bu problemdən qurtarmaq üçün sizə biznes psixologiyası xidmətini təqdim edirik.
+												<p><b>ASK Psychology</b> - {% trans 'Biznes psixoloq təşkilatın şüuraltı ilə işləyən mütəxəssisdir. Bununla da açıq olmayan və gizli irrasional
+													proseslərlə şirkətin böyüməsinə, inkişafına və mənfəətinə birbaşa təsir edir. Biz də biznesinizi məhz bu problemdən qurtarmaq üçün sizə biznes psixologiyası xidmətini təqdim edirik.' %}
 												</p>
 											</li>
 										
@@ -860,7 +860,7 @@ textarea.input {
 							<div class="section-title mb-80">
 
 								<!-- Title -->	
-								<h2 class="s-50 w-700">Təsisçilər</h2>	
+								<h2 class="s-50 w-700">{% trans 'Təsisçilər' %}</h2>	
 
 							
 
@@ -927,7 +927,7 @@ textarea.input {
 					<div class="row justify-content-center">	
 						<div class="col-md-10 col-lg-9">
 							<div class="brands-title mb-50">
-								<h2 class="s-50 w-700">Tərəfdaşlarımız</h2>	
+								<h2 class="s-50 w-700">{% trans 'Tərəfdaşlarımız' %}</h2>	
 							</div>
 						</div>
 					</div>
@@ -980,7 +980,7 @@ textarea.input {
 							<div class="section-title mb-70">	
 
 								<!-- Title -->	
-								<h2 class="s-50 w-700">Əməkdaşların gözündə ASK GROUP komandası</h2>	
+								<h2 class="s-50 w-700">{% trans 'Əməkdaşların gözündə ASK GROUP komandası' %}</h2>	
 
 									
 							</div>	
@@ -1044,12 +1044,12 @@ textarea.input {
 				<img src="img/shape.png" class="square" alt="" />
 				<div class="form">
 				  <div class="contact-info">
-					<h3 class="title">Bizə qoşul</h3>
+					<h3 class="title">{% trans 'Bizə qoşul' %}</h3>
 					<p class="text">
-						Peşəkar komandamızın üzvü olmaq istəyirsən və bacarıqlarına inanırsan ? O zaman indi müraciət et və sən də komandamızın bir üzvü ol!
+						{% trans 'Peşəkar komandamızın üzvü olmaq istəyirsən və bacarıqlarına inanırsan ? O zaman indi müraciət et və sən də komandamızın bir üzvü ol!' %}
 					</p>
 					<p class="text">
-						Namizədlərdən məlumatlarının doğruluğundan əmin olmaları rica olunur. Uğurlar !
+						{% trans 'Namizədlərdən məlumatlarının doğruluğundan əmin olmaları rica olunur. Uğurlar !' %}
 					  </p>
 				
 		  
@@ -1063,40 +1063,40 @@ textarea.input {
 					
 					  <div class="input-container">
 						<input required type="text" name="name" id="name-input" class="input" />
-						<label for="">Tam adınız</label>
-						<span>Tam adınız</span>
+						<label for="">{% trans 'Tam adınız' %}</label>
+						<span>{% trans 'Tam adınız' %}</span>
 					  </div>
 					  <div class="input-container">
 						<select required id="vac-input" name="vac" class="input">
 						
-							<option value="" disabled selected>Vakansiya seç</option>
-							<option value="Müsahibəçi">Müsahibəçi</option>
-							<option value="Sahə meneceri">Sahə meneceri</option>
-							<option value="SMM menecer">SMM menecer</option>
-							<option value="Data analitik">Data analitik</option>
-							<option value="Graphic \ Motion designer">Graphic \ Motion designer</option>
-							<option value="Researcher">Researcher</option>
-							<option value="Layihə Meneceri">Layihə Meneceri</option>
-							<option value="Layihə Meneceri köməkçisi">Layihə Meneceri köməkçisi</option>
-							<option value="PR manager">PR manager</option>
+							<option value="" disabled selected>{% trans 'Vakansiya seç' %}</option>
+							<option value="Müsahibəçi">{% trans 'Müsahibəçi' %}</option>
+							<option value="Sahə meneceri">{% trans 'Sahə meneceri' %}</option>
+							<option value="SMM menecer">{% trans 'SMM menecer' %}</option>
+							<option value="Data analitik">{% trans 'Data analitik' %}</option>
+							<option value="Graphic \ Motion designer">{% trans 'Graphic \ Motion designer' %}</option>
+							<option value="Researcher">{% trans 'Researcher' %}</option>
+							<option value="Layihə Meneceri">{% trans 'Layihə Meneceri' %}</option>
+							<option value="Layihə Meneceri köməkçisi">{% trans 'Layihə Meneceri köməkçisi' %}</option>
+							<option value="PR manager">{% trans 'PR manager' %}</option>
 							
 						</select>
 				
 					  </div>
 					  <div class="input-container">
 						<input required type="email" id="email-input" name="email" class="input" />
-						<label for="">E-poçt</label>
-						<span>E-poçt</span>
+						<label for="">{% trans 'E-poçt' %}</label>
+						<span>{% trans 'E-poçt' %}</span>
 					  </div>
 					  <div class="input-container">
 						<input required type="tel" name="phone" id="phone-input" class="input" />
-						<label for="">Əlaqə nömrəsi</label>
-						<span>Əlaqə nömrəsi</span>
+						<label for="">{% trans 'Əlaqə nömrəsi' %}</label>
+						<span>{% trans 'Əlaqə nömrəsi' %}</span>
 					  </div>
 					  <div class="input-container focus">
 						<input required type="date" name="birth" id="birth-input" class="input" />
-						<label for="">Doğum tarixi</label>
-						<span>Doğum tarixi</span>
+						<label for="">{% trans 'Doğum tarixi' %}</label>
+						<span>{% trans 'Doğum tarixi' %}</span>
 					  </div>
 					  <div class="input-container ">
 						<input required type="file" name="cv" id="cv-input" class="input" />

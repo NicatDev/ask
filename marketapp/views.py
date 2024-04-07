@@ -19,7 +19,7 @@ def set_language(request,lang_code,url):
     return response
    
 def set_language_form(request):
-    print(request.POST.get('next'))
+
     next_url = request.POST.get('next') or '/'
     language = request.POST.get('language')
     response = redirect(next_url)
@@ -277,7 +277,7 @@ def trainingMessage(request):
             
             return HttpResponse(status=200) 
         else:
-            print(newmessage.errors)
+     
             return HttpResponse(status=400) 
     return HttpResponse(status=405) 
 
