@@ -128,14 +128,14 @@ from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'az'
 
 LANGUAGES = [
-    ('en', _('English')),
     ('az', _('Azerbaijani')),
+    ('en', _('English')),
 ]
 
 PARLER_LANGUAGES = {
     None : (
-        {'code': 'en',},
         {'code': 'az',},
+        {'code': 'en',},
     ),
     'default': {
         'fallbacks': ['az'],

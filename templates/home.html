@@ -887,7 +887,7 @@ textarea.input {
 									<!-- Team Member Photo -->
 									<div class="team-member-photo r-14">
 										<div class="hover-overlay"> 
-											<img class="img-fluid" src="{{ member.image.url }}" alt="team-member-foto">
+											{% if member.image %}<img class="img-fluid" src="{{ member.image.url }}" alt="team-member-foto">{% endif %}
 											<div class="item-overlay"></div>
 										</div>
 									</div>
@@ -1019,7 +1019,7 @@ textarea.input {
 
 											<!-- Avatar -->
 											<div class="review-avatar">
-												<img src="{{ test.image.url }}" alt="review-avatar">
+												{% if test.image %}<img src="{{ test.image.url }}" alt="review-avatar">{% endif %}
 											</div>
 														
 											<!-- Data -->
