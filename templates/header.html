@@ -3,6 +3,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- HEADER============================================= -->
 		<style>
+			@media (min-width: 1200px){
+			.contactdesk{
+				display:none
+			}}
 			.mysubmenu{
 				min-width:40px !important;
 			}
@@ -133,7 +137,7 @@
 											   </ul>
 											</li>	
 										
-										
+											<li style="float:right" class="nl-simple contactdesk" aria-haspopup="true"><a href="{% url 'contact' %}" class="h-link">Əlaqə </a></li>
 											<!-- DROPDOWN SUB MENU -->
 											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link">ASK MEDIA <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
