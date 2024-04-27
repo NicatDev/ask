@@ -184,6 +184,7 @@ class TrainingSection(models.Model):
     def __str__(self):
         return f'-{self.title}'
 
+
 class TrainingItems(models.Model):
     title = models.CharField(max_length = 300)
     description = models.TextField(null=True,blank=True)

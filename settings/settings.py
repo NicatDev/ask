@@ -125,8 +125,9 @@ AUTH_PASSWORD_VALIDATORS = [
 from django.utils.translation import gettext_lazy as _
 
 
-LANGUAGE_CODE = 'az'
 
+LANGUAGE_CODE = 'az'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
 LANGUAGES = [
     ('az', _('Azerbaijani')),
     ('en', _('English')),
@@ -178,7 +179,7 @@ CKEDITOR_CONFIGS = {
         "versionCheck": False
     },
 }
-
+DATA_UPLOAD_MAX_MEMORY_SIZE = 12428800
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
