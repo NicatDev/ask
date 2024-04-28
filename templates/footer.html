@@ -25,7 +25,7 @@
 
 							<!-- NEWSLETTER FORM -->
 							<div class="col">
-								<form class="newsletter-form" method='post' action="{% url 'subscribe' %}">
+								<form class="" method='post' action="{% url 'subscribe' %}">
 										{% csrf_token %}
 									<div class="input-group">
 										<input type="email" autocomplete="off" class="form-control" placeholder="{% trans 'E-poçt' %}" name="semail" required="" id="s-email">								
