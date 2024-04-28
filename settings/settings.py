@@ -129,8 +129,8 @@ from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'az'
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
 LANGUAGES = [
-    ('az', _('Azerbaijani')),
-    ('en', _('English')),
+    ('az', _('Az')),
+    ('en', _('En')),
 ]
 
 PARLER_LANGUAGES = {
