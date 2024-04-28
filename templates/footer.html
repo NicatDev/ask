@@ -1,6 +1,7 @@
 
 {% load static %}
 {% load i18n %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 			<hr class="divider">
 
 
@@ -24,10 +25,10 @@
 
 							<!-- NEWSLETTER FORM -->
 							<div class="col">
-								<form class="newsletter-form">
-											
+								<form class="newsletter-form" method='post' action="{% url 'subscribe' %}">
+										{% csrf_token %}
 									<div class="input-group">
-										<input type="email" autocomplete="off" class="form-control" placeholder="{% trans 'E-poçt' %}" required="" id="s-email">								
+										<input type="email" autocomplete="off" class="form-control" placeholder="{% trans 'E-poçt' %}" name="semail" required="" id="s-email">								
 										<span class="input-group-btn">
 											<button type="submit" class="btn btn--theme hover--theme">{% trans "İndi abunə ol" %}</button>
 										</span>										
@@ -187,3 +188,28 @@
 				</div>     <!-- End container -->	
 			</footer>   <!-- END FOOTER-3 -->
 
+<script>
+	var currentUrl = window.location.href;
+	var urlParams = new URLSearchParams(currentUrl);
+
+	var myValue = urlParams.get('path');
+
+if (myValue) {
+    if(myValue == 'success'){
+		Swal.fire({
+
+			text: "{% trans 'Abune oldunuz' %}",
+		});
+	}
+	else{
+		Swal.fire({
+			icon: 'error',
+			title: '{% trans "Xəta" %}',
+			text: '{% trans "Zəhmət olmasa e-mailin düzgünlüyünü yoxlayın" %}',
+		});
+	}
+   
+} else {
+    console.log("The 'value' parameter is not found or empty.");
+}
+</script>

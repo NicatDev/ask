@@ -403,3 +403,11 @@ def newsSingle(request,slug):
         context['pre_blog']=previous_blog
         context['next_blog']=next_blog
     return render(request, 'newsSingle.html',context)
+
+def subscribe(request):
+    email = request.POST.get('semail')
+    try:
+        Subscriber.objects.create(email=email)
+        return redirect(reverse('home') + '?path=success')
+    except:
+        return redirect(reverse('home') + '?path=error')

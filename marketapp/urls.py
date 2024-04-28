@@ -7,6 +7,7 @@ urlpatterns = [
     
     path('',home,name='home'),
     path('2',home2,name='home2'),
+    path('subscribe',subscribe,name='subscribe'),
     path('verlisler',shows,name='shows'),
     path('biznespsixologiyasi',psychology,name='psychology'),
     path('biznespsixologiyasi/<slug>',psychologySingle,name='psychologySingle'),
