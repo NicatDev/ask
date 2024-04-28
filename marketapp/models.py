@@ -68,13 +68,15 @@ class Category(models.Model):
     
 class Tag(models.Model):
     name = models.CharField(max_length = 120)
+
     def __str__(self):
         return self.name
     
+class Subscriber(models.Model):
+    email = models.EmailField()
 
-            
-    # def get_absolute_url(self):
-    #     return reverse('blogSingle', kwargs={"slug": self.slug})
+    def __str__(self):
+        return self.email
 
 class Psychology(BaseMixin):
     name = models.CharField(max_length = 800)
