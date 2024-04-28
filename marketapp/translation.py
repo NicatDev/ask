@@ -1,5 +1,5 @@
 from modeltranslation.translator import TranslationOptions,register, translator
-from marketapp.models import Category,Tag,Team,Training,TrainingSection,Article,News,Show,Services,Psychology,PsychologySection,ServiceSection
+from marketapp.models import Category,Tag,Team,Training,TrainingSection,Article,News,Show,Services,Psychology,PsychologySection,ServiceSection,TrainingItems
 
 class ArticleTranslationOption(TranslationOptions):
     fields = ('title','content','content_2')
@@ -34,3 +34,4 @@ translator.register(Training, ServicePsychologyTrainingTranslationOption)
 translator.register(ServiceSection, SectionTranslationOption)
 translator.register(PsychologySection, PsySectionTranslationOption)
 translator.register(TrainingSection, SectionTranslationOption)
+translator.register(TrainingItems)

@@ -75,10 +75,6 @@ class Tag(models.Model):
             
     # def get_absolute_url(self):
     #     return reverse('blogSingle', kwargs={"slug": self.slug})
-    
-
-    
-
 
 class Psychology(BaseMixin):
     name = models.CharField(max_length = 800)
