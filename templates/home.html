@@ -776,7 +776,7 @@ textarea.input {
 									
 									<p >{% trans 'Transformasiya üçün həllər təklif edən bir şirkət olaraq ASK GROUP daim yenilənmək və dəyişməyin tərəfdarıdır.' %}</p>
 									<li class="list-item">
-										<p><b>{% trans 'Dəyərlərimiz' %}</b>{%trans '- Daim öyrənmək, Daim çevik olmaq,Daim yenilənmək,Daim böyümək, Daim etibarlı tərəfdaş olmaq' %}
+										<p><b>{% trans 'Dəyərlərimiz' %}</b>- {%trans '- Daim öyrənmək, Daim çevik olmaq,Daim yenilənmək,Daim böyümək, Daim etibarlı tərəfdaş olmaq' %}
 										</p>
 										
 									</li>
@@ -1045,7 +1045,7 @@ textarea.input {
 
 											<!-- Avatar -->
 											<div class="review-avatar">
-												{% if test.image %}<img src="{{ test.image.url }}" alt="review-avatar">{% endif %}
+												{% if test.image %}<img style="object-fit:cover;" src="{{ test.image.url }}" alt="review-avatar">{% endif %}
 											</div>
 														
 											<!-- Data -->
