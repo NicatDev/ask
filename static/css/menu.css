@@ -36,13 +36,7 @@
 .wsmenu .cl {
   clear: both;
 }
-.desktoplogo{
-  filter: invert(1) !important;
-}
 
-.footer-logo{
-  filter: invert(1) !important;
-}
 
 .wsmenu img {
   border: 0 none;
