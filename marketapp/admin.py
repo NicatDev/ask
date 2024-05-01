@@ -10,6 +10,7 @@ class SideModelInline(admin.StackedInline):
     extra = 0
 
 
+
 class MainModelAdmin(admin.ModelAdmin):
     inlines = [SideModelInline]
     exclude = ['name','description','title']
@@ -64,7 +65,11 @@ admin.site.register(News,NewsShowModelAdmin)
 admin.site.register(Show,NewsShowModelAdmin)
 
 admin.site.register(Vacancy)
-admin.site.register(TrainingItems)
+
+class TrainingAdminModelAdmin(admin.ModelAdmin):
+    exclude = ['description','title']
+
+admin.site.register(TrainingItems,TrainingAdminModelAdmin)
 admin.site.register(Student)
 admin.site.register(Testimonials)
 admin.site.register(Subscriber)
