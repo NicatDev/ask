@@ -563,7 +563,7 @@
 									<!-- Image -->
 								   <div  class="fbox-img gr--whitesmoke h-175 editedDiv">
 									  {% if training.image %} <img  class="img-fluid light-theme-img editedImage" src="{{ training.image.url }}" alt="feature-image ">{%endif %}
-									   <div class="editedImageText"><h2>{% if training.live %}Əyani{% else %}Onlayn{% endif %}</h2></div>
+									   <div class="editedImageText"><h2>{% if training.live %}{% trans 'ƏYANİ' %}{% else %}{% trans 'Onlayn' %}{% endif %}</h2></div>
 								   </div>
 								   
 								   <!-- Text -->
