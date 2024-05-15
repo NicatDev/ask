@@ -406,6 +406,7 @@ def newsSingle(request,slug):
 
 def subscribe(request):
     email = request.POST.get('semail')
+    print(email,'----------------------------------')
     try:
         Subscriber.objects.create(email=email)
         return redirect(reverse('home') + '?path=success')

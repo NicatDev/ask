@@ -188,20 +188,16 @@
 				</div>     <!-- End container -->	
 			</footer>   <!-- END FOOTER-3 -->
 
-<script>
-	var currentUrl = window.location.href;
-	var urlParams = new URLSearchParams(currentUrl);
-
-	var myValue = urlParams.get('path');
-
-if (myValue) {
-    if(myValue == 'success'){
-		Swal.fire({
-
-			text: "{% trans 'Abune oldunuz' %}",
-		});
-	}
-	else{
+			<script>
+				console.log(window.location.search)
+				if (window.location.search.includes('path=success')) {
+					Swal.fire({
+						icon: 'success',
+						title: 'Yeniliklər səni gözləyir!'
+					});
+				}
+	
+	else if((window.location.search.includes('path=error'))){
 		Swal.fire({
 			icon: 'error',
 			title: '{% trans "Xəta" %}',
@@ -209,7 +205,7 @@ if (myValue) {
 		});
 	}
    
-} else {
-    console.log("The 'value' parameter is not found or empty.");
+ else {
+  
 }
 </script>
