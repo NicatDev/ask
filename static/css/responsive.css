@@ -5208,7 +5208,7 @@
   .review-1 { padding: 35px 20px 30px; margin: 0 6px 20px; }
   .review-2, .review-3, .review-4, .review-5 { padding: 35px 20px 30px; }
 
-  .review-txt { margin-top: -40px; }
+  .review-txt { margin-top: 10px; }
   .review-txt h6 { margin-bottom: 10px; }
   .review-3 .review-txt p { font-size: 1.0625rem; }  
 
