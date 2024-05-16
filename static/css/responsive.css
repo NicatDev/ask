@@ -756,7 +756,7 @@
   #rw-3-2, #rw-3-3 { margin-left: 0; }
   #rw-4-1, #rw-5-1 { margin-bottom: 25px; }
 
-  .review-txt { margin-top: -42px; }
+  .review-txt { margin-top: 12px; }
   .review-txt h6 { margin-bottom: 10px; }
 
   .review-1 .author-data { margin-top: 15px; }
@@ -4115,7 +4115,7 @@
   .review-1 { padding: 35px 32px 30px; }
   .review-2, .review-3, .review-4, .review-5 { padding: 35px 35px 30px; }
 
-  .review-txt { margin-top: -43px; }
+  .review-txt { margin-top: 10px; }
   .review-txt h6 { margin-bottom: 10px; }
 
   .review-1 .author-data, .review-2 .author-data, 
@@ -6379,7 +6379,7 @@
   .review-1 { padding: 35px 20px 30px; margin: 0 6px 20px; }
   .review-2, .review-3, .review-4, .review-5 { padding: 35px 20px 30px; }
 
-  .review-txt { margin-top: -40px; }
+  .review-txt { margin-top: 10px; }
   .review-txt h6 { margin-bottom: 10px; }
   .review-3 .review-txt p { font-size: 1.0625rem; }  
 
@@ -7581,7 +7581,7 @@
   .review-2 { padding: 35px 20px 24px; }
   .review-3, .review-4, .review-5 { padding: 35px 25px 24px; }
 
-  .review-txt { margin-top: -43px; }
+  .review-txt { margin-top: 10px; }
   .review-txt h6 { margin-bottom: 10px; }
   .review-3 .review-txt p { font-size: 1rem; }  
 
@@ -8829,7 +8829,7 @@
   .review-2 { padding: 35px 15px 24px; }
   .review-3, .review-4, .review-5 { padding: 35px 25px 24px; }
 
-  .review-txt { margin-top: -40px; }
+  .review-txt { margin-top: 10px; }
   .review-txt h6 { margin-bottom: 10px; }
   .review-3 .review-txt p { font-size: 1rem; }  
 
