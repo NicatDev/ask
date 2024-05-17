@@ -161,6 +161,9 @@ class Training(BaseMixin):
     class Meta:
         verbose_name = "Training"
     
+    def get_absolute_url(self):
+        return reverse('trainingSingle', kwargs={"slug": self.slug})
+
     def save(self, *args, **kwargs):
         new_slug = seo(self.name)
         self.slug = new_slug
@@ -217,7 +220,7 @@ class Article(BaseMixin):
         super(Article, self).save(*args, **kwargs)
             
     def get_absolute_url(self):
-        return reverse('blogSingle', kwargs={"slug": self.slug})
+        return reverse('articleSingle', kwargs={"slug": self.slug})
     
 
 class News(BaseMixin):
