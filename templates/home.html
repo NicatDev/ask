@@ -470,7 +470,32 @@ textarea.input {
 
 	</style>
 	<style>
+		@media only screen and (max-width: 480px) {
+			.swiper-pagination{
+				bottom:40px !important;
+			}
+		}
+		@media only screen and (min-width: 768px) {
+			.swiper-pagination{
+				display:none !important;
+			}
+			.swiper-button-next{
+				display:block !important;
+			}
+			.swiper-button-prev{
+				display:block !important;
+			}
+		}
 		@media only screen and (max-width: 768px) {
+			.swiper-pagination{
+				display:block !important;
+			}
+			.swiper-button-next{
+				display:none !important;
+			}
+			.swiper-button-prev{
+				display:none !important;
+			}
 			.navbar-dark .wsmenu > .wsmenu-list > li > a.h-link {
 				color: black !important;
 			}
@@ -721,11 +746,14 @@ textarea.input {
 						
 
 					</div>    <!-- End row --> 	
+					
 				</div>	   <!-- End container --> 
 		
+				<div style="z-index:9999;color:white" class="swiper-button-next"></div>
+				<div style="z-index:9999;color:white" class="swiper-button-prev"></div>
+				<div style="z-index:9999" class="swiper-pagination"></div>
 			</section>	<!-- END HERO-3 -->	
-			<div class="arrowclass" style="color: white;z-index:200" class="swiper-button-next"></div>
-			<div class="arrowclass" style="color: white;z-index:200" class="swiper-button-prev"></div>	
+			
 
 </div>
 		
@@ -1296,15 +1324,20 @@ textarea.input {
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
 		var mySwiper = new Swiper('.mySwiper', {
-
-		  pagination: {
-			el: ".swiper-pagination",
-			type: "progressbar",
+			spaceBetween: 30,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			  },
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			  },
+		  autoplay: {
+			delay: 4000, // 3 saniye
+			disableOnInteraction: false,
 		  },
-		  navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		  },
+		  speed: 1500,
 		  on: {
 			slideChange: function () {
 			  var currentSlide = mySwiper.slides[mySwiper.activeIndex];
