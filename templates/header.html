@@ -223,21 +223,10 @@
 
 				</div>     <!-- End header-wrapper -->
 			</header>	<!-- END HEADER -->
-			<script>
-				if (window.innerWidth < 991) {
-					console.log(window.innerWidth)
-					var images = document.querySelectorAll('.LogoTitle');
-						images[0].src = images[0].id;
-						images[1].src = images[1].id;
-						images[2].src = images[2].id;
-						images[3].src = images[3].id;
-				}
-				else{
-					console.log(window.innerWidth)
-				}
-			</script>
+		
 			<script>
 				function updateImageSources() {
+					if (window.innerWidth > 990) {
 					var parentDiv = document.querySelector('.wsmainfull ');
 					var images = document.querySelectorAll('.LogoTitle');
 	
@@ -254,6 +243,14 @@
 						images[2].src = "{% static 'sub_logo/asktraning_white.svg' %}";
 						images[3].src = "{% static 'main_logo/AskSkyBlue_groupWhite.svg' %}";
 					}
+				}
+				else{
+					var images = document.querySelectorAll('.LogoTitle');
+					images[0].src = images[0].id;
+					images[1].src = images[1].id;
+					images[2].src = images[2].id;
+					images[3].src = images[3].id;
+				}
 				}
 		
 				// Monitor changes to the class attribute of the parentDiv
