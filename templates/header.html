@@ -225,27 +225,30 @@
 			</header>	<!-- END HEADER -->
 			<script>
 				if (window.innerWidth < 991) {
+					console.log('window.innerWidth')
 					var images = document.querySelectorAll('.LogoTitle');
 						images[0].src = images[0].id;
 						images[1].src = images[1].id;
 						images[2].src = images[2].id;
 						images[3].src = images[3].id;
 				}
+				else{
+					console.log(window.innerWidth)
+				}
 			</script>
 			<script>
 				function updateImageSources() {
 					var parentDiv = document.querySelector('.wsmainfull ');
 					var images = document.querySelectorAll('.LogoTitle');
-					console.log(parentDiv)
-					console.log(images)
+	
 					if (parentDiv.classList.contains('scroll')) {
-						console.log(true,'-------------')
+				
 						images[0].src = images[0].id;
 						images[1].src = images[1].id;
 						images[2].src = images[2].id;
 						images[3].src = images[3].id;
 					} else {
-						console.log(true,'--------------')
+				
 						images[0].src = "{% static 'sub_logo/askpsyhcology_White.svg' %}";
 						images[1].src = "{% static 'sub_logo/askresearch_white.svg' %}";
 						images[2].src = "{% static 'sub_logo/asktraning_white.svg' %}";
