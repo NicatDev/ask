@@ -24,17 +24,21 @@ SECRET_KEY = 'django-insecure-9l_%ojsx%hw(eio&m_zg#aby_lazy7_*np$)%+=(vmm!z2#^%7
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
     'https://test.askgroup.az',
     'https://askgroup.az',
+    'https://www.askgroup.az',
 ]
 # Application definition
 CSRF_TRUSTED_ORIGINS = [
     'https://test.askgroup.az',
     'http://test.askgroup.az',
+    'https://www.askgroup.az',
     'https://askgroup.az',
+    'http://www.askgroup.az',
     'http://askgroup.az',
 ]
 
@@ -59,6 +63,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'language.DefaultLanguageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,8 +131,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 
-LANGUAGE_CODE = 'az'
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
 LANGUAGES = [
     ('az', _('Az')),
     ('en', _('En')),
@@ -139,7 +142,7 @@ PARLER_LANGUAGES = {
         {'code': 'en',},
     ),
     'default': {
-        'fallbacks': ['az'],
+        'fallbacks': [],
         'hide_untranslated': False,
     }
 }
@@ -148,7 +151,9 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
-
+LANGUAGE_CODE = 'az'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
+DEFAULT_LANGUAGE = 'az'
 
 
 TIME_ZONE = 'Asia/Baku'
