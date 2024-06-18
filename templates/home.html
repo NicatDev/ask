@@ -505,13 +505,55 @@ textarea.input {
 		}
 	</style>
 
-
+<style>
+	
+	.scroll-icon {
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
+		color: white;
+		padding: 30px 30px;
+		border-radius: 5px;
+		cursor: pointer !important;
+		font-size: 24px;
+		z-index: 1000;
+		transition: transform 0.3s ease;
+		z-index:9999;
+		filter: invert(80%) brightness(100%);
+		animation: scaleAnimation 1s infinite ease-in-out;
+	}
+	
+	.scroll-icon:hover {
+		transform: scale(1.1);
+	}
+	#downArrow{
+	
+		height:50px;
+		cursor:pointer;
+	}
+	@keyframes scaleAnimation {
+		0%, 100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.05);
+		}
+	}
+</style>
 
 	<body>
 
 	
-
-
+		<div class="scroll-icon" id="scroll-icon"><img id="downArrow" src="{% static 'arrow.png' %}"></div>
+		<script>
+			document.getElementById('scroll-icon').addEventListener('click', function() {
+				window.scrollBy({
+					top: window.innerHeight+80,
+					left: 0,
+					behavior: 'smooth'
+				});
+			});
+		</script>
 		<!-- PRELOADER SPINNER
 		============================================= -->	
 		<div id="loading" class="loading--theme">
@@ -994,8 +1036,8 @@ textarea.input {
 												
 								{% for partner in partners %}
 								<div class="brand-logo">
-									<a style="height:120px;display:flex;align-items:center;justify-content:center;"><img style="width:120px;filter:brightness(150%);" class="img-fluid light-theme-img" src="{{ partner.image.url }}" alt="brand-logo"></a>
-									<a href="#"><img class="img-fluid dark-theme-img" src="{{ partner.image.url }}" alt="brand-logo"></a>
+									<a href="{{ partner.href }}" style="height:120px;display:flex;align-items:center;justify-content:center;"><img style="width:120px;filter:brightness(150%);" class="img-fluid light-theme-img" src="{{ partner.image.url }}" alt="brand-logo"></a>
+									<a href="{{ partner.href }}"><img class="img-fluid dark-theme-img" src="{{ partner.image.url }}" alt="brand-logo"></a>
 								</div>
 								{% endfor %}
 

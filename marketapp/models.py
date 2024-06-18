@@ -133,7 +133,8 @@ class Team(models.Model):
 class Partners(models.Model):
     name = models.CharField(max_length = 200)
     image = models.ImageField()
-
+    href = models.CharField(max_length=800)
+    
     def __str__(self):
         return self.name
 
