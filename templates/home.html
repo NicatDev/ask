@@ -7,6 +7,7 @@
 		<meta name="description" content="ASK Group - - Biznes psixologiyası, bazar araşdırması və biznes təlimləri ilə hər zaman bir addımlığınızdadır.">
 		<meta name="keywords" content="ASK Group - - Biznes psixologiyası, bazar araşdırması və biznes təlimləri ilə hər zaman bir addımlığınızdadır.">	
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
 		<meta name="google-site-verification" content="qaiF8TTRfcXutrKfWzN6tanJEx-7PGAd3pbqoQ97JO8" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap">
 		<!-- SITE TITLE -->
@@ -487,6 +488,7 @@ textarea.input {
 			}
 		}
 		@media only screen and (max-width: 768px) {
+			
 			.swiper-pagination{
 				display:block !important;
 			}
@@ -503,6 +505,10 @@ textarea.input {
 				color: black !important;
 			}
 		}
+		@media only screen and (max-width: 999px) {
+			.scroll-icon{
+				display:none
+			}
 	</style>
 
 <style>
@@ -546,9 +552,10 @@ textarea.input {
 	
 		<div class="scroll-icon" id="scroll-icon"><img id="downArrow" src="{% static 'arrow.png' %}"></div>
 		<script>
-			document.getElementById('scroll-icon').addEventListener('click', function() {
+			document.getElementById('scroll-icon').addEventListener('click', function() { 
+				
 				window.scrollBy({
-					top: window.innerHeight+80,
+					top: window.screen.height+80,
 					left: 0,
 					behavior: 'smooth'
 				});
