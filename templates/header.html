@@ -275,7 +275,8 @@
 			</script>
 			{% else %}
 			<script>
-				updateImageSources();
+				document.addEventListener('DOMContentLoaded', function() {
+					updateImageSources();}
 			</script>
 			{% endif %}
 <script>
