@@ -223,7 +223,6 @@
 
 				</div>     <!-- End header-wrapper -->
 			</header>	<!-- END HEADER -->
-		
 			<script>
 				function updateImageSources() {
 					if (window.innerWidth > 990) {
@@ -253,6 +252,10 @@
 				}
 				}
 		
+			</script>
+			{% if home %}
+			<script>
+				
 				// Monitor changes to the class attribute of the parentDiv
 				var parentDiv = document.querySelector('.wsmainfull');
 				var observer = new MutationObserver(function(mutations) {
@@ -270,7 +273,11 @@
 					updateImageSources();
 				});
 			</script>
-
+			{% else %}
+			<script>
+				updateImageSources();
+			</script>
+			{% endif %}
 <script>
 	function updateLanguageBasedOnCookie() {
 		var langCookie = document.cookie.replace(/(?:(?:^|.*;\s*)django_language\s*=\s*([^;]*).*$)|^.*$/, "$1");

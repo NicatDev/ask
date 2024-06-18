@@ -64,6 +64,7 @@ def home(request):
 
     team = Team.objects.all()
     testimonials = Testimonials.objects.all()
+
     context = {
         'team':team,
         'trainings':trainings,
@@ -71,7 +72,7 @@ def home(request):
         'testimonials':testimonials,
         'psychologies':psychologies,
         'services':services,
-
+        'home':True
     }
     researchs = Services.objects.all()
     context['researchs'] = researchs
