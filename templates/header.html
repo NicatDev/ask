@@ -276,7 +276,8 @@
 			{% else %}
 			<script>
 				document.addEventListener('DOMContentLoaded', function() {
-					images[0].src = images[0].id;
+					var images = document.querySelectorAll('.LogoTitle');
+						images[0].src = images[0].id;
 						images[1].src = images[1].id;
 						images[2].src = images[2].id;
 						images[3].src = images[3].id;
