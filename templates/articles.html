@@ -194,6 +194,7 @@
 
 		<!-- PAGE PAGINATION
 			============================================= -->
+			{% if blogs %}
 			<div class="pb-100 page-pagination theme-pagination">
 				<div class="container">
 					<div class="row">	
@@ -213,10 +214,11 @@
 					</div>  <!-- End row -->	
 				</div> <!-- End container -->
 			</div>	<!-- END PAGE PAGINATION -->
-
+			{% endif %}
 
 
 					<!-- BLOG POSTS CATEGORY --> 
+					{% if recent_blogs %}
 					<div class="row">
 						<div class="col">
 							<div class="posts-category ico-20 wow fadeInUp">
@@ -224,7 +226,7 @@
 							</div>
 						</div>
 					</div>
-
+					{% endif %}
 
 					<!-- POSTS WRAPPER -->
 					<div class="posts-wrapper">
