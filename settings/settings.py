@@ -42,7 +42,6 @@ CSRF_TRUSTED_ORIGINS = [
     'http://askgroup.az',
 ]
 
-# Application definition
 
 INSTALLED_APPS = [
     'modeltranslation',
@@ -60,6 +59,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'rosetta', 
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
