@@ -180,7 +180,11 @@ form {
 		padding-bottom:25px;
 	}
 }
-
+@media (min-width: 1050px) and (max-width: 1700px){
+.sliderTitleImage{
+	height:120px
+}
+}
 @media (min-width: 200px) and (max-width: 768px){
 	
 	.sabinafoto{
@@ -468,7 +472,12 @@ textarea.input {
     padding: 0.45rem 1.2rem;
   }
 }
-
+@media (min-width: 190px) and (max-width: 700px){
+.swiper-slide {
+	
+	margin-right: 20px !important; 
+ }
+}
 	</style>
 	<style>
 		@media only screen and (max-width: 480px) {
@@ -596,6 +605,7 @@ textarea.input {
 				<section id="hero-3" style="background-image:url({% static "images/hero-nicat-2.png" %}) !important;padding-top:0px;background-position:center;" class="bg--fixed hero-section swiper mySwiper">
 			
 				<div style="z-index:40;padding-top:160px" class="container myherocontainer swiper-wrapper" id="slideimageheight">	
+				
 					<div style="margin:0px !important;" class="row d-flex align-items-center swiper-slide" data-background="{% static "images/hero-nicat-2.png" %}">
 
 
@@ -604,7 +614,73 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a ><h2 class="s-60 w-700">ASK Research</h2></a>
+								<a ><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static 'main_logo/AskSkyBlue_groupWhite.svg' %}"></h2></a>
+
+								<!-- Text -->
+								<p class="p-lg">
+									{% trans 'ASK GROUP - çevik biznes həlləri təklif edən xidmətlər qrupudur. Biznesə vahid canlı orqanizm kimi yanaşaraq onun sağlam transformasiyası üçün individual həllərlə dəstək oluruq. Təklif edilən həllər xüsusən müştəri ilə birgə və məhz müştəriyə özəl tərtib olunur. İstiqamətimiz 3 hissəyə bölünür .' %}
+								</p> 
+
+								<!-- HERO DIGITS -->	
+								<div class="hero-digits">
+
+
+									<!-- DIGIT BLOCK #1 -->					
+									<div id="hd-1-1" style="width: 100%;" class="wow fadeInUp">
+										<div class="hero-digits-block">	
+
+											<!-- Digit -->
+										
+
+											<!-- Text -->
+											<!-- <div class="block-txt">
+												<p class="p-sm">Tempor sapien and quaerat placerat</p>
+											</div> -->
+
+										</div>
+									</div>	<!-- END DIGIT BLOCK #1 -->		
+
+
+									<!-- DIGIT BLOCK #2 -->						
+									<div id="hd-1-2" class="wow fadeInUp">
+										<div class="hero-digits-block">		
+
+											<!-- Digit -->
+											<!-- <div class="block-digit">
+												<h2 class="s-46 statistic-number">29<span>%</span></h2>
+											</div> -->
+
+											<!-- Text -->
+											<!-- <div class="block-txt">
+												<p class="p-sm">Ligula suscipit vitae and rutrum turpis</p>
+											</div> -->
+										</div>
+									</div>	
+						
+								</div>	
+							</div>
+						</div>	
+
+
+						<!-- HERO IMAGE -->
+						<div class="col-md-6" style="margin-bottom:22px">	
+							<div class="hero-1-img wow fadeInLeft">	
+								<img style="height: 600px" class="img-fluid qaqas sabinafoto" src="{% static 'images/persons/ts.png' %}" alt="hero-image">					
+							</div>
+						</div>	
+						
+
+					</div> 
+				
+					<div style="margin:0px !important;" class="row d-flex align-items-center swiper-slide" data-background="{% static "images/hero-nicat-2.png" %}">
+
+
+						<!-- HERO TEXT -->
+						<div class="col-md-6">
+							<div class="hero-3-txt color--white wow fadeInRight">
+
+								<!-- Title -->
+								<a ><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/asktraning_white.svg' %}"></h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">
@@ -670,7 +746,7 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a ><h2 class="s-60 w-700">ASK Psychology</h2></a>
+								<a ><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/askresearch_white.svg' %}"></h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">{% trans 'Biznes psixoloq təşkilatın şüuraltı ilə işləyən mütəxəssisdir. Bununla da açıq olmayan və gizli irrasional proseslərlə şirkətin böyüməsinə, inkişafına və mənfəətinə birbaşa təsir edir. Biznes psixoloq biznes kouçdan fərqli olaraq ancaq hədəflərlə, fərdi psixoloqdan fərqli olaraq isə fərdlərin şüüraltı və gözəgörünməyən qeyri-rasional proseslərlə işləmir. Biznes psixoloq biznesə və insan qrupuna bir canlı orqanizm kimi baxır və bu orqanizmi tətqiq edərək işləyir.' %}
@@ -736,7 +812,7 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a><h2 class="s-60 w-700">ASK Training</h2></a>
+								<a><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/askpsyhcology_White.svg' %}"></h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">
@@ -885,7 +961,7 @@ textarea.input {
 			============================================= -->
 			<section id="lnk-1" class="pt-100 ws-wrapper content-section">
 				<div class="container">
-						<!-- <div  id="particles-js" style="position: absolute;z-index:30"></div> -->
+				
 					<div style="background-color: #edf7ff !important;" class="bc-1-wrapper bg--02 bg--fixed r-16">
 						<div class="section-overlay">
 							<div class="row d-flex align-items-center">
@@ -1351,25 +1427,7 @@ textarea.input {
 
 <!-- stats.js -->
 <script src="{% static 'particle/lib/stats.js' %}"></script>
-<script>
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-    }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-</script>
+
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
 		var mySwiper = new Swiper('.mySwiper', {
