@@ -1059,7 +1059,7 @@ textarea.input {
 															
 									<!-- Team Member Photo -->
 									<div class="team-member-photo r-14">
-										<div class="hover-overlay"> 
+										<div {% if member.description %} onclick="clickTeam('{{member.full_name}}','{{member.description|escapejs}}','{{member.image.url}}')" {% endif %} class="hover-overlay"> 
 											{% if member.image %}<img class="img-fluid" src="{{ member.image.url }}" alt="team-member-foto">{% endif %}
 											<div class="item-overlay"></div>
 										</div>
@@ -1067,7 +1067,7 @@ textarea.input {
 																																					
 									<!-- Team Member Data -->		
 									<div class="team-member-data">		
-										<h6 onclick="clickTeam('{{member.full_name}}','{{member.description}}','{{member.image.url}}')" class="s-20 w-700 color--black">{{ member.full_name }}</h6>
+										<h6 {% if member.description %} onclick="clickTeam('{{member.full_name}}','{{member.description|escapejs}}','{{member.image.url}}')" {% endif %} class="s-20 w-700 color--black" style="cursor:pointer;">{{ member.full_name }}</h6>
 										<p class="color--grey">{{ member.field }}</p>
 									</div>	
 								
@@ -1365,7 +1365,8 @@ textarea.input {
 					imageUrl: image,
 					imageWidth: 304,
 					imageHeight: 400,
-					imageAlt: "Custom image"
+					imageAlt: name,
+					confirmButtonText: "{% trans 'Tamam' %}",
 				  });
 			}
 		</script>
