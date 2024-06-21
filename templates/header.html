@@ -10,6 +10,9 @@
 				transform: scale(1.1); 
 				transition: transform 0.2s ease;  
 			}
+			.scroll #mobileHome{
+				filter:invert(0) !important; 	
+			}
 			.scroll .langedit{
 				color: black !important;
 			}
@@ -134,7 +137,7 @@
 									<ul class="wsmenu-list nav-theme">
 									
 										<!-- SIMPLE NAVIGATION LINK -->
-									
+										<a href="{% url 'home' %}" class="nl-simple mobilefalse" ><img id="mobileHome" style="height:48px;float:left;padding-top:17px;padding-right:15px;filter:invert(1)"  src="{% static 'home.png' %}"></a>
 											
 											<li style="float:left" class="nl-simple mobilefalse" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a   style="color:white !important" class=" btn r-04 btn--theme last-link">{% trans "Əlaqə" %} <span  class="wsarrow contactArrow"></span></a>
 												<ul class="sub-menu">
