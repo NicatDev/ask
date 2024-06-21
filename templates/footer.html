@@ -85,11 +85,26 @@
 
 								<!-- Links -->
 								<ul class="foo-links clearfix">
+									{% url 'home' as home_url %}
+    								{% if request.path != home_url %}
 									<li><p><a href="{% url 'home' %}">ASK GROUP</a></p></li>
+									{% endif %}
+									{% url 'articles' as blog_url %}
+    								{% if request.path != blog_url %}
 									<li><p><a href="{% url 'articles' %}">Bloqlar</a></p></li>
+									{% endif %}
+									{% url 'shows' as shows_url %}
+    								{% if request.path != shows_url %}
 									<li><p><a href="{% url 'shows' %}">Paylaşımlar</a></p></li>
+									{% endif %}
+									{% url 'news' as news_url %}
+    								{% if request.path != news_url %}
 									<li><p><a href="{% url 'news' %}">Xəbərlər</a></p></li>
-									<li><p><a href="{% url 'contact' %}">{% trans "Əlaqə" %}</a></p></li>						
+									{% endif %}
+									{% url 'contact' as contact_url %}
+    								{% if request.path != contact_url %}
+									<li><p><a href="{% url 'contact' %}">{% trans "Əlaqə" %}</a></p></li>	
+									{% endif %}					
 									
 								</ul>
 
