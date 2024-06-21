@@ -7,7 +7,7 @@
 		<meta name="description" content="ASK Group - - Biznes psixologiyası, bazar araşdırması və biznes təlimləri ilə hər zaman bir addımlığınızdadır.">
 		<meta name="keywords" content="ASK Group - - Biznes psixologiyası, bazar araşdırması və biznes təlimləri ilə hər zaman bir addımlığınızdadır.">	
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<meta name="google-site-verification" content="qaiF8TTRfcXutrKfWzN6tanJEx-7PGAd3pbqoQ97JO8" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap">
 		<!-- SITE TITLE -->
@@ -680,7 +680,7 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a ><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/asktraning_white.svg' %}"></h2></a>
+								<a ><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/askresearch_white.svg' %}"></h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">
@@ -746,7 +746,7 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a ><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/askresearch_white.svg' %}"></h2></a>
+								<a ><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/askpsyhcology_White.svg' %}"></h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">{% trans 'Biznes psixoloq təşkilatın şüuraltı ilə işləyən mütəxəssisdir. Bununla da açıq olmayan və gizli irrasional proseslərlə şirkətin böyüməsinə, inkişafına və mənfəətinə birbaşa təsir edir. Biznes psixoloq biznes kouçdan fərqli olaraq ancaq hədəflərlə, fərdi psixoloqdan fərqli olaraq isə fərdlərin şüüraltı və gözəgörünməyən qeyri-rasional proseslərlə işləmir. Biznes psixoloq biznesə və insan qrupuna bir canlı orqanizm kimi baxır və bu orqanizmi tətqiq edərək işləyir.' %}
@@ -804,6 +804,7 @@ textarea.input {
 						
 
 					</div>    <!-- End row --> 	
+			
 					<div style="margin:0px !important;" class="row d-flex align-items-center swiper-slide" data-background="{% static 'images/hero-nicat-2.png' %}">
 
 
@@ -812,7 +813,7 @@ textarea.input {
 							<div class="hero-3-txt color--white wow fadeInRight">
 
 								<!-- Title -->
-								<a><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/askpsyhcology_White.svg' %}"></h2></a>
+								<a><h2 class="s-60 w-700"><img class="sliderTitleImage" src="{% static '/sub_logo/asktraning_white.svg' %}"></h2></a>
 
 								<!-- Text -->
 								<p class="p-lg">
@@ -1066,7 +1067,7 @@ textarea.input {
 																																					
 									<!-- Team Member Data -->		
 									<div class="team-member-data">		
-										<h6 class="s-20 w-700 color--black">{{ member.full_name }}</h6>
+										<h6 onclick="clickTeam('{{member.full_name}}','{{member.description}}','{{member.image.url}}')" class="s-20 w-700 color--black">{{ member.full_name }}</h6>
 										<p class="color--grey">{{ member.field }}</p>
 									</div>	
 								
@@ -1355,6 +1356,19 @@ textarea.input {
 </style>
 		<!-- EXTERNAL SCRIPTS
 		============================================= -->	
+		<script>
+			function clickTeam(name,description,image){
+		
+				Swal.fire({
+					title: name,
+					text: description,
+					imageUrl: image,
+					imageWidth: 304,
+					imageHeight: 400,
+					imageAlt: "Custom image"
+				  });
+			}
+		</script>
 		<script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
 		<script src="{% static 'js/bootstrap.min.js' %}"></script>	
 		<script src="{% static 'js/modernizr.custom.js' %}"></script>

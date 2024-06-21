@@ -233,7 +233,7 @@
 		var owl = $('.brands-carousel-6');
 			owl.owlCarousel({
 				items: 5,
-				loop:true,
+				loop:false,
 				autoplay:false,
 				navBy: 1,
 				nav:false,

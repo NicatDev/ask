@@ -124,6 +124,7 @@ class Message(models.Model):
     
 class Team(models.Model):
     full_name = models.CharField(max_length = 200)
+    description = models.TextField(null=True,blank=True)
     image = models.ImageField()
     field = models.CharField(max_length=200,blank=True)
     
