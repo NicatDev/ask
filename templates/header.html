@@ -185,11 +185,13 @@
 											 <li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'sub_logo/askmedia_Darkblue.svg' %}" src="{% static 'sub_logo/askmedia_White.svg' %}" alt="Ask Psychology"> <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
 											
-													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'articles' %}" class="h-link">{% trans "Bloqlar" %}</a></li>
+													
 												
 													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'news' %}" class="h-link">{% trans "Xəbərlər" %}</a></li>
 												
 													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'shows' %}" class="h-link">{% trans "Paylaşımlar" %}</a></li>
+
+													<li class="nl-simple" aria-haspopup="true"><a href="{% url 'articles' %}" class="h-link">{% trans "Bloqlar" %}</a></li>
 												
 												</ul>
 											</li>	
@@ -205,7 +207,7 @@
 											</li>	
 											
 
-											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'sub_logo/askresearch_darkblue.svg' %}" src="{% static 'sub_logo/askresearch_white.svg' %}" alt="Ask Research"> <span class="wsarrow"></span></a>
+											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link"><img class="LogoTitle" style="height:31px" id="{% static 'sub_logo/askresearch_darkblue.svg' %}" src="{% static 'sub_logo/askresearch_white.svg' %}" alt="Ask Research"> <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
 													{% for research in researchs %}
 													<li aria-haspopup="true"><a href="{% url 'serviceSingle' research.slug %}" class="h-link">{{ research.name }}</a></li>
@@ -329,3 +331,12 @@
 	};
 	
 </script>
+
+{% url 'home' as home_url %}
+{% if request.path != home_url %}
+<style>
+	#mobileHome {
+		filter: invert(0) !important;
+	}
+</style>
+{% endif %}
