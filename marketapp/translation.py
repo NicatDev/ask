@@ -22,6 +22,8 @@ class CategoryTagTranslationOption(TranslationOptions):
 class TeamTranslationOption(TranslationOptions):
     fields = ('field','full_name','description')
 
+translator.register(Team,TeamTranslationOption)
+
 translator.register(Category, CategoryTagTranslationOption)
 translator.register(Tag, CategoryTagTranslationOption)
 
