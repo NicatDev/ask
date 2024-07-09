@@ -73,3 +73,8 @@ admin.site.register(TrainingItems,TrainingAdminModelAdmin)
 admin.site.register(Student)
 admin.site.register(Testimonials)
 admin.site.register(Subscriber)
+
+class TeamModelAdmin(admin.ModelAdmin):
+    exclude = ['full_name','description','field']
+
+admin.site.register(Team,TeamModelAdmin)

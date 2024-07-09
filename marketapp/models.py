@@ -129,7 +129,7 @@ class Team(models.Model):
     field = models.CharField(max_length=200,blank=True)
     
     def __str__(self):
-        return self.full_name    
+        return f'Team-Member-{self.full_name}'    
     
 class Partners(models.Model):
     name = models.CharField(max_length = 200)
