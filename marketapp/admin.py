@@ -56,7 +56,7 @@ admin.site.register(Article,ArticleModelAdmin)
 admin.site.register(Message)
 admin.site.register(Partners)
 
-admin.site.register(Team)
+
 
 class NewsShowModelAdmin(admin.ModelAdmin):
     exclude = ['content','title']
