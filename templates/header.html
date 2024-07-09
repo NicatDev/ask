@@ -138,7 +138,9 @@
 									<ul class="wsmenu-list nav-theme">
 									
 										<!-- SIMPLE NAVIGATION LINK -->
-										<a href="{% url 'home' %}" class="nl-simple mobilefalse" ><img id="mobileHome" style="height:48px;float:left;padding-top:17px;padding-right:15px;filter:invert(1)"  src="{% static 'home.png' %}"></a>
+										<li style="float:left" class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'main_logo/AskgroupDarkBlue.svg' %}" src="{% static 'main_logo/AskSkyBlue_groupWhite.svg' %}" alt="askgroup"> </a></li>
+
+											
 											
 											<li style="float:left" class="nl-simple mobilefalse" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a   style="color:white !important" class=" btn r-04 btn--theme last-link">{% trans "Əlaqə" %} <span  class="wsarrow contactArrow"></span></a>
 												<ul class="sub-menu">
@@ -227,9 +229,7 @@
 											</li>	
 											
 											
-											<li style="float:right" class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'main_logo/AskgroupDarkBlue.svg' %}" src="{% static 'main_logo/AskSkyBlue_groupWhite.svg' %}" alt="askgroup"> </a></li>
-
-											
+								
 											
 											<!-- SIMPLE NAVIGATION LINK -->
 							
