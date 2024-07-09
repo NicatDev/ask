@@ -87,21 +87,21 @@
 								<ul class="foo-links clearfix">
 									{% url 'home' as home_url %}
     								{% if request.path != home_url %}
-									<li><p><a href="{% url 'home' %}">ASK GROUP</a></p></li>
+									<li><p><a href="{% url 'home' %}">{% trans 'ASK GROUP' %}</a></p></li>
 									{% endif %}
 									{% url 'news' as news_url %}
     								{% if request.path != news_url %}
-									<li><p><a href="{% url 'news' %}">Xəbərlər</a></p></li>
+									<li><p><a href="{% url 'news' %}">{% trans 'Xəbərlər' %}</a></p></li>
 									{% endif %}
 
 									{% url 'shows' as shows_url %}
     								{% if request.path != shows_url %}
-									<li><p><a href="{% url 'shows' %}">Paylaşımlar</a></p></li>
+									<li><p><a href="{% url 'shows' %}">{% trans 'Paylaşımlar' %}</a></p></li>
 									{% endif %}
 
 									{% url 'articles' as blog_url %}
     								{% if request.path != blog_url %}
-									<li><p><a href="{% url 'articles' %}">Bloqlar</a></p></li>
+									<li><p><a href="{% url 'articles' %}">{% trans 'Bloqlar' %}</a></p></li>
 									{% endif %}
 									
 									

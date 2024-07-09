@@ -19,6 +19,8 @@ class PsySectionTranslationOption(TranslationOptions):
 class CategoryTagTranslationOption(TranslationOptions):
     fields = ('name',)
 
+class TeamTranslationOption(TranslationOptions):
+    fields = ('field','full_name','description')
 
 translator.register(Category, CategoryTagTranslationOption)
 translator.register(Tag, CategoryTagTranslationOption)
