@@ -196,7 +196,15 @@
 												
 												</ul>
 											</li>	
-
+											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'sub_logo/asktraning_Darkblue.svg' %}" src="{% static 'sub_logo/asktraning_white.svg' %}" alt="Ask Training"> <span class="wsarrow"></span></a>
+												<ul class="sub-menu">
+													{% for training in trainings %}
+													<li aria-haspopup="true"><a href="{% url 'trainingSingle' training.slug %}" class="h-link">{{ training.name }}</a></li>
+													{% endfor %}
+											
+											   </ul>
+											</li>	
+											
 		
 											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'sub_logo/askpsyhcology_Darkblue.svg' %}" src="{% static 'sub_logo/askpsyhcology_White.svg' %}" alt="Ask Psychology"> <span class="wsarrow"></span></a>
 												<ul class="sub-menu">
@@ -217,15 +225,7 @@
 											   </ul>
 											</li>	
 											
-											<li style="float:right" aria-haspopup="true"><span class="wsmenu-click"><i class="wsmenu-arrow"></i></span><a  class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'sub_logo/asktraning_Darkblue.svg' %}" src="{% static 'sub_logo/asktraning_white.svg' %}" alt="Ask Training"> <span class="wsarrow"></span></a>
-												<ul class="sub-menu">
-													{% for training in trainings %}
-													<li aria-haspopup="true"><a href="{% url 'trainingSingle' training.slug %}" class="h-link">{{ training.name }}</a></li>
-													{% endfor %}
-											
-											   </ul>
-											</li>	
-											
+										
 											
 											<li style="float:right" class="nl-simple" aria-haspopup="true"><a href="{% url 'home' %}" class="h-link"><img class="LogoTitle" style="height:28px" id="{% static 'main_logo/AskgroupDarkBlue.svg' %}" src="{% static 'main_logo/AskSkyBlue_groupWhite.svg' %}" alt="askgroup"> </a></li>
 
@@ -263,9 +263,9 @@
 						images[4].src = images[4].id;
 					} else {
 						images[0].src = "{% static 'sub_logo/askmedia_White.svg' %}";
-						images[1].src = "{% static 'sub_logo/askpsyhcology_White.svg' %}";
-						images[2].src = "{% static 'sub_logo/askresearch_white.svg' %}";
-						images[3].src = "{% static 'sub_logo/asktraning_white.svg' %}";
+						images[1].src = "{% static 'sub_logo/asktraning_white.svg' %}";
+						images[2].src = "{% static 'sub_logo/askpsyhcology_White.svg' %}";
+						images[3].src = "{% static 'sub_logo/askresearch_white.svg' %}";
 						images[4].src = "{% static 'main_logo/AskSkyBlue_groupWhite.svg' %}";
 					}
 				}

@@ -983,13 +983,7 @@ textarea.input {
 												</p>
 											</li>
 
-											<li class="list-item">
-												<p><b><img style="max-height:24px;margin-left: -6px;" src="{% static 'sub_logo/asktraning_Darkblue.svg' %}"></b> - {% blocktrans %} Bilik və bacarıqların uğurlu biznesin açarı olduğunu dərk edərək bildiklərimizi paylaşmağa qərar verdik. Bununla da komandamız
-													ekosistemin inkişafı üçün bu bilikləri ayrıca təlimlər halında da təqdim
-													etmək qərarına gəldi.
-													{% endblocktrans %}
-												</p>
-											</li>
+										
 
 											<li class="list-item">
 												<p><b><img style="max-height:24px;margin-left: -6px;" src="{% static 'sub_logo/askresearch_darkblue.svg' %}"></b> - {% blocktrans %} Biznes Tədiqatları ASK Groupun əsas və baza xidmətidir. Belə ki, müasir dünyada bütün əhəmiyyətli qərarlar etibarlı
@@ -1004,6 +998,14 @@ textarea.input {
 												</p>
 											</li>
 										
+											<li class="list-item">
+												<p><b><img style="max-height:24px;margin-left: -6px;" src="{% static 'sub_logo/asktraning_Darkblue.svg' %}"></b> - {% blocktrans %} Bilik və bacarıqların uğurlu biznesin açarı olduğunu dərk edərək bildiklərimizi paylaşmağa qərar verdik. Bununla da komandamız
+													ekosistemin inkişafı üçün bu bilikləri ayrıca təlimlər halında da təqdim
+													etmək qərarına gəldi.
+													{% endblocktrans %}
+												</p>
+											</li>
+
 										</ul>
 
 									</div>
@@ -1060,7 +1062,7 @@ textarea.input {
 									<!-- Team Member Photo -->
 									<div class="team-member-photo r-14">
 										<div {% if member.description %} onclick="clickTeam('{{member.full_name}}','{{member.description|escapejs}}','{{member.image.url}}')" {% endif %} class="hover-overlay"> 
-											{% if member.image %}<img class="img-fluid" src="{{ member.image.url }}" alt="team-member-foto">{% endif %}
+											{% if member.image %}<img class="img-fluid"  src="{{ member.image.url }}" alt="team-member-foto">{% endif %}
 											<div class="item-overlay"></div>
 										</div>
 									</div>
