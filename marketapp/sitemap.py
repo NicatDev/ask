@@ -1,7 +1,7 @@
 from django.contrib.sitemaps import Sitemap
 from marketapp.models import *
 from django.urls import reverse, NoReverseMatch
-from django.utils.translation import get_language
+
 
 class ArticleSiteMap(Sitemap):
     changefreq = "daily"
@@ -15,8 +15,7 @@ class ArticleSiteMap(Sitemap):
         return obj.created_at
     
     def location(self, obj: Article) -> str:
-        lang = get_language()
-        return f'/{lang}{obj.get_absolute_url()}'
+        return obj.get_absolute_url()
     
 class TrainingSiteMap(Sitemap):
     changefreq = "daily"
@@ -30,8 +29,7 @@ class TrainingSiteMap(Sitemap):
         return obj.created_at
     
     def location(self, obj: Training) -> str:
-        lang = get_language()
-        return f'/{lang}{obj.get_absolute_url()}'
+        return obj.get_absolute_url()
     
 
 class PsychologySiteMap(Sitemap):
@@ -46,8 +44,7 @@ class PsychologySiteMap(Sitemap):
         return obj.created_at
     
     def location(self, obj: Psychology) -> str:
-        lang = get_language()
-        return f'/{lang}{obj.get_absolute_url()}'
+        return obj.get_absolute_url()
 
 
 class TagSiteMap(Sitemap):
@@ -69,8 +66,7 @@ class ServiceSitemap(Sitemap):
         return Services.objects.all()
 
     def location(self, obj: Services) -> str:
-        lang = get_language()
-        return f'/{lang}{obj.get_absolute_url()}'
+        return obj.get_absolute_url()
 
 
 
@@ -87,8 +83,8 @@ class StaticSitemap(Sitemap):
 
     def location(self, item):
         try:
-            lang = get_language() 
-            return f'/{lang}{reverse(item)}' 
+            return reverse(item)
         except NoReverseMatch:
-            return f'/{get_language()}{reverse("home")}'
+            # Eğer reverse işlemi başarısız olursa, hata durumuyla başa çıkabilirsiniz.
+            return reverse('home')
 
