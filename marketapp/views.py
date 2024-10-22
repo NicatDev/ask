@@ -80,6 +80,8 @@ def home(request):
     context['pyschologies'] = pyschologies
     trainings = Training.objects.all()
     context['trainings'] = trainings
+    meta = MetaInfo.objects.filter(page_name="home").first()
+    context['meta'] = meta
     return render(request,'home.html',context)
 
 def home2(request):
@@ -98,6 +100,8 @@ def home2(request):
     context['pyschologies'] = pyschologies
     trainings = Training.objects.all()
     context['trainings'] = trainings
+    meta = MetaInfo.objects.filter(page_name="home").first()
+    context['meta'] = meta
     return render(request,'home2.html',context)
 
 
@@ -132,6 +136,7 @@ def psychologySingle(request,slug):
     context['researchs'] = researchs
     trainings = Training.objects.all()
     context['trainings'] = trainings
+
     return render(request, 'psychologies.html',context)
 
 
@@ -147,6 +152,8 @@ def services(request):
     context['pyschologies'] = pyschologies
     trainings = Training.objects.all()
     context['trainings'] = trainings
+    meta = MetaInfo.objects.filter(page_name="services").first()
+    context['meta'] = meta
     return render(request,'services.html',context)
 
 def serviceSingle(request,slug):
@@ -208,6 +215,8 @@ def articles(request):
     context['pyschologies'] = pyschologies
     trainings = Training.objects.all()
     context['trainings'] = trainings
+    meta = MetaInfo.objects.filter(page_name="articles").first()
+    context['meta'] = meta
     return render(request,'articles.html',context)
 
 def articleSingle(request,slug):
@@ -254,6 +263,8 @@ def contact(request):
     context['pyschologies'] = pyschologies
     trainings = Training.objects.all()
     context['trainings'] = trainings
+    meta = MetaInfo.objects.filter(page_name="contact").first()
+    context['meta'] = meta
     return render(request,'contact.html',context)
 
 def message(request):
@@ -320,6 +331,8 @@ def training(request):
     context['pyschologies'] = pyschologies
     trainings = Training.objects.all()
     context['trainings'] = trainings
+    meta = MetaInfo.objects.filter(page_name="training").first()
+    context['meta'] = meta
     return render(request,'trainings.html',context)
 
 

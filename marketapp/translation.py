@@ -2,13 +2,13 @@ from modeltranslation.translator import TranslationOptions,register, translator
 from marketapp.models import Category,Tag,Team,Training,TrainingSection,Article,News,Show,Services,Psychology,PsychologySection,ServiceSection,TrainingItems
 
 class ArticleTranslationOption(TranslationOptions):
-    fields = ('title','content','content_2')
+    fields = ('title','content','content_2','slug')
 
 class ShowNewsTranslationOption(TranslationOptions):
-    fields = ('title','content')
+    fields = ('title','content','slug')
 
 class ServicePsychologyTrainingTranslationOption(TranslationOptions):
-    fields = ('name','description','title')
+    fields = ('name','description','title','slug')
   
 class SectionTranslationOption(TranslationOptions):
     fields = ('title','description')

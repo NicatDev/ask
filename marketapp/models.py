@@ -4,6 +4,15 @@ from marketapp.utils import *
 from datetime import datetime
 from django.utils.text import slugify
 from django.urls import reverse
+from django.core.exceptions import ValidationError
+
+URL_CHOICES = [
+        ('home', 'home'),
+        ('articles', 'articles'),
+        ('services', 'services'),
+        ('contact', 'contact'),
+        ('training', 'training'),
+    ]
 
 class BaseMixin(models.Model):
     slug = models.SlugField(unique=True,editable=False,blank=True,null=True)
@@ -15,6 +24,22 @@ class BaseMixin(models.Model):
     
     class Meta:
         abstract = True
+
+
+class MetaInfo(models.Model):
+    page_name = models.CharField(max_length=300, choices=URL_CHOICES, unique=True)
+    meta_title = models.CharField(max_length=10,null=True,blank=True,verbose_name='title for seo')
+    meta_description = models.CharField(max_length=300,null=True,blank=True,verbose_name='Meta Description')
+    meta_keyword = models.CharField(max_length=300,null=True,blank=True,verbose_name='keywords for seo')
+    image_alt = models.CharField(max_length=300,null=True,blank=True)
+
+
+    def __str__(self):
+        return self.page_name
+    
+    def delete(self, *args, **kwargs):
+        raise ValidationError("Meta məlumatları silinə bilməz!")
+    
         
 class Vacancy(models.Model):
     name = models.CharField(max_length = 400)
