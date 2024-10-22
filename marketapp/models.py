@@ -65,13 +65,39 @@ class Services(BaseMixin):
         verbose_name = "Research"
     
     def save(self, *args, **kwargs):
-        new_slug = seo(self.name)
-        self.slug = new_slug
-        if Services.objects.filter(slug=new_slug).exists():
-            count = 0
-            while Services.objects.filter(slug=new_slug).exists():
-                new_slug = f"{seo(self.name)}-{count}"
-                count += 1
+        # Azerbaycan Dili (az)
+        if self.name_az:
+            new_slug_az = seo(self.name_az)
+            self.slug_az = new_slug_az
+            if Services.objects.filter(slug_az=new_slug_az).exists():
+                count_az = 0
+                while Services.objects.filter(slug_az=new_slug_az).exists():
+                    new_slug_az = f"{seo(self.name_az)}-{count_az}"
+                    count_az += 1
+                self.slug_az = new_slug_az
+
+        # İngilizce (en)
+        if self.name_en:
+            new_slug_en = seo(self.name_en)
+            self.slug_en = new_slug_en
+            if Services.objects.filter(slug_en=new_slug_en).exists():
+                count_en = 0
+                while Services.objects.filter(slug_en=new_slug_en).exists():
+                    new_slug_en = f"{seo(self.name_en)}-{count_en}"
+                    count_en += 1
+                self.slug_en = new_slug_en
+
+        # Rusça (ru)
+        if self.name_ru:
+            new_slug_ru = seo(self.name_ru)
+            self.slug_ru = new_slug_ru
+            if Services.objects.filter(slug_ru=new_slug_ru).exists():
+                count_ru = 0
+                while Services.objects.filter(slug_ru=new_slug_ru).exists():
+                    new_slug_ru = f"{seo(self.name_ru)}-{count_ru}"
+                    count_ru += 1
+                self.slug_ru = new_slug_ru
+
         super(Services, self).save(*args, **kwargs)
         
     def get_absolute_url(self):
@@ -116,13 +142,39 @@ class Psychology(BaseMixin):
         verbose_name = "Psychology"
     
     def save(self, *args, **kwargs):
-        new_slug = seo(self.name)
-        self.slug = new_slug
-        if Psychology.objects.filter(slug=new_slug).exists():
-            count = 0
-            while Psychology.objects.filter(slug=new_slug).exists():
-                new_slug = f"{seo(self.name)}-{count}"
-                count += 1
+        # Azerbaycan Dili (az)
+        if self.name_az:
+            new_slug_az = seo(self.name_az)
+            self.slug_az = new_slug_az
+            if Psychology.objects.filter(slug_az=new_slug_az).exists():
+                count_az = 0
+                while Psychology.objects.filter(slug_az=new_slug_az).exists():
+                    new_slug_az = f"{seo(self.name_az)}-{count_az}"
+                    count_az += 1
+                self.slug_az = new_slug_az
+
+        # İngilizce (en)
+        if self.name_en:
+            new_slug_en = seo(self.name_en)
+            self.slug_en = new_slug_en
+            if Psychology.objects.filter(slug_en=new_slug_en).exists():
+                count_en = 0
+                while Psychology.objects.filter(slug_en=new_slug_en).exists():
+                    new_slug_en = f"{seo(self.name_en)}-{count_en}"
+                    count_en += 1
+                self.slug_en = new_slug_en
+
+        # Rusça (ru)
+        if self.name_ru:
+            new_slug_ru = seo(self.name_ru)
+            self.slug_ru = new_slug_ru
+            if Psychology.objects.filter(slug_ru=new_slug_ru).exists():
+                count_ru = 0
+                while Psychology.objects.filter(slug_ru=new_slug_ru).exists():
+                    new_slug_ru = f"{seo(self.name_ru)}-{count_ru}"
+                    count_ru += 1
+                self.slug_ru = new_slug_ru
+
         super(Psychology, self).save(*args, **kwargs)
         
   
@@ -192,13 +244,39 @@ class Training(BaseMixin):
         return reverse('trainingSingle', kwargs={"slug": self.slug})
 
     def save(self, *args, **kwargs):
-        new_slug = seo(self.name)
-        self.slug = new_slug
-        if Training.objects.filter(slug=new_slug).exists():
-            count = 0
-            while Training.objects.filter(slug=new_slug).exists():
-                new_slug = f"{seo(self.name)}-{count}"
-                count += 1
+        # Azerbaycan Dili (az)
+        if self.name_az:
+            new_slug_az = seo(self.name_az)
+            self.slug_az = new_slug_az
+            if Training.objects.filter(slug_az=new_slug_az).exists():
+                count_az = 0
+                while Training.objects.filter(slug_az=new_slug_az).exists():
+                    new_slug_az = f"{seo(self.name_az)}-{count_az}"
+                    count_az += 1
+                self.slug_az = new_slug_az
+
+        # İngilizce (en)
+        if self.name_en:
+            new_slug_en = seo(self.name_en)
+            self.slug_en = new_slug_en
+            if Training.objects.filter(slug_en=new_slug_en).exists():
+                count_en = 0
+                while Training.objects.filter(slug_en=new_slug_en).exists():
+                    new_slug_en = f"{seo(self.name_en)}-{count_en}"
+                    count_en += 1
+                self.slug_en = new_slug_en
+
+        # Rusça (ru)
+        if self.name_ru:
+            new_slug_ru = seo(self.name_ru)
+            self.slug_ru = new_slug_ru
+            if Training.objects.filter(slug_ru=new_slug_ru).exists():
+                count_ru = 0
+                while Training.objects.filter(slug_ru=new_slug_ru).exists():
+                    new_slug_ru = f"{seo(self.name_ru)}-{count_ru}"
+                    count_ru += 1
+                self.slug_ru = new_slug_ru
+
         super(Training, self).save(*args, **kwargs)
         
 
@@ -235,15 +313,39 @@ class Article(BaseMixin):
         return f'-{self.title}'
     
     def save(self, *args, **kwargs):
-        if not self.slug:
-            new_slug = seo(self.title)
-            
-            if Article.objects.filter(slug=new_slug).exists():
-                count = 2
-                while Article.objects.filter(slug=new_slug).exists():
-                    new_slug = f"{seo(self.title)}-{count}"
-                    count += 1
-            self.slug = new_slug
+        # Azerbaycan Dili (az)
+        if self.title_az:
+            new_slug_az = seo(self.title_az)
+            self.slug_az = new_slug_az
+            if Article.objects.filter(slug_az=new_slug_az).exists():
+                count_az = 0
+                while Article.objects.filter(slug_az=new_slug_az).exists():
+                    new_slug_az = f"{seo(self.title_az)}-{count_az}"
+                    count_az += 1
+                self.slug_az = new_slug_az
+
+        # İngilizce (en)
+        if self.title_en:
+            new_slug_en = seo(self.title_en)
+            self.slug_en = new_slug_en
+            if Article.objects.filter(slug_en=new_slug_en).exists():
+                count_en = 0
+                while Article.objects.filter(slug_en=new_slug_en).exists():
+                    new_slug_en = f"{seo(self.title_en)}-{count_en}"
+                    count_en += 1
+                self.slug_en = new_slug_en
+
+        # Rusça (ru)
+        if self.title_ru:
+            new_slug_ru = seo(self.title_ru)
+            self.slug_ru = new_slug_ru
+            if Article.objects.filter(slug_ru=new_slug_ru).exists():
+                count_ru = 0
+                while Article.objects.filter(slug_ru=new_slug_ru).exists():
+                    new_slug_ru = f"{seo(self.title_ru)}-{count_ru}"
+                    count_ru += 1
+                self.slug_ru = new_slug_ru
+
         super(Article, self).save(*args, **kwargs)
             
     def get_absolute_url(self):
@@ -260,15 +362,39 @@ class News(BaseMixin):
         return f'-{self.title}'
     
     def save(self, *args, **kwargs):
-        if not self.slug:
-            new_slug = seo(self.title)
-            
-            if News.objects.filter(slug=new_slug).exists():
-                count = 2
-                while News.objects.filter(slug=new_slug).exists():
-                    new_slug = f"{seo(self.title)}-{count}"
-                    count += 1
-            self.slug = new_slug
+        # Azerbaycan Dili (az)
+        if self.title_az:
+            new_slug_az = seo(self.title_az)
+            self.slug_az = new_slug_az
+            if News.objects.filter(slug_az=new_slug_az).exists():
+                count_az = 0
+                while News.objects.filter(slug_az=new_slug_az).exists():
+                    new_slug_az = f"{seo(self.title_az)}-{count_az}"
+                    count_az += 1
+                self.slug_az = new_slug_az
+
+        # İngilizce (en)
+        if self.title_en:
+            new_slug_en = seo(self.title_en)
+            self.slug_en = new_slug_en
+            if News.objects.filter(slug_en=new_slug_en).exists():
+                count_en = 0
+                while News.objects.filter(slug_en=new_slug_en).exists():
+                    new_slug_en = f"{seo(self.title_en)}-{count_en}"
+                    count_en += 1
+                self.slug_en = new_slug_en
+
+        # Rusça (ru)
+        if self.title_ru:
+            new_slug_ru = seo(self.title_ru)
+            self.slug_ru = new_slug_ru
+            if News.objects.filter(slug_ru=new_slug_ru).exists():
+                count_ru = 0
+                while News.objects.filter(slug_ru=new_slug_ru).exists():
+                    new_slug_ru = f"{seo(self.title_ru)}-{count_ru}"
+                    count_ru += 1
+                self.slug_ru = new_slug_ru
+
         super(News, self).save(*args, **kwargs)
             
     def get_absolute_url(self):
@@ -293,14 +419,37 @@ class Show(BaseMixin):
         return f'-{self.title}'
     
     def save(self, *args, **kwargs):
-        if not self.slug:
-            new_slug = seo(self.title)
-            
-            if Show.objects.filter(slug=new_slug).exists():
-                count = 2
-                while Show.objects.filter(slug=new_slug).exists():
-                    new_slug = f"{seo(self.title)}-{count}"
-                    count += 1
-            self.slug = new_slug
+        if self.title_az:
+            new_slug_az = seo(self.title_az)
+            self.slug_az = new_slug_az
+            if Show.objects.filter(slug_az=new_slug_az).exists():
+                count_az = 0
+                while Show.objects.filter(slug_az=new_slug_az).exists():
+                    new_slug_az = f"{seo(self.title_az)}-{count_az}"
+                    count_az += 1
+                self.slug_az = new_slug_az
+
+        # İngilizce (en)
+        if self.title_en:
+            new_slug_en = seo(self.title_en)
+            self.slug_en = new_slug_en
+            if Show.objects.filter(slug_en=new_slug_en).exists():
+                count_en = 0
+                while Show.objects.filter(slug_en=new_slug_en).exists():
+                    new_slug_en = f"{seo(self.title_en)}-{count_en}"
+                    count_en += 1
+                self.slug_en = new_slug_en
+
+        # Rusça (ru)
+        if self.title_ru:
+            new_slug_ru = seo(self.title_ru)
+            self.slug_ru = new_slug_ru
+            if Show.objects.filter(slug_ru=new_slug_ru).exists():
+                count_ru = 0
+                while Show.objects.filter(slug_ru=new_slug_ru).exists():
+                    new_slug_ru = f"{seo(self.title_ru)}-{count_ru}"
+                    count_ru += 1
+                self.slug_ru = new_slug_ru
+
         super(Show, self).save(*args, **kwargs)
 
